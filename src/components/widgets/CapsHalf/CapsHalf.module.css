@@ -30,13 +30,13 @@
   .redCaps {
     right: 0;
     /* justify-content: flex-start; */
-    background: url("/images/redHalf11.png") no-repeat center center/cover;
+    background: url("/images/redHalf1.png") no-repeat center center/cover;
   }
 
   .greenCaps {
     left: 0;
     /* justify-content: flex-end; */
-    background: url("/images/greenHalf11.png") no-repeat center center/cover;
+    background: url("/images/greenHalf1.png") no-repeat center center/cover;
   }
 }
 

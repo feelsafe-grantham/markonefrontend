@@ -1,5 +1,5 @@
 
-import React, { useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import styles from "./ProjectView.module.css"
 import Sidebar from "../../components/common/Sidebar";
 import Timeline from "../../components/common/Timeline";
@@ -7,41 +7,63 @@ const ProjectView = () => {
     const scrollContainerRef = useRef<HTMLDivElement>(null);
     const handleWheel = (e: React.WheelEvent) => {
         if (scrollContainerRef.current) {
-            e.preventDefault();
+
             scrollContainerRef.current.scrollLeft += e.deltaY;
         }
     };
-    const links = [
-        { name: "IOS App", url: "/" },
-        { name: "Android App", url: "/" },
-        { name: "Website | Portal", url: "/" },
-        { name: "CRM", url: "/" },
-        { name: "ERM", url: "/" },
-        { name: "Software", url: "/" },
-        { name: "IOS App", url: "/" },
-        { name: "Android App", url: "/" },
+
+    const timelinedata = [
+        "Start",
+        "Requirement Analysis",
+        "Prototype Building",
+        "Finilizing Ui/Ux",
+        "Setting Timeline",
+        "Build Beta Version/Test",
+        "Deploy Prod Version",
+        "Improvement Phase",
     ]
-    const timelinedata =
-        [
-            "Start",
-            "Requirement Analysis",
-            "Prototype Building",
-            "Finilizing Ui/Ux",
-            "Setting Timeline",
-            "Build Beta Version/Test",
-            "Deploy Prod Version",
-            "Improvement Phase",
-        ]
+
+    const projects = {
+        "ios": [
+            { image: "/images/project1.png", },
+            { image: "/images/project2.png", },
+            { image: "/images/project3.png", },
+            { image: "/images/project4.png", },
+        ],
+        "android": [
+            { image: "/images/project2.png", },
+            { image: "/images/project3.png", },
+            { image: "/images/project4.png", },
+            { image: "/images/project1.png", },
+        ],
+        "web": [
+            { image: "/images/project3.png", },
+            { image: "/images/project4.png", },
+            { image: "/images/project1.png", },
+            { image: "/images/project2.png", },
+        ],
+    }
 
     const linkss = [
-        { label: "IOS App", value: "", },
-        { label: "Android App", value: "", },
-        { label: "Website | Portal", value: "", },
-        { label: "CRM", value: "", },
-        { label: "ERP", value: "", },
-        { label: "Software", value: "", },
-        { name: "Android App", value: "/" },
+        { label: "IOS App", value: "ios", },
+        { label: "Android App", value: "android", },
+        { label: "Website | Portal", value: "web", },
+        { label: "IOS App", value: "ios", },
+        { label: "Android App", value: "android", },
+        { label: "Website | Portal", value: "web", },
+        { label: "IOS App", value: "ios", },
+        { label: "Android App", value: "android", },
+        { label: "Website | Portal", value: "web", },
+        { label: "IOS App", value: "ios", },
+        { label: "Android App", value: "android", },
+        { label: "Website | Portal", value: "web", },
     ]
+
+    const [selectedType, setSelectedType] = useState("ios");
+    const handleLinkClick = (value: string) => {
+        setSelectedType(value);
+    }
+    const currentProject = projects[selectedType];
 
     return (
         <div className={`flex flex-col space-x-4 mx-auto ${styles.mainContainer}`}>
@@ -50,17 +72,17 @@ const ProjectView = () => {
                 <h2 className={`${styles.mainHeading}`}>Projects</h2>
             </div>
             <div className={`flex space-x-4 mx-auto ${styles.contentContainer}`}>
-                <Sidebar links={links} />
-                <div className={`px-5 py-2 flex-1 trans-black-bg scrollbar-hidden ${styles.projectsContainer}`}>
-                    <h2 className={`text-2xl mb-2 ${styles.sectionHeading}`} >Project Summary</h2>
+                <Sidebar handleClick={handleLinkClick} links={linkss} />
+                <div className={`trans-black-bg scrollbar-hidden ${styles.projectsContainer}`}>
+                    <h2 className={`${styles.sectionHeading}`} >Project Summary</h2>
                     <div
                         onWheel={handleWheel}
                         ref={scrollContainerRef}
                         className={`${styles.midContainer}`}
                     >
-                        <img className={`${styles.image}`} src="/images/projects.png" alt="" />
-                        <img className={`${styles.image}`} src="/images/projects.png" alt="" />
-                        <img className={`${styles.image}`} src="/images/projects.png" alt="" />
+                        {currentProject?.map((item: any, index: number) => <img
+                            key={index} className={`${styles.image}`} src={item.image} alt="" />
+                        )}
                     </div>
                 </div>
                 <div className={`${styles.timelineContainer}`}>

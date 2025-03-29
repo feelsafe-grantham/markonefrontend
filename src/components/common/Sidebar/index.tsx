@@ -1,19 +1,19 @@
 import styles from "./Sidebar.module.css";
 import { Link } from "react-router-dom";
 interface links {
-    name: string;
-    url: string
+    label: string;
+    value: string
 }
 const Sidebar = ({ links = [
-    { name: "IOS App", url: "/" },
-] }: { links: links[] }) => {
+    { label: "IOS App", value: "ios", },
+], handleClick }: { links: links[], handleClick?: any }) => {
 
     return (
         <div className={`${styles.sidebarContainer} scrollbar-hidden trans-black-bg`}>
             {links.map((link, index) => {
                 return (
-                    <Link className={`${styles.link}`} key={index} to={link.url}>
-                        {link.name}
+                    <Link onClick={() => handleClick(link.value)} className={`${styles.link}`} key={index} to={""}>
+                        {link.label}
                     </Link>
                 );
             })}
