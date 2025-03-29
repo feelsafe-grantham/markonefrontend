@@ -33,6 +33,16 @@ const ProjectView = () => {
             "Improvement Phase",
         ]
 
+    const linkss = [
+        { label: "IOS App", value: "", },
+        { label: "Android App", value: "", },
+        { label: "Website | Portal", value: "", },
+        { label: "CRM", value: "", },
+        { label: "ERP", value: "", },
+        { label: "Software", value: "", },
+        { name: "Android App", value: "/" },
+    ]
+
     return (
         <div className={`flex flex-col space-x-4 mx-auto ${styles.mainContainer}`}>
             <div className={`flex space-x-4 ${styles.headingContainer}`} >
@@ -48,15 +58,6 @@ const ProjectView = () => {
                         ref={scrollContainerRef}
                         className={`${styles.midContainer}`}
                     >
-                        {/* <div className={`${styles.imageContainer}`}>
-                            <img className={`${styles.image}`} src="/images/projects.png" alt="" />
-                        </div>
-                        <div className={`${styles.imageContainer}`}>
-                            <img className={`${styles.image}`} src="/images/projects.png" alt="" />
-                        </div>
-                        <div className={`${styles.imageContainer}`}>
-                            <img className={`${styles.image}`} src="/images/projects.png" alt="" />
-                        </div> */}
                         <img className={`${styles.image}`} src="/images/projects.png" alt="" />
                         <img className={`${styles.image}`} src="/images/projects.png" alt="" />
                         <img className={`${styles.image}`} src="/images/projects.png" alt="" />
