@@ -27,21 +27,22 @@
 }
 
 @media (max-width: 1120px) {
+  .capsuleContainer {
+    height: 90px;
+  }
   .redCaps {
     right: 0;
-    /* justify-content: flex-start; */
     background: url("/images/redHalf1.png") no-repeat center center/cover;
   }
 
   .greenCaps {
     left: 0;
-    /* justify-content: flex-end; */
     background: url("/images/greenHalf1.png") no-repeat center center/cover;
   }
 }
 
 @media (max-width: 600px) {
   .capsuleContainer {
-    height: 85px;
+    height: 75px;
   }
 }
