@@ -30,7 +30,6 @@ const BlogListView = () => {
         },
     ]
     const fBlogs: BlogListType[] = [
-
         {
             id: 1,
             cover_image: "/images/blogFeature.png",
@@ -65,10 +64,11 @@ const BlogListView = () => {
     return (
         <div className={`${styles.mainContainer} `}>
             <div className={`scrollbar-hidden ${styles.blogsCardContainer}`}>
-                {blogs.length > 0 && blogs.map((blog, index) => <BlogCard key={index} blog={blog} />)}
+                {blogs.length > 0 ? blogs.map((blog, index) => <BlogCard key={index} blog={blog} />) : <div className={`${styles.noBlogFound}`}>No Blog Found</div>
+                }
             </div>
             <div className={`scrollbar-hidden ${styles.featuredBlogsContainer}`}>
-                {fBlogs.length > 0 && fBlogs.map((blog, index) => <BlogFeaturedCard key={index} blog={blog} />)}
+                {fBlogs.length > 0 ? fBlogs.map((blog, index) => <BlogFeaturedCard key={index} blog={blog} />) : <div className={`${styles.noBlogFound}`}>No Blog Found</div>}
             </div>
         </div>
 

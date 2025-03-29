@@ -15,6 +15,7 @@ import TermsView from './views/TermsView';
 import PrivacyView from './views/PrivacyView';
 import RefundsView from './views/RefundsView';
 import BlogDetailView from './views/BlogDetailView';
+import TestimonialView from './views/TestimonialView';
 
 function App() {
   // const alert = [{
@@ -74,7 +75,7 @@ function App() {
               {isActive === "connect" && <ConnectView />}
               {isActive === "seoproject" && <SeoProjectView />}
               {isActive === "project" && <ProjectView />}
-              {isActive === "testimonial" && <SeoProjectView />}
+              {isActive === "testimonial" && <TestimonialView />}
               {isActive === "blogs" && <BlogListView />}
               {isActive === "profile" && <ContactView />}
             </>} />
