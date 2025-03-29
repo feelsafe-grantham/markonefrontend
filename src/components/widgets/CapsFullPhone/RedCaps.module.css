@@ -1,0 +1,28 @@
+.capsuleContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 2/1;
+  height: 100px;
+  z-index: 19;
+}
+
+.redCaps {
+  background: url("/images/redCapsulePhone.png") no-repeat center center/cover;
+  right: 0;
+}
+
+.greenCaps {
+  background: url("/images/greenCapsulePhone.png") no-repeat center center/cover;
+  left: 0;
+}
+@media (max-width: 500px) {
+  .capsuleContainer {
+    height: 100px;
+  }
+}
+@media (max-width: 400px) {
+  .capsuleContainer {
+    height: 85px;
+  }
+}

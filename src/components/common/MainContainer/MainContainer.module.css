@@ -1,0 +1,17 @@
+.mainContainer {
+  background-image: url("/images/bg.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  flex: 1;
+}
+
+@media (min-width: 1600px) {
+  .logo {
+    height: 5vw;
+  }
+}

@@ -1,0 +1,67 @@
+.mainContainer {
+  height: 100%;
+  /* display: flex;
+  flex-direction: column; */
+}
+.capsuleContainer {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin: 10px auto;
+}
+
+.capsule {
+  width: 180px;
+  height: 360px;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.blueCaps {
+  background: url("/images/blueVer1.png") no-repeat center center/cover;
+}
+
+.redCaps {
+  background: url("/images/redVer1.png") no-repeat center center/cover;
+}
+
+.capsuleText {
+  font-size: 24px;
+  font-weight: 600;
+
+  padding: 10px;
+  rotate: -90deg;
+}
+
+@media (max-width: 768px) {
+  .capsule {
+    width: 140px;
+    height: 280px;
+  }
+  .capsuleText {
+    font-size: 20px;
+    padding: 10px;
+    rotate: -90deg;
+  }
+}
+
+@media (max-width: 576px) {
+  .capsule {
+    width: 100px;
+    height: 200px;
+  }
+  .capsuleText {
+    padding: 10px;
+    rotate: -90deg;
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .capsuleContainer {
+    margin-top: 5vw;
+  }
+}

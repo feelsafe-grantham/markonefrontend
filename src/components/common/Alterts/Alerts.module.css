@@ -1,0 +1,22 @@
+.alertContainer {
+  max-width: 400px;
+  display: flex;
+}
+
+.alertEmoji {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 30px;
+  padding: 3;
+}
+
+.alertHeader {
+  display: flex;
+  gap: 10px;
+}
+
+.alertItem {
+  font-size: 16px;
+  font-weight: 700;
+}

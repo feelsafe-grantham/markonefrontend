@@ -1,0 +1,87 @@
+.mainContainer {
+  width: 80vw;
+  max-height: calc(100vh - 230px);
+  overflow: auto;
+  max-width: 1400px;
+  margin: 0px auto;
+  border: 1px solid #eaeaea;
+  background-color: rgba(0, 0, 0, 0.9);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+.mainContainer {
+  padding: 20px;
+  line-height: 1.6;
+  color: #e1eaf7;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Scrollbar customization */
+.mainContainer.scrollbar-hidden {
+  overflow: auto;
+  scrollbar-width: none;
+}
+
+.mainContainer.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+/* Header Styles */
+.mainContainer h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #f1f3f6;
+}
+
+.mainContainer h3 {
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #dbdfe6;
+}
+
+/* Paragraph styles */
+.mainContainer p {
+  font-size: 16px;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+/* List styles */
+.mainContainer ul {
+  margin-left: 20px;
+  list-style-type: disc;
+}
+
+.mainContainer li {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+/* Address Styling */
+.mainContainer address {
+  font-style: normal;
+  margin-top: 10px;
+}
+
+.mainContainer address p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.mainContainer a {
+  color: #0320ff;
+  text-decoration: none;
+}
+
+.mainContainer a:hover {
+  text-decoration: underline;
+}
+
+/* Strong text styling */
+.mainContainer strong {
+  font-weight: bold;
+}

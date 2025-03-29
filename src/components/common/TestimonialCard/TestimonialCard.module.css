@@ -1,0 +1,30 @@
+.testimonialCardContainer {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.testimonialCard {
+  margin: 20px auto;
+  width: 100%;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: flex-start;
+}
+.clientInfo {
+  border: 2px solid red;
+}
+.image {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+.clientName {
+  right: 0;
+  bottom: -15px;
+  font-size: 16px;
+  font-weight: 600;
+  position: absolute;
+}

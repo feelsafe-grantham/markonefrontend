@@ -1,0 +1,159 @@
+.contactTextColor {
+  color: #adb4c0;
+}
+
+.testimonialContainer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  overflow-x: auto;
+  gap: 40px;
+}
+
+.testimonialParentCard::before {
+  content: "";
+  background-image: url("/images/usa.png");
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 25px;
+  z-index: -1;
+  opacity: 0.5;
+}
+.testimonialParentCard {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border: 1px solid rgb(165, 159, 159);
+  box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
+  border-radius: 25px;
+  padding: 20px 10px;
+  height: 380px;
+  width: 280px;
+  gap: 15px;
+  z-index: 2;
+}
+.testimonialParentCardMid {
+  height: 400px;
+}
+
+.testimonialCountryNameContainer {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.countryName {
+  font-weight: 900;
+  font-size: 28px;
+  line-height: 24px;
+}
+.flag {
+  height: 35px;
+}
+
+.testimonialCard {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.testimonialClientInfoConainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.userImage {
+  border-radius: 50%;
+  height: 40px;
+}
+.clientName {
+  margin-left: 10px;
+  font-size: 18px;
+}
+.testimonialText {
+  font-size: 18px;
+  line-height: 24px;
+}
+.testimonialClientNameContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.socialMediaContainer {
+  margin-top: 10px;
+}
+.socialMediaIconsContainer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 100;
+}
+.socialMediaIcon {
+  height: 80px;
+}
+.copyRightContainer {
+  position: relative;
+  z-index: 100;
+}
+.copyRightText {
+  text-align: center;
+}
+.linksContainer {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+  z-index: 100;
+  align-items: center;
+}
+@media (max-width: 1000px) {
+  .testimonialParentCardMid {
+    display: none;
+  }
+  .testimonialText {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+@media (max-width: 576px) {
+  .testimonialCountryNameContainer {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+  }
+
+  .countryName {
+    font-size: 28px;
+    line-height: 24px;
+  }
+  .flag {
+    height: 35px;
+  }
+  .testimonialContainer > :first-child {
+    display: none;
+  }
+  .testimonialText {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .testimonialParentCard {
+    width: 300px;
+    height: 500px;
+  }
+  .testimonialParentCardMid {
+    height: 540px;
+  }
+
+  .clientName {
+    font-size: 18px;
+  }
+}

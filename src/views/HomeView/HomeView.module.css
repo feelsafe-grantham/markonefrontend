@@ -1,0 +1,118 @@
+.homeView {
+  display: flex;
+  justify-content: center;
+}
+
+.bgImage {
+  background-image: url("/images/newLense.png");
+  background-size: cover;
+  background-position: center;
+}
+.bgPosition {
+  height: 300px;
+  margin: 0 auto;
+  margin-top: -20px;
+  aspect-ratio: 11 / 8;
+}
+.bgContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.textCta {
+  color: var(--text-color1);
+  text-align: center;
+  margin-top: 30px;
+  font-size: 34px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+.textPara {
+  text-align: center;
+  position: absolute;
+  bottom: -6rem;
+  z-index: 10;
+  font-weight: 700;
+  font-size: 32px;
+}
+
+.capCtaContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 4rem;
+  position: relative;
+}
+.leftCapsule {
+  z-index: 10;
+}
+.rightCapsule {
+  z-index: 10;
+}
+.leftCapsulePhone {
+  display: none;
+}
+.rightCapsulePhone {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .leftCapsule {
+    display: none;
+  }
+  .rightCapsule {
+    display: none;
+  }
+  .leftCapsulePhone {
+    z-index: 10;
+    display: block;
+  }
+  .rightCapsulePhone {
+    z-index: 10;
+    display: block;
+  }
+}
+@media (max-width: 576px) {
+  .bgPosition {
+    height: 250px;
+    margin: 0 auto;
+    margin-top: -5px;
+    aspect-ratio: 11 / 8;
+  }
+  .textCta {
+    font-size: 32px;
+  }
+  .capCtaContainer {
+    margin-top: 6rem;
+  }
+  .textPara {
+    /* display: none; */
+    width: 90%;
+    font-size: 18px;
+    bottom: -6rem;
+  }
+}
+@media (max-width: 400px) {
+  .textCta {
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .bgPosition {
+    height: 20vw;
+  }
+  .textCta {
+    margin-top: 1.5vw;
+    font-size: 2.5vw;
+  }
+  .textPara {
+    bottom: -5vw;
+    z-index: 10;
+    font-size: 1.4vw;
+  }
+  .capCtaContainer {
+    margin-top: 4vw;
+  }
+}

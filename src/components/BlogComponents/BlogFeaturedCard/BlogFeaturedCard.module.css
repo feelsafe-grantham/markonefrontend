@@ -1,0 +1,23 @@
+.blogCard {
+  max-width: 650px;
+  width: 100%;
+  position: relative;
+  border-radius: 20px;
+}
+.blogCover {
+  aspect-ratio: 2/1;
+  border-radius: 20px;
+}
+.featuredTextPosition {
+  position: absolute;
+  bottom: 30px;
+  width: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.featuredTextFont {
+  font-size: 22px;
+  font-weight: 500;
+}

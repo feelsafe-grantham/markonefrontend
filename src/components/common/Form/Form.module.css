@@ -1,0 +1,108 @@
+:root {
+  --form-bg-color: 255, 255, 255;
+  --button-bg-color: 17, 174, 5;
+}
+.formContainer {
+  border: 1px solid var(--foreground);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #eaeaea;
+  box-shadow: inset rgba(var(--form-bg-color), 0.1) 0px 54px 50px,
+    inset rgba(var(--form-bg-color), 0.12) 0px -521px 50px,
+    inset rgba(var(--form-bg-color), 0.12) 0px 4px 50px,
+    inset rgba(var(--form-bg-color), 0.17) 0px 12px 50px,
+    inset rgba(var(--form-bg-color), 0.09) 0px -3px 50px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 20px 40px;
+}
+.form {
+  width: 100%;
+}
+.heading {
+  text-align: center;
+  font-weight: 700;
+  font-size: 32px;
+  color: var(--green);
+}
+.paragraph {
+  font-size: 14px;
+  text-align: center;
+  width: 70%;
+}
+.select {
+  padding: 10px;
+  border: 1px solid white;
+  margin: 15px 0px;
+}
+.option {
+  background: #000;
+  color: white;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.submitButton {
+  box-shadow: inset rgba(var(--button-bg-color), 0.1) 0px 54px 50px,
+    inset rgba(var(--button-bg-color), 0.12) 0px -12px 50px,
+    inset rgba(var(--button-bg-color), 0.12) 0px 4px 50px,
+    inset rgba(var(--button-bg-color), 0.17) 0px 12px 50px,
+    inset rgba(var(--button-bg-color), 0.09) 0px -3px 50px;
+  border: 1px solid rgb(88, 255, 88);
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.capsulePhone {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .capsulePhone {
+    display: block;
+    position: absolute;
+    height: 150px;
+    right: 0;
+    top: -5%;
+  }
+  .heading {
+    max-width: 75%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .formContainer {
+    width: 90%;
+    padding: 50px 20px;
+  }
+  .form {
+    width: 100%;
+  }
+  .select {
+    width: 100%;
+    margin: 10px 0px;
+  }
+  .imageContainer {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .formContainer {
+    width: 90%;
+    padding: 50px 20px;
+  }
+  .form {
+    width: 100%;
+  }
+  .select {
+    width: 100%;
+    margin: 10px 0px;
+  }
+  .imageContainer {
+    display: none;
+  }
+}
