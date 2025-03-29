@@ -24,7 +24,7 @@ const BlogDetailView = () => {
     if (loading) {
         return (
             <div>
-                laskdjf
+                loading
             </div>
         )
     }
