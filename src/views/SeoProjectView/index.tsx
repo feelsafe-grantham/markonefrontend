@@ -1,5 +1,5 @@
 
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import styles from "./SeoProjectView.module.css"
 import Sidebar from "../../components/common/Sidebar";
 import Timeline from "../../components/common/Timeline";
@@ -11,16 +11,7 @@ const SeoProjectView = () => {
             scrollContainerRef.current.scrollLeft += e.deltaY;
         }
     };
-    const links = [
-        { name: "IOS App", url: "/" },
-        { name: "Android App", url: "/" },
-        { name: "Website | Portal", url: "/" },
-        { name: "CRM", url: "/" },
-        { name: "ERM", url: "/" },
-        { name: "Software", url: "/" },
-        { name: "IOS App", url: "/" },
-        { name: "Android App", url: "/" },
-    ]
+
     const timelinedata =
         [
             "Keyword Research",
@@ -32,6 +23,47 @@ const SeoProjectView = () => {
             "Performance Monitoring",
             "Continuous Optimization"
         ]
+    const projects = {
+        "ios": [
+            { image: "/images/project1.png", },
+            { image: "/images/project2.png", },
+            { image: "/images/project3.png", },
+            { image: "/images/project4.png", },
+        ],
+        "android": [
+            { image: "/images/project2.png", },
+            { image: "/images/project3.png", },
+            { image: "/images/project4.png", },
+            { image: "/images/project1.png", },
+        ],
+        "web": [
+            { image: "/images/project3.png", },
+            { image: "/images/project4.png", },
+            { image: "/images/project1.png", },
+            { image: "/images/project2.png", },
+        ],
+    }
+
+    const linkss = [
+        { label: "IOS App", value: "ios", },
+        { label: "Android App", value: "android", },
+        { label: "Website | Portal", value: "web", },
+        { label: "IOS App", value: "ios", },
+        { label: "Android App", value: "android", },
+        { label: "Website | Portal", value: "web", },
+        { label: "IOS App", value: "ios", },
+        { label: "Android App", value: "android", },
+        { label: "Website | Portal", value: "web", },
+        { label: "IOS App", value: "ios", },
+        { label: "Android App", value: "android", },
+        { label: "Website | Portal", value: "web", },
+    ]
+
+    const [selectedType, setSelectedType] = useState<"ios" | "android" | "web">("ios");
+    const handleLinkClick = (value: "ios" | "android" | "web") => {
+        setSelectedType(value);
+    };
+    const currentProject = projects[selectedType];
     return (
         <div className={`flex flex-col space-x-4 mx-auto ${styles.mainContainer}`}>
             <div className={`flex space-x-4 ${styles.headingContainer}`} >
@@ -39,7 +71,7 @@ const SeoProjectView = () => {
                 <h2 className={`${styles.mainHeading}`}>SEO</h2>
             </div>
             <div className={`flex space-x-4 mx-auto ${styles.contentContainer}`}>
-                <Sidebar links={links} />
+                <Sidebar handleClick={handleLinkClick} links={linkss} />
                 <div className={`px-5 py-2 flex-1 trans-black-bg scrollbar-hidden ${styles.projectsContainer}`}>
                     <h2 className={`text-2xl mb-2 ${styles.sectionHeading}`} >Project Summary</h2>
                     <div
@@ -47,10 +79,9 @@ const SeoProjectView = () => {
                         ref={scrollContainerRef}
                         className={`${styles.midContainer}`}
                     >
-                        <img className={`${styles.image}`} src="/images/projects.png" alt="" />
-                        <img className={`${styles.image}`} src="/images/projects.png" alt="" />
-                        <img className={`${styles.image}`} src="/images/projects.png" alt="" />
-                    </div>
+                        {currentProject?.map((item: any, index: number) => <img
+                            key={index} className={`${styles.image}`} src={item.image} alt="" />
+                        )}</div>
                 </div>
                 <div className={`${styles.timelineContainer}`}>
                     <Timeline timelineData={timelinedata} />

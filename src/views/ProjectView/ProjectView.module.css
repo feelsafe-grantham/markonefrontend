@@ -32,6 +32,7 @@
   flex-direction: column;
   border-radius: var(--border-radius);
 }
+
 .sectionHeading {
   font-size: 1rem;
   padding: 10px 0px 10px 10px;
