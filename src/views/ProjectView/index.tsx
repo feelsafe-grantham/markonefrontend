@@ -59,11 +59,12 @@ const ProjectView = () => {
         { label: "Website | Portal", value: "web", },
     ]
 
-    const [selectedType, setSelectedType] = useState("ios");
-    const handleLinkClick = (value: string) => {
+    const [selectedType, setSelectedType] = useState<"ios" | "android" | "web">("ios");
+    const handleLinkClick = (value: "ios" | "android" | "web") => {
         setSelectedType(value);
-    }
+    };
     const currentProject = projects[selectedType];
+
 
     return (
         <div className={`flex flex-col space-x-4 mx-auto ${styles.mainContainer}`}>
