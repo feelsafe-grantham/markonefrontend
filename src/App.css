@@ -20,6 +20,8 @@
   --form-bg-color: 255, 255, 255;
   --button-bg-color: 17, 174, 5;
   --blog-shadow-color: 0, 0, 0;
+  --swiper-pagination-color: white;
+  --swiper-theme-color: white;
 }
 
 /* Hide scrollbar for all browsers */

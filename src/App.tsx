@@ -79,7 +79,7 @@ function App() {
               {isActive === "project" && <ProjectView />}
               {isActive === "testimonial" && <TestimonialView />}
               {isActive === "blogs" && <BlogListView />}
-              {isActive === "profile" && <Carousel />}
+              {isActive === "profile" && <EbookView />}
             </>} />
             <Route path="/terms-and-conditon" element={<TermsView />} />
             <Route path="/privacy-policy" element={<PrivacyView />} />

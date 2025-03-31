@@ -1,13 +1,3 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,500&display=swap"); */
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-  color: #fff;
-}
-
 .collection {
   background-color: transparent;
   display: flex;
@@ -16,27 +6,18 @@
   width: 100%;
 }
 
-.mySwiper {
-  width: 80%; /* Adjust Swiper width */
-  height: 80%; /* Adjust Swiper height */
-}
-
 .content {
-  height: 28rem;
-  width: 22rem;
-  background-color: #1b1f2a;
-  border: 0.2rem solid rgba(255, 255, 255, 0.1);
-  border-radius: 0.7rem;
-  border-bottom: 0.4rem solid #0022ff;
-  border-top: 0.4rem solid #0099ff;
-  overflow: hidden;
-  position: relative;
   display: flex;
   flex-direction: column;
+  width: 22rem;
+  height: 28rem;
+  border: 0.2rem solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.7rem;
+  overflow: hidden;
+  position: relative;
 }
 .imageContainer {
   position: relative;
-  border: 2px solid red;
 }
 .image {
   width: 100%;
@@ -47,38 +28,26 @@
 }
 .downloadbtn {
   position: absolute;
-  bottom: 0rem;
-  left: 41%;
-}
-
-.textContent {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 10px;
-  height: 40%;
-}
-
-.textContent h3 {
-  font-size: 1.7rem;
-  font-weight: 500;
-}
-
-.textContent p {
-  max-width: 22rem;
-  font-size: 0.8rem;
-  font-weight: 400;
-  text-align: center;
+  bottom: 1rem;
+  left: 35%;
 }
 
 .btn {
-  background-color: #0099ff;
-  padding: 0.2rem;
-  border: 2px solid #0099ff;
+  display: none;
   outline: none;
-  font-size: 0.8rem;
-  border-radius: 0.5rem;
   margin: 1rem 0;
   cursor: pointer;
+  font-size: 0.8rem;
+  border-radius: 0.5rem;
+  padding: 0.2rem 0.5rem;
+  background-color: transparent;
+  border: 2px solid white;
+  height: 3rem;
+  width: 10rem;
+  font-size: 22px;
+  box-shadow: inset rgba(0, 0, 0, 0.4) 0px 54px 50px;
+}
+
+.content:hover .btn {
+  display: block;
 }
