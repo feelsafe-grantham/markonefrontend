@@ -7,7 +7,6 @@ const ProjectView = () => {
     const scrollContainerRef = useRef<HTMLDivElement>(null);
     const handleWheel = (e: React.WheelEvent) => {
         if (scrollContainerRef.current) {
-
             scrollContainerRef.current.scrollLeft += e.deltaY;
         }
     };
@@ -62,6 +61,10 @@ const ProjectView = () => {
     const [selectedType, setSelectedType] = useState<"ios" | "android" | "web">("ios");
     const handleLinkClick = (value: "ios" | "android" | "web") => {
         setSelectedType(value);
+        // scroll to left of the container with smooth animation
+        if (scrollContainerRef.current) {
+            scrollContainerRef.current.scrollTo({ left: 0, behavior: "smooth" });
+        }
     };
     const currentProject = projects[selectedType];
 
@@ -70,7 +73,7 @@ const ProjectView = () => {
         <div className={`flex flex-col space-x-4 mx-auto ${styles.mainContainer}`}>
             <div className={`flex space-x-4 ${styles.headingContainer}`} >
                 <div className={`${styles.emptyDiv}`}></div>
-                <h2 className={`${styles.mainHeading}`}>Projects</h2>
+                <h2 className={`${styles.mainHeading}`}>SEO</h2>
             </div>
             <div className={`flex space-x-4 mx-auto ${styles.contentContainer}`}>
                 <Sidebar handleClick={handleLinkClick} links={linkss} />

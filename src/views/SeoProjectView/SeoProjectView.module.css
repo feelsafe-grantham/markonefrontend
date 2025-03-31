@@ -13,9 +13,11 @@
   align-items: flex-start;
   justify-content: flex-start;
 }
+
 .emptyDiv {
   width: 320px;
 }
+
 .mainHeading {
   font-weight: 700;
   font-size: 2.5rem;
@@ -24,7 +26,7 @@
 
 .contentContainer {
   display: flex;
-  gap: 20;
+  gap: 10px;
 }
 
 .projectsContainer {
@@ -97,6 +99,7 @@
     position: sticky;
     padding: 20px 10px;
   }
+
   .projectsContainer {
     padding-bottom: 20px;
   }

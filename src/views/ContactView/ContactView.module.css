@@ -32,13 +32,11 @@
   box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
   border-radius: 25px;
   padding: 20px 10px;
-  height: 380px;
   width: 280px;
   gap: 15px;
   z-index: 2;
 }
 .testimonialParentCardMid {
-  height: 400px;
 }
 
 .testimonialCountryNameContainer {
@@ -145,14 +143,6 @@
 }
 
 @media (min-width: 1400px) {
-  .testimonialParentCard {
-    width: 300px;
-    height: 500px;
-  }
-  .testimonialParentCardMid {
-    height: 540px;
-  }
-
   .clientName {
     font-size: 18px;
   }

@@ -12,7 +12,12 @@ const Sidebar = ({ links = [
         <div className={`${styles.sidebarContainer} scrollbar-hidden trans-black-bg`}>
             {links.map((link, index) => {
                 return (
-                    <Link onClick={() => handleClick(link.value)} className={`${styles.link}`} key={index} to={""}>
+                    <Link
+                        onClick={() => handleClick(link.value)}
+                        className={`${styles.link}`}
+                        key={index}
+                        to={"#"}
+                    >
                         {link.label}
                     </Link>
                 );

@@ -3,7 +3,9 @@
   top: -50px;
   left: 50%;
   transform: translateX(-50%);
-  gap: 0px 30px;
+  max-width: 90vw;
+  margin: 0px auto;
+  height: calc(100vh - 260px);
 }
 
 .mainHeading {
@@ -33,9 +35,9 @@
   padding: 0.5rem;
 }
 .projectsContainer {
-  height: calc(100vh - 260px);
+  display: flex;
+  flex-direction: column;
   border-radius: var(--border-radius);
-  padding: 5px 10px;
 }
 .userImage {
   border-radius: 50%;
@@ -59,7 +61,96 @@
   align-items: center;
   margin-right: 2rem;
 }
-.testimonialImage {
+
+.midContainer {
+  display: flex;
+  overflow-x: auto;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  padding-top: 5px;
+  height: 100%;
+}
+
+.image {
+  height: 100%;
+  max-height: 800px;
+  width: auto;
+  aspect-ratio: 450/300;
+  margin: 0px 10px;
+  border-radius: 10px;
+}
+@media (max-width: 1300px) {
+  .emptyDiv {
+    width: 355px;
+  }
+}
+@media (max-width: 1024px) {
+  .contentContainer {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    height: calc(100vh - 320px);
+  }
+  .emptyDiv {
+    display: none;
+  }
+
+  .mainHeading {
+    margin-top: 3rem;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  .sectionHeading {
+    font-size: 16px;
+    position: sticky;
+    padding: 20px 10px;
+  }
+}
+@media (max-width: 576px) {
+  .projectsContainer {
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 10px auto;
+  }
+  .mainHeading {
+    text-align: left;
+    margin-top: 3rem;
+  }
+  .sectionHeading {
+    font-size: 14px;
+  }
+  .image {
+    height: 100%;
+  }
+}
+
+/* Webkit scrollbar styling (for Chrome, Safari, etc.) */
+.midContainer::-webkit-scrollbar {
+  width: 12px; /* Width of the vertical scrollbar */
+  height: 12px; /* Height of the horizontal scrollbar */
+}
+
+/* Styling the scrollbar track (background) */
+.midContainer::-webkit-scrollbar-track {
+  background: #1a1a1a; /* Light background */
+}
+
+/* Styling the draggable part (thumb) */
+.midContainer::-webkit-scrollbar-thumb {
+  background: #202122; /* Dark background for the thumb */
+}
+
+/* Styling the thumb on hover */
+.midContainer::-webkit-scrollbar-thumb:hover {
+  background: #2a2a2a; /* Darker thumb on hover */
+}
+
+/* Optional: Styling the scrollbar corner if both horizontal and vertical scrollbars are visible */
+.midContainer::-webkit-scrollbar-corner {
+  background: #f1f1f1;
+}
+
+/* .testimonialImage {
   border-radius: 10px;
   margin: auto 10px;
 }
@@ -79,36 +170,4 @@
 }
 .userImageNew {
   width: 500px;
-}
-@media (max-width: 1024px) {
-  .emptyDiv {
-    display: none;
-  }
-  .contentContainer {
-    display: flex;
-    flex-direction: column-reverse;
-    gap: 20px;
-    width: 100%;
-  }
-  .headingContainer {
-    justify-content: center;
-  }
-  .mainHeading {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-  }
-  .sectionHeading {
-    font-size: 16px;
-  }
-}
-@media (max-width: 576px) {
-  .sectionHeading {
-    font-size: 16px;
-  }
-  .recIconContainer {
-    display: none;
-  }
-  .mainContainer {
-    margin-top: 3rem;
-  }
-}
+} */

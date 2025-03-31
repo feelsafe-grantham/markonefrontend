@@ -62,6 +62,10 @@ const SeoProjectView = () => {
     const [selectedType, setSelectedType] = useState<"ios" | "android" | "web">("ios");
     const handleLinkClick = (value: "ios" | "android" | "web") => {
         setSelectedType(value);
+        // scroll to left of the container with smooth animation
+        if (scrollContainerRef.current) {
+            scrollContainerRef.current.scrollTo({ left: 0, behavior: "smooth" });
+        }
     };
     const currentProject = projects[selectedType];
     return (
