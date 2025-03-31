@@ -17,6 +17,7 @@ import RefundsView from './views/RefundsView';
 import BlogDetailView from './views/BlogDetailView';
 import TestimonialView from './views/TestimonialView';
 import EbookView from './views/EbookView';
+import Carousel from './components/common/Carousel';
 
 function App() {
   // const alert = [{
@@ -75,7 +76,7 @@ function App() {
               {isActive === "home" && <HomeView setActiveTab={setIsActive} />}
               {isActive === "connect" && <ConnectView />}
               {isActive === "seoproject" && <SeoProjectView />}
-              {isActive === "project" && <ProjectView />}
+              {isActive === "project" && <Carousel />}
               {isActive === "testimonial" && <TestimonialView />}
               {isActive === "blogs" && <BlogListView />}
               {isActive === "profile" && <EbookView />}
