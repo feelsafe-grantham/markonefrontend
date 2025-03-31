@@ -120,6 +120,11 @@
   }
 }
 
+@media (min-width: 1500px) {
+  .mainContainer {
+    top: -70px;
+  }
+}
 /* Webkit scrollbar styling (for Chrome, Safari, etc.) */
 .midContainer::-webkit-scrollbar {
   width: 12px; /* Width of the vertical scrollbar */

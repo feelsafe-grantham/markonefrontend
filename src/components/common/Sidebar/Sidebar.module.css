@@ -6,6 +6,7 @@
   overflow-y: scroll;
   padding: 20px;
   width: 350px;
+  max-width: 350px;
   border-radius: var(--border-radius);
 }
 
@@ -26,6 +27,7 @@
     height: auto;
     overflow-x: scroll;
     flex-direction: row;
+    max-width: none;
   }
   .link {
     min-width: fit-content;

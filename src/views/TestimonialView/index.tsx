@@ -5,6 +5,7 @@ import styles from "./TestimonialView.module.css"
 
 const TestimonialView = () => {
     const scrollContainerRef = useRef<HTMLDivElement>(null);
+
     const handleWheel = (e: React.WheelEvent) => {
         if (scrollContainerRef.current) {
             e.preventDefault();
@@ -146,8 +147,11 @@ const TestimonialView = () => {
             ]
         },
     }
+
     type ClientKey = keyof typeof testimonials;
+
     const [selectedClient, setSelectedClient] = useState<ClientKey>("client1");
+
     const linkss = [
         { label: "Alice Johnson | Software Engineer", value: "client1", },
         { label: "Bob Smith | Marketing Specialist", value: "client2", },
@@ -163,14 +167,15 @@ const TestimonialView = () => {
         { label: "Leo Martinez | Sales Executive", value: "client12", },
     ]
 
-
     const { client_name, client_image, client_segment, images, stars } = testimonials[selectedClient];
+
     const handleClick = (value: ClientKey) => {
         setSelectedClient(value);
         if (scrollContainerRef.current) {
             scrollContainerRef.current.scrollTo({ left: 0, behavior: "smooth" });
         }
     }
+
     return (
         <div className={` ${styles.mainContainer}`}>
             <div className={`flex space-x-4 ${styles.headingContainer}`} >

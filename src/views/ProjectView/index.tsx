@@ -73,7 +73,7 @@ const ProjectView = () => {
         <div className={`flex flex-col space-x-4 mx-auto ${styles.mainContainer}`}>
             <div className={`flex space-x-4 ${styles.headingContainer}`} >
                 <div className={`${styles.emptyDiv}`}></div>
-                <h2 className={`${styles.mainHeading}`}>SEO</h2>
+                <h2 className={`${styles.mainHeading}`}>Projects</h2>
             </div>
             <div className={`flex space-x-4 mx-auto ${styles.contentContainer}`}>
                 <Sidebar handleClick={handleLinkClick} links={linkss} />

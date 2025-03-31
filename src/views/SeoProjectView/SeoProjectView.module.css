@@ -122,6 +122,11 @@
     height: 100%;
   }
 }
+@media (min-width: 1500px) {
+  .mainContainer {
+    top: -70px;
+  }
+}
 
 /* Webkit scrollbar styling (for Chrome, Safari, etc.) */
 .midContainer::-webkit-scrollbar {
