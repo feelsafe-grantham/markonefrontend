@@ -16,6 +16,7 @@ import PrivacyView from './views/PrivacyView';
 import RefundsView from './views/RefundsView';
 import BlogDetailView from './views/BlogDetailView';
 import TestimonialView from './views/TestimonialView';
+import EbookView from './views/EbookView';
 
 function App() {
   // const alert = [{
@@ -77,7 +78,7 @@ function App() {
               {isActive === "project" && <ProjectView />}
               {isActive === "testimonial" && <TestimonialView />}
               {isActive === "blogs" && <BlogListView />}
-              {isActive === "profile" && <ContactView />}
+              {isActive === "profile" && <EbookView />}
             </>} />
             <Route path="/terms-and-conditon" element={<TermsView />} />
             <Route path="/privacy-policy" element={<PrivacyView />} />
