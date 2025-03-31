@@ -1,6 +1,8 @@
 export interface VerCapsType {
+  type: "service" | "budget";
   caps: "blue" | "red";
   text: string;
+  value: string;
 }
 export interface Question {
   name: string;

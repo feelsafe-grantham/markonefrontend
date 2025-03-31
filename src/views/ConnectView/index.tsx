@@ -7,34 +7,49 @@ import { VerCapsType } from "../../types/componentTypes";
 import TextInputForm from "../../components/common/TextInputForm";
 const ConnectView = () => {
     const { isOpen, openModal, closeModal } = useModal();
-
+    const [form, setForm] = useState({
+        service: "",
+        budget: "",
+    })
     const first: VerCapsType[] = [
         {
+            type: "service",
             caps: "blue",
-            text: "Web & App"
+            text: "Web & App",
+            value: "web",
         },
         {
+            type: "service",
             caps: "blue",
-            text: "SEO"
+            text: "SEO",
+            value: "seo",
         },
         {
+            type: "service",
             caps: "blue",
-            text: "Ads"
+            text: "Ads",
+            value: "ads",
         }
     ]
 
     const second: VerCapsType[] = [
         {
+            type: "budget",
             caps: "red",
-            text: "₹25K  -  ₹50K"
+            text: "₹25K  -  ₹50K",
+            value: "25k-50k",
         },
         {
+            type: "budget",
             caps: "red",
-            text: "₹50K - ₹1L"
+            text: "₹50K - ₹1L",
+            value: "50k-1l",
         },
         {
+            type: "budget",
             caps: "red",
-            text: "₹1L & above"
+            text: "₹1L & above",
+            value: "1LAbove",
         },
     ]
 
@@ -46,8 +61,12 @@ const ConnectView = () => {
     }, []);
 
     const [step, setStep] = useState(0);
-    const handleNext = () => {
+
+
+    const handleNext = (type: string, value: string) => {
         setStep(step + 1);
+        const upatedForm = { ...form, [type]: value };
+        setForm(upatedForm);
     }
 
     const handlePrev = () => {
@@ -69,7 +88,7 @@ const ConnectView = () => {
                     <VerCaps onClick={handleNext} heading="Estimate Budget !" caps={second} />
                 </div>}
 
-                {step === 2 && <div> <TextInputForm /> </div>}
+                {step === 2 && <div> <TextInputForm form={form} /> </div>}
 
             </Modal>
         </div>

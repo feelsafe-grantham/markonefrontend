@@ -2,11 +2,13 @@
 import { useState } from "react";
 import styles from "./TextInputForm.module.css";
 
-const TextInputForm = () => {
+const TextInputForm = ({ form }: any) => {
 
   const [answers, setAnswers] = useState({
-    aman1: "",
-    aman2: "",
+    name: "",
+    email: "",
+    number: "",
+    website: "",
     aman3: false,
     aman4: false,
     aman5: false,
@@ -16,7 +18,6 @@ const TextInputForm = () => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = e.target;
 
-    // Update the state based on the type of the input (checkbox or text)
     setAnswers((prevAnswers) => ({
       ...prevAnswers,
       [name]: type === "checkbox" ? checked : value,
@@ -25,7 +26,8 @@ const TextInputForm = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Form submitted with answers:", answers);
+    const updated = { ...answers, ...form };
+    console.log("Form submitted with answers:", updated);
   };
 
 
@@ -33,11 +35,6 @@ const TextInputForm = () => {
   return (
     <div className="flex justify-center">
       <div className={`${styles.formContainer}`}>
-        {/* <img
-          className={`${styles.capsulePhone}`}
-          src="/images/blueCapsule.png"
-          alt="aman is here"
-        /> */}
         <h3 className={`${styles.heading}`}>You are almost done!</h3>
         {<p className={`${styles.paragraph}`}>you are doing it right </p>}
         <form
@@ -45,28 +42,54 @@ const TextInputForm = () => {
           onSubmit={handleSubmit}
         >
           <div>
-            <label htmlFor="q1" className={`${styles.label}`}>
-              How to get it done here right now?
+            <label htmlFor="name" className={`${styles.label}`}>
+              What is Your Name
             </label>
             <input
               type="text"
               className={`${styles.input}`}
-              name="aman1"
-              id="q1"
-              value={answers.aman1}
+              name="name"
+              id="name"
+              value={answers.name}
               onChange={handleChange}
             />
           </div>
           <div>
-            <label htmlFor="q2" className={`${styles.label}`}>
-              How will it be done after this?
+            <label htmlFor="email" className={`${styles.label}`}>
+              Enter your Email Address
+            </label>
+            <input
+              type="email"
+              className={`${styles.input}`}
+              name="email"
+              id="email"
+              value={answers.email}
+              onChange={handleChange}
+            />
+          </div>
+          <div>
+            <label htmlFor="number" className={`${styles.label}`}>
+              Enter your Contact Number
+            </label>
+            <input
+              type="tel"
+              className={`${styles.input}`}
+              name="number"
+              id="number"
+              value={answers.number}
+              onChange={handleChange}
+            />
+          </div>
+          <div>
+            <label htmlFor="website" className={`${styles.label}`}>
+              Enter your company Website
             </label>
             <input
               type="text"
               className={`${styles.input}`}
-              name="aman2"
-              id="q2"
-              value={answers.aman2}
+              name="website"
+              id="website"
+              value={answers.website}
               onChange={handleChange}
             />
           </div>
