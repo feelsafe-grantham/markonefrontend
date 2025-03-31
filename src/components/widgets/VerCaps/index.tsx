@@ -6,7 +6,7 @@ const VerCaps = ({ heading, caps, onClick }: { heading: string, caps: VerCapsTyp
     return (
 
         <div className={`${styles.mainContainer}`}>
-            <h3 className="text-center text-4xl font-semibold">{heading}</h3>
+            <h3 className={`text-center text-4xl font-semibold ${styles.headng}`}>{heading}</h3>
             <div className={`${styles.capsuleContainer} `}>
                 {caps.map((obj) =>
                     <div onClick={onClick} key={obj.text} className={`${styles.capsule} ${obj.caps === "blue" ? styles.blueCaps : styles.redCaps}`}>

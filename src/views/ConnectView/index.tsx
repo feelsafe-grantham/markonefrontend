@@ -7,10 +7,11 @@ import { VerCapsType } from "../../types/componentTypes";
 import TextInputForm from "../../components/common/TextInputForm";
 const ConnectView = () => {
     const { isOpen, openModal, closeModal } = useModal();
+
     const first: VerCapsType[] = [
         {
             caps: "blue",
-            text: "Application "
+            text: "Web & App"
         },
         {
             caps: "blue",
@@ -18,13 +19,10 @@ const ConnectView = () => {
         },
         {
             caps: "blue",
-            text: "Website Dev."
-        },
-        {
-            caps: "blue",
             text: "Ads"
         }
     ]
+
     const second: VerCapsType[] = [
         {
             caps: "red",
@@ -39,30 +37,36 @@ const ConnectView = () => {
             text: "₹1L & above"
         },
     ]
+
     useEffect(() => {
         openModal();
         return () => {
             closeModal();
         }
     }, []);
+
     const [step, setStep] = useState(0);
-    const handleClick = () => {
+    const handleNext = () => {
         setStep(step + 1);
+    }
+
+    const handlePrev = () => {
+        if (step > 0) {
+            setStep(step - 1);
+        }
     }
 
     return (
         <div>
             <Modal
                 isOpen={isOpen}
-            // onOpenModal={openModal}
-            // onCloseModal={closeModal}
-
+                onPrevClick={handlePrev}
             >
                 {step === 0 && <div className={`${styles.capsuleContainer}`}>
-                    <VerCaps onClick={handleClick} heading="Services You Want!" caps={first} />
+                    <VerCaps onClick={handleNext} heading="Services You Want!" caps={first} />
                 </div>}
                 {step === 1 && <div className={`${styles.capsuleContainer} max-w-[900px] mx-auto`}>
-                    <VerCaps onClick={handleClick} heading="Estimate Budget !" caps={second} />
+                    <VerCaps onClick={handleNext} heading="Estimate Budget !" caps={second} />
                 </div>}
 
                 {step === 2 && <div> <TextInputForm /> </div>}

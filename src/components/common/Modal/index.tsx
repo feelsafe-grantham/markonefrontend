@@ -6,11 +6,13 @@ const Modal = (
     {
         children,
         isOpen,
+        onPrevClick,
         // onOpenModal,
         // onCloseModal
     }: Readonly<{
         children: React.ReactNode,
         isOpen?: boolean,
+        onPrevClick?: () => void
         // onOpenModal?: () => void,
         // onCloseModal?: () => void
     }>
@@ -21,6 +23,11 @@ const Modal = (
         <div className={styles.modalContainer}>
             <div className={styles.modal}>
                 <div className={`${styles.modalContent}`}>
+                    <button className={`${styles.closeButton}`} onClick={onPrevClick}
+                    >
+                        &larr;
+                        {/* <img className="h-10 w-10" src="/images/leftArrow.svg" alt="" /> */}
+                    </button>
                     {children}
                 </div>
             </div>
