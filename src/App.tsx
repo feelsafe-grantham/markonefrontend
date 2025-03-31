@@ -76,10 +76,10 @@ function App() {
               {isActive === "home" && <HomeView setActiveTab={setIsActive} />}
               {isActive === "connect" && <ConnectView />}
               {isActive === "seoproject" && <SeoProjectView />}
-              {isActive === "project" && <Carousel />}
+              {isActive === "project" && <ProjectView />}
               {isActive === "testimonial" && <TestimonialView />}
               {isActive === "blogs" && <BlogListView />}
-              {isActive === "profile" && <EbookView />}
+              {isActive === "profile" && <Carousel />}
             </>} />
             <Route path="/terms-and-conditon" element={<TermsView />} />
             <Route path="/privacy-policy" element={<PrivacyView />} />

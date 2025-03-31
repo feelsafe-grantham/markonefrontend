@@ -1,17 +1,19 @@
 import styles from "./Carousel.module.css"
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { EffectCoverflow, Pagination } from 'swiper/modules';
 import 'swiper/swiper-bundle.css'; // Import Swiper styles
 const Carousel = () => {
     return (
+
         <section className={styles.collection}>
             <div className="swiper mySwiper">
                 <Swiper
-                    effect="coverflow"
+                    effect={'coverflow'}
                     grabCursor={true}
                     centeredSlides={true}
                     loop={true}
                     slidesPerView={3}
-                    spaceBetween={30}
+                    spaceBetween={10}
                     coverflowEffect={{
                         rotate: 0,
                         stretch: 0,
@@ -23,15 +25,21 @@ const Carousel = () => {
                         delay: 3000,
                         disableOnInteraction: false,
                     }}
+                    pagination={true}
+                    modules={[EffectCoverflow, Pagination]}
+                    className="mySwiper"
                 >
                     <SwiperSlide className={styles.content}>
-                        <img src="/images/Image1.jpg" alt="Photography 1" />
+                        <div className={styles.imageContainer}>
+                            <img className={styles.image} src="/images/project1.png" alt="Photography 1" />
+                            <button className={`${styles.btn} ${styles.downloadbtn}`}>Read more</button>
+                        </div>
                         <div className={styles.textContent}>
-                            <h3>Photography</h3>
+                            {/* <h3>Photography</h3>
                             <p>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto accusamus ratione nesciunt atque, dolores
                                 vel culpa debitis officia expedita unde?
-                            </p>
+                            </p> */}
                             <button className={styles.btn}>Read more</button>
                         </div>
                     </SwiperSlide>
@@ -49,7 +57,18 @@ const Carousel = () => {
                     </SwiperSlide>
 
                     <SwiperSlide className={styles.content}>
-                        <img src="Image3.jpg" alt="Photography 3" />
+                        <img src="/images/image3.jpg" alt="Photography 3" />
+                        <div className={styles.textContent}>
+                            <h3>Photography</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto accusamus ratione nesciunt atque, dolores
+                                vel culpa debitis officia expedita unde?
+                            </p>
+                            <button className={styles.btn}>Read more</button>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide className={styles.content}>
+                        <img src="/images/image4.jpg" alt="Photography 1" />
                         <div className={styles.textContent}>
                             <h3>Photography</h3>
                             <p>
@@ -60,7 +79,31 @@ const Carousel = () => {
                         </div>
                     </SwiperSlide>
 
-                    {/* Add more slides as needed */}
+                    <SwiperSlide className={styles.content}>
+                        <img src="/images/image5.jpg" alt="Photography 2" />
+                        <div className={styles.textContent}>
+                            <h3>Photography</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto accusamus ratione nesciunt atque, dolores
+                                vel culpa debitis officia expedita unde?
+                            </p>
+                            <button className={styles.btn}>Read more</button>
+                        </div>
+                    </SwiperSlide>
+
+                    <SwiperSlide className={styles.content}>
+                        <img src="/images/image6.jpg" alt="Photography 3" />
+                        <div className={styles.textContent}>
+                            <h3>Photography</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto accusamus ratione nesciunt atque, dolores
+                                vel culpa debitis officia expedita unde?
+                            </p>
+                            <button className={styles.btn}>Read more</button>
+                        </div>
+                    </SwiperSlide>
+
+
                 </Swiper>
             </div>
         </section>
