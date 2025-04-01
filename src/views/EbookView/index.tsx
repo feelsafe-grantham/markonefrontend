@@ -7,7 +7,7 @@ const EbookView = () => {
     return (
         <>
             <Carousel />
-            <div className={`${styles.socialMediaContainer}`}>
+            <div className={`${styles.socialMediaContainer} ${styles.textColor}`}>
                 <div className={`${styles.socialMediaIconsContainer}`}>
                     <Link target="_black" to={"https://in.linkedin.com/company/feelsafe-markone"}><img className={`${styles.socialMediaIcon}`} src="/images/linkedin.png" alt="instagram" /></Link>
                     <Link target="_black" to={"https://www.instagram.com/feelsafe_markone/"}><img className={`${styles.socialMediaIcon}`} src="/images/instagram.png" alt="instagram" /></Link>

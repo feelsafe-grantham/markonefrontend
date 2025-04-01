@@ -1,6 +1,9 @@
 .socialMediaContainer {
   margin-top: 50px;
 }
+.textColor {
+  color: gray;
+}
 .socialMediaIconsContainer {
   margin-top: 20px;
   display: flex;
@@ -25,4 +28,14 @@
   position: relative;
   z-index: 100;
   align-items: center;
+}
+
+@media (max-width: 576px) {
+  .copyRightText {
+    font-size: 14px;
+  }
+  .linksContainer {
+    gap: 5px;
+    font-size: 14px;
+  }
 }
