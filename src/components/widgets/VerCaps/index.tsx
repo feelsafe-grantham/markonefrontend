@@ -7,15 +7,17 @@ const VerCaps = ({ heading, caps, onClick }: { heading: string, caps: VerCapsTyp
 
         <div className={`${styles.mainContainer}`}>
             <h3 className={`text-center text-4xl font-semibold ${styles.headng}`}>{heading}</h3>
-            <div className={`${styles.capsuleContainer} `}>
-                {caps.map((obj) =>
-                    <div onClick={() => onClick && onClick(obj.type, obj.value)} key={obj.text} className={`${styles.capsule} ${obj.caps === "blue" ? styles.blueCaps : styles.redCaps}`}>
-                        <p className={`text-white-shadow ${styles.capsuleText}`}>
-                            {obj.text}
-                        </p>
-                    </div>
-                )}
-            </div >
+            <div className={`${styles.capsContainer}`}>
+                <div className={`${styles.capsuleContainer} `}>
+                    {caps.map((obj) =>
+                        <div onClick={() => onClick && onClick(obj.type, obj.value)} key={obj.text} className={`${styles.capsule} ${obj.caps === "blue" ? styles.blueCaps : styles.redCaps}`}>
+                            <p className={`text-white-shadow ${styles.capsuleText}`}>
+                                {obj.text}
+                            </p>
+                        </div>
+                    )}
+                </div >
+            </div>
         </div>
 
     )
