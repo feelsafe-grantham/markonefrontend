@@ -13,7 +13,7 @@ const Sidebar = ({ links = [
             {links.map((link, index) => {
                 return (
                     <Link
-                        onClick={() => handleClick(link.value)}
+                        onClick={() => handleClick(link.value, index)}
                         className={`${styles.link}`}
                         key={index}
                         to={"#"}
