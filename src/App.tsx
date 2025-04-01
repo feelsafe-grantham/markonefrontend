@@ -75,7 +75,7 @@ function App() {
           <Routes>
             <Route path="/" element={<>
               {isActive === "home" && <HomeView setActiveTab={setIsActive} />}
-              {isActive === "connect" && <ConnectView />}
+              {isActive === "connect" && <ConnectView setActiveTab={setIsActive} />}
               {isActive === "seoproject" && <SeoProjectView />}
               {isActive === "project" && <ProjectView />}
               {isActive === "testimonial" && <TestimonialView />}
