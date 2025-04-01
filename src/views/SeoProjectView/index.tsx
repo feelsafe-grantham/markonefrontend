@@ -13,24 +13,17 @@ const SeoProjectView = () => {
             scrollContainerRef.current.scrollLeft += e.deltaY;
         }
     };
-    const { loading, data, error } = useFetchProjects("seo");
-    const { title, section_heading, projects: projectsApi, timeline } = data || {};
-    // console.log(data);
-    // const loading = true;
-
-    const timelinedata =
-        [
-            "Keyword Research",
-            "Competitor Analysis",
-            "On-Page Optimization",
-            "Content Creation",
-            "Technical SEO",
-            "Link Building",
-            "Performance Monitoring",
-            "Continuous Optimization"
-        ]
-
-    const projects = {
+    const [timelinedata, setTimelinedata] = useState([
+        "Keyword Research",
+        "Competitor Analysis",
+        "On-Page Optimization",
+        "Content Creation",
+        "Technical SEO",
+        "Link Building",
+        "Performance Monitoring",
+        "Continuous Optimization"
+    ])
+    const [projects, setProjects] = useState({
         "ios": [
             { image: "/images/project1.png", },
             { image: "/images/project2.png", },
@@ -49,9 +42,13 @@ const SeoProjectView = () => {
             { image: "/images/project1.png", },
             { image: "/images/project2.png", },
         ],
-    }
+    });
+    // const { loading, data, error } = useFetchProjects("seo");
+    // const { title, section_heading, projects: projectsApi, timeline } = data || {};
+    // console.log(data);
+    // const loading = true;
 
-    const linkss = [
+    const [links, setLink] = useState([
         { label: "IOS App", value: "ios", },
         { label: "Android App", value: "android", },
         { label: "Website | Portal", value: "web", },
@@ -64,7 +61,7 @@ const SeoProjectView = () => {
         { label: "IOS App", value: "ios", },
         { label: "Android App", value: "android", },
         { label: "Website | Portal", value: "web", },
-    ]
+    ])
 
     const [selectedType, setSelectedType] = useState<"ios" | "android" | "web">("ios");
     const handleLinkClick = (value: "ios" | "android" | "web") => {
@@ -74,13 +71,13 @@ const SeoProjectView = () => {
         }
     };
     const currentProject = projects[selectedType];
-    if (loading)
-        return (
-            <div className="flex space-x-10 justify-center">
-                <div className="w-full sm:w-[48%] lg:w-[30%] h-[450px] bg-black animate-pulse rounded-lg"></div>
-                <div className="w-full sm:w-[48%] lg:w-[30%] h-[450px] bg-black animate-pulse rounded-lg"></div>
-                <div className="w-full sm:w-[48%] lg:w-[30%] h-[450px] bg-black animate-pulse rounded-lg"></div>
-            </div>)
+    // if (loading)
+    //     return (
+    //         <div className="flex space-x-10 justify-center">
+    //             <div className="w-full sm:w-[48%] lg:w-[30%] h-[450px] bg-black animate-pulse rounded-lg"></div>
+    //             <div className="w-full sm:w-[48%] lg:w-[30%] h-[450px] bg-black animate-pulse rounded-lg"></div>
+    //             <div className="w-full sm:w-[48%] lg:w-[30%] h-[450px] bg-black animate-pulse rounded-lg"></div>
+    //         </div>)
     return (
         <>
             <div className={`flex flex-col space-x-4 mx-auto ${styles.mainContainer}`}>
@@ -89,7 +86,7 @@ const SeoProjectView = () => {
                     <h2 className={`${styles.mainHeading}`}>SEO</h2>
                 </div>
                 <div className={`flex space-x-4 mx-auto ${styles.contentContainer}`}>
-                    <Sidebar handleClick={handleLinkClick} links={linkss} />
+                    <Sidebar handleClick={handleLinkClick} links={links} />
                     <div className={`px-5 py-2 flex-1 trans-black-bg scrollbar-hidden ${styles.projectsContainer}`}>
                         <h2 className={`text-2xl mb-2 ${styles.sectionHeading}`} >Project Summary</h2>
                         <div

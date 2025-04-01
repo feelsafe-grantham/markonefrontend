@@ -92,7 +92,11 @@
     display: flex;
     flex-direction: column-reverse;
     justify-content: flex-end;
+    margin-top: 3rem;
     height: calc(100vh - 320px);
+  }
+  .headingContainer {
+    display: none;
   }
   .emptyDiv {
     display: none;
@@ -111,20 +115,44 @@
 }
 
 @media (max-width: 576px) {
+  .mainContainer {
+    width: 95vw;
+    max-width: 95vw;
+  }
   .projectsContainer {
     justify-content: flex-start;
     align-items: flex-start;
     margin: 10px auto;
+    height: calc(100vh - 340px);
+  }
+  .ratingContainer {
+    display: none;
+  }
+  .recIconContainer {
+    display: none;
+  }
+  .contentContainer {
+    width: 95vw;
   }
   .mainHeading {
     text-align: left;
     margin-top: 3rem;
+  }
+  .userContainer {
+    padding: 10px 10px;
+    padding-bottom: 5px;
   }
   .sectionHeading {
     font-size: 14px;
   }
   .image {
     height: 100%;
+  }
+  .projectsContainer {
+    padding-bottom: 0px;
+  }
+  .contentContainer {
+    gap: 2px;
   }
 }
 
