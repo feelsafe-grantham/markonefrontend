@@ -5,6 +5,10 @@ export interface BlogListType {
   date: string;
   description: string;
 }
+export interface BlogListResponse {
+  blogs: BlogListType[];
+  f_blogs: BlogListType[];
+}
 export interface BlogDetailType {
   id: number;
   title: string;

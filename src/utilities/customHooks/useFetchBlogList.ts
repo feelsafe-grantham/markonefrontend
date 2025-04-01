@@ -1,7 +1,15 @@
 import { useEffect, useState } from "react";
 import { BASE_URL } from "../static/varNames";
-const useFetchBlogList = () => {
-  const [data, setData] = useState([]);
+import { BlogListResponse } from "../../types/contentTypes";
+const useFetchBlogList = (): {
+  data: BlogListResponse;
+  loading: boolean;
+  error: any;
+} => {
+  const [data, setData] = useState<BlogListResponse>({
+    blogs: [],
+    f_blogs: [],
+  });
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<any>(null);
   const fetchData = async () => {

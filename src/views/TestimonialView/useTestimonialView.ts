@@ -166,7 +166,7 @@ const useTestimonialView = () => {
 
       const data = await response.json();
       console.log("this is data: ", data.data);
-      //   setTitle(data.data.title);
+      setTitle("Testimonial");
       setLinks(data.data.link);
       setTestimonial(data.data.testimonials);
 

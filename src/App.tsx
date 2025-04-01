@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomeView from "./views/HomeView";
 import ConnectView from "./views/ConnectView";
-import SeoProjectView from "./views/SeoProjectView";
+// import SeoProjectView from "./views/SeoProjectView";
 // import { useSnackbar } from './components/Operations/Alert';
 import MainContainer from "./components/common/MainContainer";
 import Bottombar from "./components/common/Bottombar";

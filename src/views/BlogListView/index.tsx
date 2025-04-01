@@ -68,6 +68,7 @@ const BlogListView = () => {
   blogss = data?.blogs;
   fBlogss = data?.f_blogs;
   if (loading) return <LoadingProjects />;
+  if (error) return <div>error</div>;
   return (
     <div className={`${styles.mainContainer} `}>
       <div className={`scrollbar-hidden ${styles.blogsCardContainer}`}>
