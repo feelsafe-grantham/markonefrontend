@@ -29,6 +29,7 @@
   border-radius: 10px;
   box-sizing: border-box;
   padding: 20px 40px;
+  overflow: scroll;
 }
 
 .form {
@@ -44,21 +45,26 @@
 }
 
 .input {
-  height: 40px;
-  padding: 5px 2px;
+  height: 45px;
+  padding: 5px 5px;
   border: 2px solid green;
-  box-shadow: rgba(var(--form-bg-color), 0.1) 0px 54px 50px,
+  font-size: 20px;
+  /* box-shadow: rgba(var(--form-bg-color), 0.1) 0px 54px 50px,
     rgba(var(--form-bg-color), 0.12) 0px -12px 50px,
     rgba(var(--form-bg-color), 0.12) 0px 4px 50px,
     rgba(var(--form-bg-color), 0.17) 0px 12px 50px,
-    rgba(var(--form-bg-color), 0.09) 0px -3px 50px;
+    rgba(var(--form-bg-color), 0.09) 0px -3px 50px; */
   margin-top: 0px;
   margin-bottom: 5px;
   width: 100%;
   box-sizing: border-box;
 }
-.input[type="text"]:focus-visible {
-  border: 1px solid green;
+.input[type="text"],
+.input[type="email"],
+.input[type="password"],
+.input[type="tel"]:focus-visible {
+  border: 2px solid green;
+  outline: none;
 }
 
 .heading {

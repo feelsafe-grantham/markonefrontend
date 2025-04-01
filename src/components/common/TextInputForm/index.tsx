@@ -34,7 +34,7 @@ const TextInputForm = ({ form }: any) => {
 
   return (
     <div className="flex justify-center">
-      <div className={`${styles.formContainer}`}>
+      <div className={`scrollbar-hidden ${styles.formContainer}`}>
         <h3 className={`${styles.heading}`}>You are almost done!</h3>
         {<p className={`${styles.paragraph}`}>you are doing it right </p>}
         <form
@@ -43,7 +43,7 @@ const TextInputForm = ({ form }: any) => {
         >
           <div>
             <label htmlFor="name" className={`${styles.label}`}>
-              What is Your Name
+              Name
             </label>
             <input
               type="text"
@@ -56,7 +56,7 @@ const TextInputForm = ({ form }: any) => {
           </div>
           <div>
             <label htmlFor="email" className={`${styles.label}`}>
-              Enter your Email Address
+              Email address
             </label>
             <input
               type="email"
@@ -69,7 +69,7 @@ const TextInputForm = ({ form }: any) => {
           </div>
           <div>
             <label htmlFor="number" className={`${styles.label}`}>
-              Enter your Contact Number
+              Contact number
             </label>
             <input
               type="tel"
@@ -82,7 +82,7 @@ const TextInputForm = ({ form }: any) => {
           </div>
           <div>
             <label htmlFor="website" className={`${styles.label}`}>
-              Enter your company Website
+              Company website
             </label>
             <input
               type="text"

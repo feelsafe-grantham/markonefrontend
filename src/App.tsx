@@ -18,6 +18,7 @@ import BlogDetailView from './views/BlogDetailView';
 import TestimonialView from './views/TestimonialView';
 import EbookView from './views/EbookView';
 import Carousel from './components/common/Carousel';
+import NewProjectView from './views/NewProjectView';
 
 function App() {
   // const alert = [{
