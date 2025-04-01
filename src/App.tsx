@@ -1,22 +1,21 @@
-import './App.css'
-import { useState, useEffect } from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import HomeView from './views/HomeView';
-import ConnectView from './views/ConnectView';
-import SeoProjectView from './views/SeoProjectView';
+import "./App.css";
+import { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import HomeView from "./views/HomeView";
+import ConnectView from "./views/ConnectView";
+import SeoProjectView from "./views/SeoProjectView";
 // import { useSnackbar } from './components/Operations/Alert';
-import MainContainer from './components/common/MainContainer';
-import Bottombar from './components/common/Bottombar';
-import ProjectView from './views/ProjectView';
-import BlogListView from './views/BlogListView';
+import MainContainer from "./components/common/MainContainer";
+import Bottombar from "./components/common/Bottombar";
+import ProjectView from "./views/ProjectView";
+import BlogListView from "./views/BlogListView";
 // import Alerts from './components/common/Alterts';
-import TermsView from './views/TermsView';
-import PrivacyView from './views/PrivacyView';
-import RefundsView from './views/RefundsView';
-import BlogDetailView from './views/BlogDetailView';
-import TestimonialView from './views/TestimonialView';
-import EbookView from './views/EbookView';
-
+import TermsView from "./views/TermsView";
+import PrivacyView from "./views/PrivacyView";
+import RefundsView from "./views/RefundsView";
+import BlogDetailView from "./views/BlogDetailView";
+import TestimonialView from "./views/TestimonialView";
+import EbookView from "./views/EbookView";
 
 function App() {
   // const alert = [{
@@ -58,28 +57,41 @@ function App() {
   const renderSomething = () => {
     // review
     // showSnackbar(<Alerts alert={alert[Math.floor(Math.random() * alert.length)]} />, "success");
-  }
+  };
   useEffect(() => {
     const interval = setInterval(() => {
       renderSomething();
-    }
-      , 2000);
+    }, 2000);
     return () => clearInterval(interval);
   }, []);
   return (
     <>
       <Router>
-        <MainContainer setActiveTab={setIsActive} chiledContainerClass="relative" >
+        <MainContainer
+          setActiveTab={setIsActive}
+          chiledContainerClass="relative"
+        >
           <Routes>
-            <Route path="/" element={<>
-              {isActive === "home" && <HomeView setActiveTab={setIsActive} />}
-              {isActive === "connect" && <ConnectView setActiveTab={setIsActive} />}
-              {isActive === "seoproject" && <SeoProjectView />}
-              {isActive === "project" && <ProjectView />}
-              {isActive === "testimonial" && <TestimonialView />}
-              {isActive === "blogs" && <BlogListView />}
-              {isActive === "profile" && <EbookView />}
-            </>} />
+            <Route
+              path="/"
+              element={
+                <>
+                  {isActive === "home" && (
+                    <HomeView setActiveTab={setIsActive} />
+                  )}
+                  {isActive === "connect" && (
+                    <ConnectView setActiveTab={setIsActive} />
+                  )}
+                  {isActive === "project" && (
+                    <ProjectView endpoint="development" />
+                  )}
+                  {isActive === "seoproject" && <ProjectView endpoint="seo" />}
+                  {isActive === "testimonial" && <TestimonialView />}
+                  {isActive === "blogs" && <BlogListView />}
+                  {isActive === "profile" && <EbookView />}
+                </>
+              }
+            />
             <Route path="/terms-and-conditon" element={<TermsView />} />
             <Route path="/privacy-policy" element={<PrivacyView />} />
             <Route path="/refund-policy" element={<RefundsView />} />
@@ -89,7 +101,7 @@ function App() {
         </MainContainer>
       </Router>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -6,7 +6,7 @@ const useFetchBlogDetail = (blogId: number | null) => {
   const [error, setError] = useState<any>(null);
   const fetchData = async () => {
     try {
-      const response: any = await fetch(BASE_URL + `get-blog/${blogId}/`);
+      const response: any = await fetch(BASE_URL + `get-blog/${blogId}`);
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
