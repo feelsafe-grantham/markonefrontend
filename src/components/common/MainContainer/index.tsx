@@ -47,7 +47,7 @@ const MainContainer = ({
   return (
     <div className={`${styles.mainContainer}`} style={{ height }}>
       {/* Header with Logo */}
-      <div className="px-1 py-1 lg:px-0 lg:py-4 relative z-10">
+      <div className="px-1 py-1 lg:px-0 lg:py-4 relative z-10 ">
         <img
           onClick={handleClick}
           className={`h-14 lg:h-18 ${styles.logo}`}

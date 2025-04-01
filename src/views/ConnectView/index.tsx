@@ -70,6 +70,7 @@ const ConnectView = () => {
     }
 
     const handlePrev = () => {
+
         if (step > 0) {
             setStep(step - 1);
         }

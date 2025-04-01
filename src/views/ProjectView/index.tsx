@@ -3,15 +3,10 @@ import React, { useState, useRef } from 'react';
 import styles from "./ProjectView.module.css"
 import Sidebar from "../../components/common/Sidebar";
 import Timeline from "../../components/common/Timeline";
+import useFetchProjects from '../../utilities/customHooks/useFetchProjects';
+import { dividerClasses } from '@mui/material';
 const ProjectView = () => {
-    const scrollContainerRef = useRef<HTMLDivElement>(null);
-    const handleWheel = (e: React.WheelEvent) => {
-        if (scrollContainerRef.current) {
-            scrollContainerRef.current.scrollLeft += e.deltaY;
-        }
-    };
-
-    const timelinedata = [
+    const [timelinedata, setTimelinedata] = useState([
         "Start",
         "Requirement Analysis",
         "Prototype Building",
@@ -20,9 +15,8 @@ const ProjectView = () => {
         "Build Beta Version/Test",
         "Deploy Prod Version",
         "Improvement Phase",
-    ]
-
-    const projects = {
+    ]);
+    const [projects, setProjects] = useState({
         "ios": [
             { image: "/images/project1.png", },
             { image: "/images/project2.png", },
@@ -41,23 +35,32 @@ const ProjectView = () => {
             { image: "/images/project1.png", },
             { image: "/images/project2.png", },
         ],
+    });
+    const [links, setLinks] = useState<{ label: string, value: string }[]>(
+        [
+            { label: "IOS App", value: "ios" },
+            { label: "Android App", value: "android" },
+            { label: "Web App", value: "web" },
+            { label: "IOS App", value: "ios" },
+            { label: "Android App", value: "android" },
+            { label: "Web App", value: "web" },
+            { label: "IOS App", value: "ios" },
+            { label: "Android App", value: "android" },
+            { label: "Web App", value: "web" },
+
+        ]);
+    const scrollContainerRef = useRef<HTMLDivElement>(null);
+    const handleWheel = (e: React.WheelEvent) => {
+        if (scrollContainerRef.current) {
+            scrollContainerRef.current.scrollLeft += e.deltaY;
+        }
+    };
+    const { data, loading, error } = useFetchProjects("seo")
+    const timeline = data?.timeline.replace(/'/g, '"');
+    const timelinedataApi = timeline && JSON.parse(timeline)
+    if (timelinedataApi) {
+        setTimelinedata(timelinedataApi)
     }
-
-    const linkss = [
-        { label: "IOS App", value: "ios", },
-        { label: "Android App", value: "android", },
-        { label: "Website | Portal", value: "web", },
-        { label: "IOS App", value: "ios", },
-        { label: "Android App", value: "android", },
-        { label: "Website | Portal", value: "web", },
-        { label: "IOS App", value: "ios", },
-        { label: "Android App", value: "android", },
-        { label: "Website | Portal", value: "web", },
-        { label: "IOS App", value: "ios", },
-        { label: "Android App", value: "android", },
-        { label: "Website | Portal", value: "web", },
-    ]
-
     const [selectedType, setSelectedType] = useState<"ios" | "android" | "web">("ios");
     const handleLinkClick = (value: "ios" | "android" | "web") => {
         setSelectedType(value);
@@ -68,15 +71,15 @@ const ProjectView = () => {
     };
     const currentProject = projects[selectedType];
 
-
     return (
         <div className={`flex flex-col space-x-4 mx-auto ${styles.mainContainer}`}>
+            {loading ? <div>Loading...</div> : <div></div>}
             <div className={`flex space-x-4 ${styles.headingContainer}`} >
                 <div className={`${styles.emptyDiv}`}></div>
                 <h2 className={`${styles.mainHeading}`}>Projects</h2>
             </div>
             <div className={`flex space-x-4 mx-auto ${styles.contentContainer}`}>
-                <Sidebar handleClick={handleLinkClick} links={linkss} />
+                <Sidebar handleClick={handleLinkClick} links={links} />
                 <div className={`trans-black-bg scrollbar-hidden ${styles.projectsContainer}`}>
                     <h2 className={`${styles.sectionHeading}`} >Project Summary</h2>
                     <div

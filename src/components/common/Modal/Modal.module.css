@@ -19,6 +19,7 @@
   background: transparent;
   padding: 20px;
   border-radius: 10px;
+  z-index: 99;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -39,10 +40,11 @@
 
 .modal {
   width: 70%;
-  height: 90%;
+  height: 84%;
   backdrop-filter: blur(50px);
   background: transparent;
   padding: 20px;
+  z-index: 99;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   position: relative;
@@ -61,8 +63,14 @@
   transition: opacity 0.3s ease;
   font-size: 32px;
   font-weight: 800;
+  position: absolute;
+  z-index: 11;
 }
-
+.leftArrow {
+  cursor: pointer;
+  position: absolute;
+  z-index: 999;
+}
 .closeButton:hover {
   opacity: 1;
 }
