@@ -1,9 +1,9 @@
 .mainContainer {
-  background-image: url("/images/bg.png");
-  background-size: cover;
-  background-position: center;
   display: flex;
   flex-direction: column;
+  background-size: cover;
+  background-position: center;
+  background-image: url("/images/bg.png");
 }
 
 .container {
