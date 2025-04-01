@@ -57,11 +57,11 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 80%;
+    height: 70%;
   }
   .capsule {
-    width: 120px;
-    height: 240px;
+    width: 130px;
+    height: 260px;
     display: flex;
     cursor: pointer;
     position: relative;
@@ -73,6 +73,11 @@
   }
 }
 
+@media (max-width: 576px) {
+  .headng {
+    margin-top: 40px;
+  }
+}
 @media (min-width: 1600px) {
   .capsuleContainer {
     margin-top: 5vw;

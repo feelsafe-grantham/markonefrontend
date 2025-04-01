@@ -20,7 +20,7 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  border: 1px solid #eaeaea;
+  border: 1px solid #01e632;
   box-shadow: inset rgba(var(--form-bg-color), 0.1) 0px 54px 50px,
     inset rgba(var(--form-bg-color), 0.12) 0px -521px 50px,
     inset rgba(var(--form-bg-color), 0.12) 0px 4px 50px,
@@ -118,7 +118,7 @@
     max-width: 75%;
   }
   .formContainer {
-    width: 90%;
+    width: 100%;
     padding: 50px 20px;
   }
   .form {
@@ -137,7 +137,7 @@
   .formContainer {
     margin-top: 1rem;
     width: 100%;
-    padding: 20px;
+    padding: 20px 10px;
   }
   .heading {
     max-width: 95%;

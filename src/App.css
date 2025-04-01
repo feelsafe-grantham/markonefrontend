@@ -17,7 +17,7 @@
   --border-radius: 15px;
   /* calvars */
   --content-height: calc(100vh - 310px);
-  --form-bg-color: 255, 255, 255;
+  --form-bg-color: 0, 0, 0;
   --button-bg-color: 17, 174, 5;
   --blog-shadow-color: 0, 0, 0;
   --swiper-pagination-color: white;

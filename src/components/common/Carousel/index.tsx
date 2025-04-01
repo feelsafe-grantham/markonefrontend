@@ -30,45 +30,39 @@ const Carousel = () => {
                     className="mySwiper"
                 >
                     <SwiperSlide className={styles.content}>
-                        <div className={styles.imageContainer}>
-                            <img className={styles.image} src="/images/image1.jpg" alt="Photography 1" />
-                            <button className={`${styles.btn} ${styles.downloadbtn}`}>Download</button>
-                        </div>
+                        <img className={styles.image} src="/images/image1.jpg" alt="Photography 1" />
+                        <button className={`${styles.btn} ${styles.downloadbtn}`}>Download</button>
                     </SwiperSlide>
                     <SwiperSlide className={styles.content}>
-                        <div className={styles.imageContainer}>
-                            <img className={styles.image} src="/images/image2.jpg" alt="Photography 1" />
-                            <button className={`${styles.btn} ${styles.downloadbtn}`}>Download</button>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide className={styles.content}>
-                        <div className={styles.imageContainer}>
-                            <img className={styles.image} src="/images/image3.jpg" alt="Photography 1" />
-                            <button className={`${styles.btn} ${styles.downloadbtn}`}>Download</button>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide className={styles.content}>
-                        <div className={styles.imageContainer}>
-                            <img className={styles.image} src="/images/image4.jpg" alt="Photography 1" />
-                            <button className={`${styles.btn} ${styles.downloadbtn}`}>Download</button>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide className={styles.content}>
-                        <div className={styles.imageContainer}>
-                            <img className={styles.image} src="/images/image5.jpg" alt="Photography 1" />
-                            <button className={`${styles.btn} ${styles.downloadbtn}`}>Download</button>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide className={styles.content}>
-                        <div className={styles.imageContainer}>
-                            <img className={styles.image} src="/images/image6.jpg" alt="Photography 1" />
-                            <button className={`${styles.btn} ${styles.downloadbtn}`}>Download</button>
-                        </div>
-                    </SwiperSlide>
 
+                        <img className={styles.image} src="/images/image2.jpg" alt="Photography 1" />
+                        <button className={`${styles.btn} ${styles.downloadbtn}`}>Download</button>
 
+                    </SwiperSlide>
+                    <SwiperSlide className={styles.content}>
 
+                        <img className={styles.image} src="/images/image3.jpg" alt="Photography 1" />
+                        <button className={`${styles.btn} ${styles.downloadbtn}`}>Download</button>
 
+                    </SwiperSlide>
+                    <SwiperSlide className={styles.content}>
+
+                        <img className={styles.image} src="/images/image4.jpg" alt="Photography 1" />
+                        <button className={`${styles.btn} ${styles.downloadbtn}`}>Download</button>
+
+                    </SwiperSlide>
+                    <SwiperSlide className={styles.content}>
+
+                        <img className={styles.image} src="/images/image5.jpg" alt="Photography 1" />
+                        <button className={`${styles.btn} ${styles.downloadbtn}`}>Download</button>
+
+                    </SwiperSlide>
+                    <SwiperSlide className={styles.content}>
+
+                        <img className={styles.image} src="/images/image6.jpg" alt="Photography 1" />
+                        <button className={`${styles.btn} ${styles.downloadbtn}`}>Download</button>
+
+                    </SwiperSlide>
                 </Swiper>
             </div>
         </section>

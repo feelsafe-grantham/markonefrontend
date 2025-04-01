@@ -31,11 +31,14 @@
 }
 
 @media (max-width: 576px) {
+  .socialMediaContainer {
+    margin-top: 10px;
+  }
   .copyRightText {
-    font-size: 14px;
+    font-size: 12px;
   }
   .linksContainer {
     gap: 5px;
-    font-size: 14px;
+    font-size: 12px;
   }
 }

@@ -3,7 +3,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
 }
 
 .content {
@@ -16,16 +15,13 @@
   overflow: hidden;
   position: relative;
 }
-.imageContainer {
-  position: relative;
-}
+
 .image {
-  width: 100%;
-  height: 60%;
   object-fit: cover;
   border-bottom-left-radius: 0.6rem;
   border-bottom-right-radius: 0.6rem;
 }
+
 .downloadbtn {
   position: absolute;
   bottom: 1rem;
@@ -50,4 +46,21 @@
 
 .content:hover .btn {
   display: block;
+}
+
+@media (max-width: 576px) {
+  .mySswiper {
+    width: 350px;
+  }
+  .collection {
+    height: 45vh;
+  }
+  .content {
+    height: 300px;
+    width: 350px;
+  }
+  .image {
+    height: 300px;
+    width: 350px;
+  }
 }

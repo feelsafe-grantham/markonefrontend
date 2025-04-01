@@ -7,14 +7,10 @@ const Modal = (
         children,
         isOpen,
         onPrevClick,
-        // onOpenModal,
-        // onCloseModal
     }: Readonly<{
         children: React.ReactNode,
         isOpen?: boolean,
         onPrevClick?: () => void
-        // onOpenModal?: () => void,
-        // onCloseModal?: () => void
     }>
 ) => {
 

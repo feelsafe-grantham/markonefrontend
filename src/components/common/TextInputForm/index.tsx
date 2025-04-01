@@ -96,7 +96,7 @@ const TextInputForm = ({ form }: any) => {
           <div className="flex justify-center flex-col sm:flex-row sm:justify-between gap-1">
             <div className="flex gap-1 md:gap-3">
               <label htmlFor="q3" className="text-[14px] md:text-[18px]">
-                Question 1
+                How to hire a marketing agency ?
               </label>
               <input
                 type="checkbox"
@@ -108,7 +108,7 @@ const TextInputForm = ({ form }: any) => {
             </div>
             <div className="flex gap-1 md:gap-3">
               <label htmlFor="q4" className="text-[14px] md:text-[18px]">
-                Question 2
+                How to hire a web developer ?
               </label>
               <input
                 type="checkbox"
@@ -120,7 +120,7 @@ const TextInputForm = ({ form }: any) => {
             </div>
             <div className="flex gap-1 md:gap-3">
               <label htmlFor="q5" className="text-[14px] md:text-[18px]">
-                Question 3
+                How to hire a designer ?
               </label>
               <input
                 type="checkbox"
