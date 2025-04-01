@@ -24,7 +24,7 @@
 
 @media (max-width: 1024px) {
   .sidebarContainer {
-    width: 90vw;
+    width: 95vw;
     height: auto;
     overflow-x: scroll;
     flex-direction: row;

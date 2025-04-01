@@ -17,7 +17,7 @@ const CapsHalf = ({
         size === "small" ? styles.small : size === "large" ? styles.large : styles.medium;
     return (
         <div onClick={onClick} className={`${capsuleClass} ${sizeClass} ${styles.redCaps} ${styles.capsuleContainer} ${styles.capsuleContainerSmall} `}>
-            <h3>{text}</h3>
+            <h3 className={styles.capsHalfText}>{text}</h3>
         </div>
     );
 }

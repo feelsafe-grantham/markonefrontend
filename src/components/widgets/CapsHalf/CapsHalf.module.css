@@ -25,7 +25,10 @@
 .large {
   height: 250px;
 }
-
+.capsHalfText {
+  font-weight: 700;
+  text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.7);
+}
 @media (max-width: 1120px) {
   .capsuleContainer {
     height: 90px;
@@ -44,5 +47,11 @@
 @media (max-width: 600px) {
   .capsuleContainer {
     height: 75px;
+  }
+}
+
+@media (max-width: 500px) {
+  .capsuleContainer {
+    height: 70px;
   }
 }
