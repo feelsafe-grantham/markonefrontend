@@ -4,7 +4,6 @@ import styles from "./ProjectView.module.css"
 import Sidebar from "../../components/common/Sidebar";
 import Timeline from "../../components/common/Timeline";
 import useFetchProjects from '../../utilities/customHooks/useFetchProjects';
-import { dividerClasses } from '@mui/material';
 const ProjectView = () => {
     const [timelinedata, setTimelinedata] = useState([
         "Start",
@@ -58,9 +57,7 @@ const ProjectView = () => {
     const { data, loading, error } = useFetchProjects("seo")
     const timeline = data?.timeline.replace(/'/g, '"');
     const timelinedataApi = timeline && JSON.parse(timeline)
-    if (timelinedataApi) {
-        setTimelinedata(timelinedataApi)
-    }
+
     const [selectedType, setSelectedType] = useState<"ios" | "android" | "web">("ios");
     const handleLinkClick = (value: "ios" | "android" | "web") => {
         setSelectedType(value);
@@ -81,7 +78,7 @@ const ProjectView = () => {
             <div className={`flex space-x-4 mx-auto ${styles.contentContainer}`}>
                 <Sidebar handleClick={handleLinkClick} links={links} />
                 <div className={`trans-black-bg scrollbar-hidden ${styles.projectsContainer}`}>
-                    <h2 className={`${styles.sectionHeading}`} >Project Summary</h2>
+                    <h2 className={`${styles.sectionHeading}`}>Project Summary</h2>
                     <div
                         onWheel={handleWheel}
                         ref={scrollContainerRef}

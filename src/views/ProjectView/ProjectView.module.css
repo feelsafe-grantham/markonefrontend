@@ -49,6 +49,7 @@
   padding-top: 5px;
   width: 50vw;
   height: 100%;
+  /* border: 2px solid red; */
 }
 
 .image {
@@ -58,6 +59,7 @@
   aspect-ratio: 450/300;
   margin: 0px 10px;
   border-radius: 10px;
+  /* border: 2px solid green; */
 }
 
 @media (max-width: 1300px) {
