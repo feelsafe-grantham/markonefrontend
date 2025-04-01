@@ -9,7 +9,6 @@ import MainContainer from './components/common/MainContainer';
 import Bottombar from './components/common/Bottombar';
 import ProjectView from './views/ProjectView';
 import BlogListView from './views/BlogListView';
-import ContactView from './views/ContactView';
 // import Alerts from './components/common/Alterts';
 import TermsView from './views/TermsView';
 import PrivacyView from './views/PrivacyView';
@@ -17,8 +16,7 @@ import RefundsView from './views/RefundsView';
 import BlogDetailView from './views/BlogDetailView';
 import TestimonialView from './views/TestimonialView';
 import EbookView from './views/EbookView';
-import Carousel from './components/common/Carousel';
-import NewProjectView from './views/NewProjectView';
+
 
 function App() {
   // const alert = [{

@@ -24,3 +24,16 @@ export type FetchBlogDetailResult = {
 };
 export interface ProjectType {}
 export interface SeoProjectType {}
+
+export interface ProjectImageInterface {
+  image: string;
+}
+
+export interface ProjectsInterface {
+  [key: string]: ProjectImageInterface[];
+}
+
+export interface LinkInterface {
+  label: string;
+  value: string;
+}

@@ -1,7 +1,8 @@
 import { BlogDetailType } from "../../../types/contentTypes";
 import styles from "./Blogdetail.module.css"
 import parse from "html-react-parser"
-const Blogdetail = ({ blog }: { blog: BlogDetailType }) => {
+const Blogdetail = ({ blog }: { blog: BlogDetailType | null }) => {
+    if (!blog) return null
     return (
         <div className={`trans-black-bg scrollbar-hidden ${styles.mainContainer} `}>
             <div className="flex flex-col justify-center items-center gap-4">
