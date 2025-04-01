@@ -33,6 +33,7 @@
   display: flex;
   flex-direction: column;
   border-radius: var(--border-radius);
+  border-radius: 5px;
 }
 
 .sectionHeading {
@@ -78,7 +79,14 @@
     justify-content: flex-end;
     height: calc(100vh - 320px);
   }
+  .headingContainer {
+    display: none;
+  }
 
+  .contentContainer {
+    height: auto;
+    margin-top: 3rem;
+  }
   .emptyDiv {
     display: none;
   }
@@ -96,7 +104,8 @@
   .sectionHeading {
     font-size: 18px;
     position: sticky;
-    padding: 20px 10px;
+    padding: 5px 10px;
+    padding-top: 10px;
   }
 
   .projectsContainer {
@@ -105,10 +114,15 @@
 }
 
 @media (max-width: 576px) {
+  .mainContainer {
+    width: 95vw;
+    max-width: 95vw;
+  }
   .projectsContainer {
     justify-content: flex-start;
     align-items: flex-start;
     margin: 10px auto;
+    height: calc(100vh - 340px);
   }
   .mainHeading {
     text-align: left;
@@ -119,6 +133,12 @@
   }
   .image {
     height: 100%;
+  }
+  .projectsContainer {
+    padding-bottom: 0px;
+  }
+  .contentContainer {
+    gap: 2px;
   }
 }
 

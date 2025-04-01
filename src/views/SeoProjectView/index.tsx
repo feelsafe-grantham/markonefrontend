@@ -3,6 +3,8 @@ import React, { useRef, useState } from 'react';
 import styles from "./SeoProjectView.module.css"
 import Sidebar from "../../components/common/Sidebar";
 import Timeline from "../../components/common/Timeline";
+import useFetchProjects from '../../utilities/customHooks/useFetchProjects';
+import { dividerClasses } from '@mui/material';
 const SeoProjectView = () => {
     const scrollContainerRef = useRef<HTMLDivElement>(null);
     const handleWheel = (e: React.WheelEvent) => {
@@ -11,6 +13,10 @@ const SeoProjectView = () => {
             scrollContainerRef.current.scrollLeft += e.deltaY;
         }
     };
+    const { loading, data, error } = useFetchProjects("seo");
+    const { title, section_heading, projects: projectsApi, timeline } = data || {};
+    // console.log(data);
+    // const loading = true;
 
     const timelinedata =
         [
@@ -23,6 +29,7 @@ const SeoProjectView = () => {
             "Performance Monitoring",
             "Continuous Optimization"
         ]
+
     const projects = {
         "ios": [
             { image: "/images/project1.png", },
@@ -62,36 +69,44 @@ const SeoProjectView = () => {
     const [selectedType, setSelectedType] = useState<"ios" | "android" | "web">("ios");
     const handleLinkClick = (value: "ios" | "android" | "web") => {
         setSelectedType(value);
-        // scroll to left of the container with smooth animation
         if (scrollContainerRef.current) {
             scrollContainerRef.current.scrollTo({ left: 0, behavior: "smooth" });
         }
     };
     const currentProject = projects[selectedType];
+    if (loading)
+        return (
+            <div className="flex space-x-10 justify-center">
+                <div className="w-full sm:w-[48%] lg:w-[30%] h-[450px] bg-black animate-pulse rounded-lg"></div>
+                <div className="w-full sm:w-[48%] lg:w-[30%] h-[450px] bg-black animate-pulse rounded-lg"></div>
+                <div className="w-full sm:w-[48%] lg:w-[30%] h-[450px] bg-black animate-pulse rounded-lg"></div>
+            </div>)
     return (
-        <div className={`flex flex-col space-x-4 mx-auto ${styles.mainContainer}`}>
-            <div className={`flex space-x-4 ${styles.headingContainer}`} >
-                <div className={`${styles.emptyDiv}`}></div>
-                <h2 className={`${styles.mainHeading}`}>SEO</h2>
+        <>
+            <div className={`flex flex-col space-x-4 mx-auto ${styles.mainContainer}`}>
+                <div className={`flex space-x-4 ${styles.headingContainer}`} >
+                    <div className={`${styles.emptyDiv}`}></div>
+                    <h2 className={`${styles.mainHeading}`}>SEO</h2>
+                </div>
+                <div className={`flex space-x-4 mx-auto ${styles.contentContainer}`}>
+                    <Sidebar handleClick={handleLinkClick} links={linkss} />
+                    <div className={`px-5 py-2 flex-1 trans-black-bg scrollbar-hidden ${styles.projectsContainer}`}>
+                        <h2 className={`text-2xl mb-2 ${styles.sectionHeading}`} >Project Summary</h2>
+                        <div
+                            onWheel={handleWheel}
+                            ref={scrollContainerRef}
+                            className={`${styles.midContainer}`}
+                        >
+                            {currentProject?.map((item: any, index: number) => <img
+                                key={index} className={`${styles.image}`} src={item.image} alt="" />
+                            )}</div>
+                    </div>
+                    <div className={`${styles.timelineContainer}`}>
+                        <Timeline timelineData={timelinedata} />
+                    </div>
+                </div >
             </div>
-            <div className={`flex space-x-4 mx-auto ${styles.contentContainer}`}>
-                <Sidebar handleClick={handleLinkClick} links={linkss} />
-                <div className={`px-5 py-2 flex-1 trans-black-bg scrollbar-hidden ${styles.projectsContainer}`}>
-                    <h2 className={`text-2xl mb-2 ${styles.sectionHeading}`} >Project Summary</h2>
-                    <div
-                        onWheel={handleWheel}
-                        ref={scrollContainerRef}
-                        className={`${styles.midContainer}`}
-                    >
-                        {currentProject?.map((item: any, index: number) => <img
-                            key={index} className={`${styles.image}`} src={item.image} alt="" />
-                        )}</div>
-                </div>
-                <div className={`${styles.timelineContainer}`}>
-                    <Timeline timelineData={timelinedata} />
-                </div>
-            </div >
-        </div >
+        </>
     )
 }
 

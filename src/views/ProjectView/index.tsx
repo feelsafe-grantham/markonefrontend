@@ -54,9 +54,9 @@ const ProjectView = () => {
             scrollContainerRef.current.scrollLeft += e.deltaY;
         }
     };
-    const { data, loading, error } = useFetchProjects("seo")
-    const timeline = data?.timeline.replace(/'/g, '"');
-    const timelinedataApi = timeline && JSON.parse(timeline)
+    // const { data, loading, error } = useFetchProjects("seo")
+    // const timeline = data?.timeline.replace(/'/g, '"');
+    // const timelinedataApi = timeline && JSON.parse(timeline)
 
     const [selectedType, setSelectedType] = useState<"ios" | "android" | "web">("ios");
     const handleLinkClick = (value: "ios" | "android" | "web") => {
@@ -70,7 +70,6 @@ const ProjectView = () => {
 
     return (
         <div className={`flex flex-col space-x-4 mx-auto ${styles.mainContainer}`}>
-            {loading ? <div>Loading...</div> : <div></div>}
             <div className={`flex space-x-4 ${styles.headingContainer}`} >
                 <div className={`${styles.emptyDiv}`}></div>
                 <h2 className={`${styles.mainHeading}`}>Projects</h2>
