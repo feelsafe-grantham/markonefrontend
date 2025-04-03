@@ -1,9 +1,7 @@
-
 import { useState } from "react";
 import styles from "./TextInputForm.module.css";
 
 const TextInputForm = ({ form }: any) => {
-
   const [answers, setAnswers] = useState({
     name: "",
     email: "",
@@ -13,7 +11,6 @@ const TextInputForm = ({ form }: any) => {
     aman4: false,
     aman5: false,
   });
-
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = e.target;
@@ -29,8 +26,6 @@ const TextInputForm = ({ form }: any) => {
     const updated = { ...answers, ...form };
     console.log("Form submitted with answers:", updated);
   };
-
-
 
   return (
     <div className="flex justify-center">
@@ -94,7 +89,7 @@ const TextInputForm = ({ form }: any) => {
             />
           </div>
           <div className="flex justify-center flex-col sm:flex-row sm:justify-between gap-1">
-            <div className="flex gap-1 md:gap-3">
+            <div className="flex justify-between gap-1 md:gap-3">
               <label htmlFor="q3" className="text-[14px] md:text-[18px]">
                 What I get after hiring you ?
               </label>
@@ -106,7 +101,7 @@ const TextInputForm = ({ form }: any) => {
                 onChange={handleChange}
               />
             </div>
-            <div className="flex gap-1 md:gap-3">
+            <div className="flex justify-between gap-1 md:gap-3">
               <label htmlFor="q4" className="text-[14px] md:text-[18px]">
                 SEO strategy that 200% works.
               </label>
@@ -118,7 +113,7 @@ const TextInputForm = ({ form }: any) => {
                 onChange={handleChange}
               />
             </div>
-            <div className="flex gap-1 md:gap-3">
+            <div className="flex justify-between gap-1 md:gap-3">
               <label htmlFor="q5" className="text-[14px] md:text-[18px]">
                 Get cost cutting updates everyday .
               </label>

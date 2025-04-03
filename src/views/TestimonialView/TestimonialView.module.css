@@ -21,6 +21,7 @@
 }
 
 .contentContainer {
+  height: calc(100vh - 260px);
   display: flex;
   gap: 20px;
   width: 80vw;
