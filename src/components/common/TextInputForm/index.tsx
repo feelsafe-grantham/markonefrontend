@@ -12,6 +12,9 @@ const TextInputForm = ({ form }: any) => {
     cost: false,
   });
 
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = e.target;
 
@@ -25,30 +28,37 @@ const TextInputForm = ({ form }: any) => {
     e.preventDefault();
     const updated = { ...answers, ...form };
     try {
+      setIsLoading(true);
       await fetch("https://formspree.io/f/xnnpgoww", {
         method: "POST",
         body: JSON.stringify(updated),
       })
         .then((response) => response.json())
         .then((data) => {
-          console.log("Success:", data);
-          // Optionally, reset form or handle success response
+
+          setIsSuccess(true);
+          setAnswers({
+            name: "",
+            email: "",
+            number: "",
+            website: "",
+            hiring: false,
+            seo: false,
+            cost: false,
+          })
         })
         .catch((error) => {
+
           console.error("Error:", error);
           // Optionally, handle error
         });
-      setAnswers({
-        name: "",
-        email: "",
-        number: "",
-        website: "",
-        hiring: false,
-        seo: false,
-        cost: false,
-      })
+
     } catch (error) {
+      setIsSuccess(false);
       console.error("Error:", error);
+    }
+    finally {
+      setIsLoading(false); // Hide the loading spinner once the request is complete
     }
 
   };
@@ -58,7 +68,10 @@ const TextInputForm = ({ form }: any) => {
       <div className={`scrollbar-hidden ${styles.formContainer}`}>
         <h3 className={`${styles.heading}`}>You are almost done!</h3>
         {<p className={`${styles.paragraph}`}>you are doing it right </p>}
-        <form
+        {isSuccess ? <div className="text-green-500">
+          <h4 className="text-xl">Thank you for submitting the form!</h4>
+          <p>We will get back to you shortly.</p>
+        </div> : <form
           className={`flex flex-col space-y-10 ${styles.form}`}
           onSubmit={handleSubmit}
         >
@@ -67,6 +80,7 @@ const TextInputForm = ({ form }: any) => {
               Name
             </label>
             <input
+              required
               type="text"
               className={`${styles.input}`}
               name="name"
@@ -80,6 +94,7 @@ const TextInputForm = ({ form }: any) => {
               Email address
             </label>
             <input
+              required
               type="email"
               className={`${styles.input}`}
               name="email"
@@ -93,6 +108,7 @@ const TextInputForm = ({ form }: any) => {
               Contact number
             </label>
             <input
+              required
               type="tel"
               className={`${styles.input}`}
               name="number"
@@ -106,6 +122,7 @@ const TextInputForm = ({ form }: any) => {
               Company website
             </label>
             <input
+              required
               type="text"
               className={`${styles.input}`}
               name="website"
@@ -117,6 +134,7 @@ const TextInputForm = ({ form }: any) => {
           <div className="flex justify-center flex-col sm:flex-row sm:justify-between gap-1">
             <div className={`${styles.selectInputContainer}`}>
               <input
+                required
                 className={`${styles.selectInput}`}
                 type="checkbox"
                 name="hiring"
@@ -157,10 +175,16 @@ const TextInputForm = ({ form }: any) => {
 
             </div>
           </div>
-          <button className={`${styles.submitButton}`} type="submit">
-            Submit
-          </button>
-        </form>
+          {isLoading ? (
+            <div className="flex justify-center items-center">
+              <div className={styles.loader}></div>
+            </div>
+          ) : (
+            <button className={`${styles.submitButton}`} type="submit">
+              Submit
+            </button>
+          )}
+        </form>}
       </div>
     </div>
   );
