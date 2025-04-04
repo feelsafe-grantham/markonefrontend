@@ -46,6 +46,7 @@ const TextInputForm = ({ form }: any) => {
             seo: false,
             cost: false,
           })
+          console.log("Success:", data);
         })
         .catch((error) => {
 
