@@ -59,10 +59,18 @@ const ContactView = () => {
             </div>
             <div className={`${styles.socialMediaContainer}`}>
                 <div className={`${styles.socialMediaIconsContainer}`}>
-                    <Link to={"https://in.linkedin.com/company/feelsafe-markone"}><img className={`${styles.socialMediaIcon}`} src="/images/linkedin.png" alt="instagram" /></Link>
-                    <Link to={"https://www.instagram.com/feelsafe_markone/"}><img className={`${styles.socialMediaIcon}`} src="/images/instagram.png" alt="instagram" /></Link>
-                    <Link to={"#"}><img className={`${styles.socialMediaIcon}`} src="/images/twitter.png" alt="instagram" /></Link>
-                    <Link to={"#"}><img className={`${styles.socialMediaIcon}`} src="/images/youtube.png" alt="instagram" /></Link>
+                    <Link target="_blank" to={"https://in.linkedin.com/company/feelsafe-markone"}>
+                        <img className={`${styles.socialMediaIcon}`} src="/images/linkedin.png" alt="instagram" />
+                    </Link>
+                    <Link target="_blank" to={"https://www.instagram.com/feelsafe_markone/"}>
+                        <img className={`${styles.socialMediaIcon}`} src="/images/instagram.png" alt="instagram" />
+                    </Link>
+                    <Link target="_blank" to={"https://x.com/feelsafe_mark1?t=qBgHTsTQPT3CXOsyMwiFdw&s=08"}>
+                        <img className={`${styles.socialMediaIcon}`} src="/images/twitter.png" alt="instagram" />
+                    </Link>
+                    <Link target="_blank" to={"https://www.youtube.com/@feelsafemarkone"}>
+                        <img className={`${styles.socialMediaIcon}`} src="/images/youtube.png" alt="instagram" />
+                    </Link>
                 </div>
                 <div className={`${styles.copyRightContainer}`}>
                     <p className={`${styles.copyRightText}`}>@feelsafemarkone All Rights Reserved 2022</p>

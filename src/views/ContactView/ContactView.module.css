@@ -91,6 +91,7 @@
   justify-content: center;
   position: relative;
   z-index: 100;
+  border: 2px solid red;
 }
 .socialMediaIcon {
   height: 80px;
