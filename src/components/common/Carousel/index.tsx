@@ -30,7 +30,7 @@ const Carousel = () => {
                     className="mySwiper"
                 >
                     <SwiperSlide className={styles.content}>
-                        <img className={styles.image} src="/images/image1.jpg" alt="Photography 1" />
+                        <img className={styles.image} src="/images/image4.jpg" alt="Photography 1" />
                         <button className={`${styles.btn} ${styles.downloadbtn}`}>Download</button>
                     </SwiperSlide>
                     <SwiperSlide className={styles.content}>
