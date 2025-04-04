@@ -49,7 +49,7 @@
 }
 @media (max-width: 576px) {
   .mainContainer {
-    width: 90vw;
+    width: 97vw;
     padding: 10px 20px;
     height: calc(100vh - 270px);
   }
