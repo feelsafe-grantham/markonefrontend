@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom';
 import styles from "./EbookView.module.css"
 import Carousel from '../../components/common/Carousel';
