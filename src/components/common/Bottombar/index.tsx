@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 const Bottombar = ({ setActiveTab }: Readonly<{ setActiveTab?: (tab: string) => void }>) => {
   const navigate = useNavigate();
   const handleTabClick = (tabName: string) => {
+    console.log("Tab clicked:", tabName);
     if (setActiveTab) {
       navigate("/");
       setActiveTab(tabName);
@@ -30,9 +31,9 @@ const Bottombar = ({ setActiveTab }: Readonly<{ setActiveTab?: (tab: string) => 
       </div>
       <div className={`${styles.bottombar} ${styles.bottombarMobile}`}>
         <div className={`flex justify-center items-end gap-5 w-full`}>
-          <CtaCard onClick={() => handleTabClick("testimonial")} link="#" type="testimonial" />
-          <CtaCard onClick={() => handleTabClick("blogs")} link="#" type="blog" />
-          <CtaCard onClick={() => handleTabClick("project")} link="#" type="result" />
+          <CtaCard onClick={() => handleTabClick("testimonial")} link="/" type="testimonial" />
+          <CtaCard onClick={() => handleTabClick("blogs")} link="/" type="blog" />
+          <CtaCard onClick={() => handleTabClick("project")} link="/" type="result" />
         </div>
         <div className="flex justify-center w-full">
           <CapsHalf onClick={() => handleTabClick("connect")} size="small" text="Connect" type="green" />
