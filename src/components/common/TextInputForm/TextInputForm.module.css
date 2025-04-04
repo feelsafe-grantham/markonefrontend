@@ -1,4 +1,3 @@
-/* New styles to handle text input */
 .input {
   padding: 10px;
   border: 1px solid white;
@@ -68,16 +67,19 @@
   font-size: 32px;
   color: var(--green);
 }
+
 .paragraph {
   font-size: 14px;
   text-align: center;
   width: 70%;
 }
+
 .select {
   padding: 10px;
   border: 1px solid white;
   margin: 15px 0px;
 }
+
 .option {
   background: #000;
   color: white;
@@ -85,6 +87,7 @@
   text-overflow: ellipsis;
   overflow: hidden;
 }
+
 .submitButton {
   box-shadow: inset rgba(var(--button-bg-color), 0.1) 0px 54px 50px,
     inset rgba(var(--button-bg-color), 0.12) 0px -12px 50px,
@@ -97,10 +100,27 @@
   cursor: pointer;
   margin-top: 20px;
 }
+
 .capsulePhone {
   display: none;
 }
 
+.selectInputContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.25rem;
+}
+
+.selectLabel {
+  line-height: 25px;
+  font-size: 14px;
+}
+
+.selectInput {
+  margin-top: 5px;
+  margin-right: 5px;
+}
 @media (max-width: 1024px) {
   .capsulePhone {
     display: block;
@@ -126,8 +146,20 @@
   .imageContainer {
     display: none;
   }
+  .selectInputContainer {
+    display: flex;
+    justify-content: flex-start;
+  }
 }
 
+@media (min-width: 768px) {
+  .custom-flex-container {
+    gap: 0.75rem;
+  }
+  .selectLabel {
+    font-size: 18px;
+  }
+}
 @media (max-width: 600px) {
   .formContainer {
     margin-top: 1rem;

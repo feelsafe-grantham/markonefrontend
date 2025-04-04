@@ -7,9 +7,9 @@ const TextInputForm = ({ form }: any) => {
     email: "",
     number: "",
     website: "",
-    aman3: false,
-    aman4: false,
-    aman5: false,
+    hiring: false,
+    seo: false,
+    cost: false,
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -21,10 +21,36 @@ const TextInputForm = ({ form }: any) => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const updated = { ...answers, ...form };
-    console.log("Form submitted with answers:", updated);
+    try {
+      await fetch("https://formspree.io/f/xnnpgoww", {
+        method: "POST",
+        body: JSON.stringify(updated),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log("Success:", data);
+          // Optionally, reset form or handle success response
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          // Optionally, handle error
+        });
+      setAnswers({
+        name: "",
+        email: "",
+        number: "",
+        website: "",
+        hiring: false,
+        seo: false,
+        cost: false,
+      })
+    } catch (error) {
+      console.error("Error:", error);
+    }
+
   };
 
   return (
@@ -89,44 +115,48 @@ const TextInputForm = ({ form }: any) => {
             />
           </div>
           <div className="flex justify-center flex-col sm:flex-row sm:justify-between gap-1">
-            <div className="flex justify-between gap-1 md:gap-3">
-              <label htmlFor="q3" className="text-[14px] md:text-[18px]">
+            <div className={`${styles.selectInputContainer}`}>
+              <input
+                className={`${styles.selectInput}`}
+                type="checkbox"
+                name="hiring"
+                id="hiring"
+                checked={answers.hiring}
+                onChange={handleChange}
+              />
+              <label htmlFor="hiring" className={`${styles.selectLabel}`}>
                 What I get after hiring you ?
               </label>
+            </div>
+            <div className={`${styles.selectInputContainer}`}>
               <input
+                className={`${styles.selectInput}`}
                 type="checkbox"
-                name="aman3"
-                id="q3"
-                checked={answers.aman3}
+                name="seo"
+                id="seo"
+                checked={answers.seo}
                 onChange={handleChange}
               />
-            </div>
-            <div className="flex justify-between gap-1 md:gap-3">
-              <label htmlFor="q4" className="text-[14px] md:text-[18px]">
+              <label htmlFor="seo" className={`${styles.selectLabel}`}>
                 SEO strategy that 200% works.
               </label>
+
+            </div>
+            <div className={`${styles.selectInputContainer}`}>
               <input
+                className={`${styles.selectInput}`}
                 type="checkbox"
-                name="aman4"
-                id="q4"
-                checked={answers.aman4}
+                name="cost"
+                id="cost"
+                checked={answers.cost}
                 onChange={handleChange}
               />
-            </div>
-            <div className="flex justify-between gap-1 md:gap-3">
-              <label htmlFor="q5" className="text-[14px] md:text-[18px]">
+              <label htmlFor="cost" className={`${styles.selectLabel}`}>
                 Get cost cutting updates everyday .
               </label>
-              <input
-                type="checkbox"
-                name="aman5"
-                id="q5"
-                checked={answers.aman5}
-                onChange={handleChange}
-              />
+
             </div>
           </div>
-
           <button className={`${styles.submitButton}`} type="submit">
             Submit
           </button>
