@@ -1,15 +1,30 @@
 .mainContainer {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   background-size: cover;
   background-position: center;
   background-image: url("/images/bg.png");
+  grid-template-rows: auto 1fr auto;
 }
-
+.logoContainer {
+  padding: 0.25rem;
+  position: relative;
+  z-index: 10;
+}
+.logo {
+  height: 3.5rem;
+}
 .container {
-  flex: 1;
+  grid-row: 2;
+}
+.bottomBarContainer {
+  grid-row: 3;
 }
 
+@media (min-width: 1024px) {
+  .logo {
+    height: 4.5rem;
+  }
+}
 @media (min-width: 1600px) {
   .logo {
     height: 5vw;

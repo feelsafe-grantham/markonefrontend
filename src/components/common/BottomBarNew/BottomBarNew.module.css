@@ -1,0 +1,72 @@
+.bottomBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+.bottomBarLink {
+  height: 150px;
+  aspect-ratio: 2/1;
+  text-transform: capitalize;
+  font-size: 18px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.redCap {
+  left: 0;
+  background: url("/images/redCapsule.png") no-repeat center center/cover;
+}
+.greenCap {
+  right: 0;
+  background: url("/images/greenCapsule.png") no-repeat center center/cover;
+}
+.ctaCardContainer {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.capsHalfContainer {
+  display: none;
+}
+@media (max-width: 1150px) {
+  .bottomBar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .bottomBarLink {
+    display: none;
+  }
+  .capsHalfContainer {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+  .capsHalf {
+    height: 90px;
+    aspect-ratio: 2/1;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .capsHalfRed {
+    background: url("/images/redHalf1.png") no-repeat center center/cover;
+  }
+  .capsHalfGreen {
+    background: url("/images/greenHalf1.png") no-repeat center center/cover;
+  }
+}
+
+@media (max-width: 400px) {
+  .capsHalf {
+    height: 80px;
+  }
+}

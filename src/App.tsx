@@ -71,6 +71,7 @@ function App() {
           setActiveTab={setIsActive}
           chiledContainerClass="relative"
         >
+          <div></div>
           <Routes>
             <Route
               path="/"
@@ -97,7 +98,7 @@ function App() {
             <Route path="/refund-policy" element={<RefundsView />} />
             <Route path="/:slug" element={<BlogDetailView />} />
           </Routes>
-          <Bottombar setActiveTab={setIsActive} />
+          {/* <Bottombar setActiveTab={setIsActive} /> */}
         </MainContainer>
       </Router>
     </>

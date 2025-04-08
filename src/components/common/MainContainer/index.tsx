@@ -2,6 +2,10 @@
 import { useNavigate } from "react-router-dom";
 import styles from "./MainContainer.module.css";
 import React, { useEffect, useState } from "react";
+import Bottombar from "../Bottombar";
+import CtaCard from "../../widgets/CtaCard";
+import CapsFull from "../../widgets/CapsFull";
+import BottomBarNew from "../BottomBarNew";
 const MainContainer = ({
   children,
   chiledContainerClass,
@@ -11,14 +15,11 @@ const MainContainer = ({
   chiledContainerClass?: string;
   setActiveTab?: (tab: string) => void;
 }>) => {
-  // const [height, setHeight] = useState(window.innerHeight);
   const [height, setHeight] = useState<number | undefined>(undefined);
   const navigate = useNavigate();
 
   useEffect(() => {
-    // const handleResize = () => {
-    //     setHeight(window.innerHeight);
-    // };
+
     const handleResize = () => {
       setHeight(window.innerHeight);
     };
@@ -46,11 +47,10 @@ const MainContainer = ({
   };
   return (
     <div className={`${styles.mainContainer}`} style={{ height }}>
-      {/* Header with Logo */}
-      <div className="px-1 py-1 lg:px-0 lg:py-4 relative z-10 ">
+      <div className={` ${styles.logoContainer}`}>
         <img
           onClick={handleClick}
-          className={`h-14 lg:h-18 ${styles.logo}`}
+          className={`${styles.logo}`}
           src="/images/logotranswhite.png"
           alt="markone the right choice for marketing"
         />
@@ -59,6 +59,9 @@ const MainContainer = ({
         className={`${styles.container} ${chiledContainerClass} relative z-0`}
       >
         {children}
+      </div>
+      <div className={`${styles.bottomBarContainer}`}>
+        <BottomBarNew />
       </div>
     </div>
   );

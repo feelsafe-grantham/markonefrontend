@@ -26,3 +26,21 @@
     height: 40px;
   }
 }
+@media (max-width: 450px) {
+  .card {
+    width: 120px;
+    height: 60px;
+  }
+  .cardImage {
+    height: 30px;
+  }
+}
+@media (max-width: 380px) {
+  .card {
+    width: 100px;
+    height: 55px;
+  }
+  .cardImage {
+    height: 30px;
+  }
+}
