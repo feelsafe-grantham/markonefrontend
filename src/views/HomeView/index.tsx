@@ -11,19 +11,19 @@ const HomeView = ({
   return (
     <>
       <div className={`relative p-4 ${styles.homeView}`}>
-        {/* <div
+        <div
           className={`${styles.bgImage} ${styles.bgPosition} ${styles.bgContainer}`}
-        > */}
-        {/* <p className={`text-white-shadow ${styles.textCta}`}>
+        >
+          <p className={`text-white-shadow ${styles.textCta}`}>
             Feeling Tired <br />
             Just Hire
-          </p> */}
-        {/* <p className={`caveat ${styles.textPara}`}>
+          </p>
+          <p className={`caveat ${styles.textPara}`}>
             Someone classy that match your imagination <br /> with your brand
-          </p> */}
+          </p>
+        </div>
       </div>
-      {/* </div> */}
-      {/* <div className={`${styles.capCtaContainer}`}>
+      <div className={`${styles.capCtaContainer}`}>
         <div className={`${styles.leftCapsule}`}>
           <CapsFull
             onClick={() => handleClick("project")}
@@ -60,7 +60,7 @@ const HomeView = ({
             type="red"
           />
         </div>
-      </div> */}
+      </div>
     </>
   );
 };
