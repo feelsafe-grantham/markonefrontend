@@ -1,12 +1,14 @@
 import styles from "./HomeView.module.css";
 import CapsFull from "../../components/widgets/CapsFull";
 import CapsFullPhone from "../../components/widgets/CapsFullPhone";
-
+import { useNavigate } from 'react-router-dom';
 const HomeView = ({
   setActiveTab,
 }: Readonly<{ setActiveTab?: (tab: string) => void }>) => {
+  const navigate = useNavigate();
   const handleClick = (tabName: string) => {
-    if (setActiveTab) setActiveTab(tabName);
+    console.log("i am here")
+    navigate(tabName);
   };
   return (
     <>
@@ -22,12 +24,12 @@ const HomeView = ({
             Someone classy that match your imagination <br /> with your brand
           </p>
         </div>
+        {/* <div onClick={() => handleClick("/development")}>Go to other page</div> */}
       </div>
       <div className={`${styles.capCtaContainer}`}>
         <div className={`${styles.leftCapsule}`}>
           <CapsFull
-            onClick={() => handleClick("project")}
-            link="#"
+            onClick={() => handleClick("/development")}
             size="small"
             text="Development"
             type="green"
@@ -35,8 +37,7 @@ const HomeView = ({
         </div>
         <div className={`${styles.rightCapsule}`}>
           <CapsFull
-            onClick={() => handleClick("seoproject")}
-            link="#"
+            onClick={() => handleClick("/seo")}
             size="small"
             text="SEO"
             type="red"
@@ -44,8 +45,7 @@ const HomeView = ({
         </div>
         <div className={`${styles.leftCapsulePhone}`}>
           <CapsFullPhone
-            onClick={() => handleClick("project")}
-            link="#"
+            onClick={() => handleClick("/development")}
             size="small"
             text="Development"
             type="green"
@@ -53,8 +53,7 @@ const HomeView = ({
         </div>
         <div className={`${styles.rightCapsulePhone}`}>
           <CapsFullPhone
-            onClick={() => handleClick("seoproject")}
-            link="#"
+            onClick={() => handleClick("/seo")}
             size="small"
             text="SEO"
             type="red"

@@ -1,9 +1,9 @@
 .sidebarContainer {
+  height: calc(100vh - 235px);
+  max-height: 800px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  max-height: calc(100vh - 280px);
-  /* height: calc(100vh - 260px); */
   overflow-y: scroll;
   padding: 20px;
   width: 350px;

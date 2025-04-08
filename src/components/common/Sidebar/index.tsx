@@ -7,10 +7,21 @@ interface links {
 const Sidebar = ({ links = [
     { label: "IOS App", value: "ios", },
 ], handleClick }: { links: links[], handleClick?: any }) => {
-
+    const tempLinks = [
+        { label: "IOS App", value: "ios", },
+        { label: "IOS App", value: "ios", },
+        { label: "IOS App", value: "ios", },
+        { label: "IOS App", value: "ios", },
+        { label: "IOS App", value: "ios", },
+        { label: "IOS App", value: "ios", },
+        { label: "IOS App", value: "ios", },
+        { label: "IOS App", value: "ios", },
+        { label: "IOS App", value: "ios", },
+        { label: "IOS App", value: "ios", },
+    ]
     return (
-        <div className={`${styles.sidebarContainer} scrollbar-hidden trans-black-bg`}>
-            {links.map((link, index) => {
+        <div className={`scrollbar-hidden trans-black-bg ${styles.sidebarContainer}`}>
+            {tempLinks.map((link, index) => {
                 return (
                     <Link
                         onClick={() => handleClick(link.value, index)}

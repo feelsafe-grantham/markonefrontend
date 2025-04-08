@@ -5,7 +5,7 @@ interface RedCapsProps {
   text?: string;
   type: "green" | "red" | "blue";
   size?: "small" | "medium" | "large";
-  link: string;
+
   onClick?: () => void;
 }
 
@@ -13,7 +13,7 @@ const CapsFull = ({
   text = "",
   type = "green",
   size = "medium",
-  link = "/home",
+
   onClick,
 }: Readonly<RedCapsProps>) => {
   const capsuleClass =
@@ -30,13 +30,12 @@ const CapsFull = ({
         : styles.medium;
 
   return (
-    <Link
+    <button
       onClick={onClick}
-      to={link}
       className={`${capsuleClass} ${sizeClass} ${styles.redCaps} ${styles.capsuleContainer} ${styles.capsuleContainerSmall}`}
     >
       <h3 className={`text-white-shadow ${styles.capsuleText}`}>{text}</h3>
-    </Link>
+    </button>
   );
 };
 

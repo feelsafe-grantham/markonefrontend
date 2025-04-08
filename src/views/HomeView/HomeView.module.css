@@ -11,7 +11,7 @@
 .bgPosition {
   height: 250px;
   margin: 0 auto;
-  margin-top: -20px;
+  margin-top: -5px;
   aspect-ratio: 11 / 8;
 }
 .bgContainer {
@@ -89,7 +89,7 @@
   .bgPosition {
     height: 250px;
     margin: 0 auto;
-    margin-top: -5px;
+    /* margin-top: -5px; */
     aspect-ratio: 11 / 8;
   }
   .textCta {
@@ -102,7 +102,6 @@
     /* display: none; */
     width: 90%;
     font-size: 18px;
-    bottom: -6rem;
   }
 }
 @media (max-width: 400px) {
@@ -132,7 +131,6 @@
   .bgPosition {
     height: 200px;
     margin: 0 auto;
-    margin-top: -20px;
     aspect-ratio: 11 / 8;
   }
 }

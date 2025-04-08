@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
-import styles from "./ProjectView.module.css";
+import styles from "./Project.module.css"
+// import styles from "./ProjectView.module.css";
 import Sidebar from "../../components/common/Sidebar";
 import Timeline from "../../components/common/Timeline";
 import useProjectView from "./useProjectView";
@@ -37,39 +38,85 @@ const ProjectView = ({ endpoint }: { endpoint: Endpoint }) => {
   if (error) {
     return null;
   }
-
+  // "/images/vartical1.png", "/images/vartical2.png", "/images/vartical3.png",
   return (
-    <div className={`flex flex-col space-x-4 mx-auto ${styles.mainContainer}`}>
-      <div className={`flex space-x-4 ${styles.headingContainer}`}>
-        <div className={`${styles.emptyDiv}`}></div>
-        <h2 className={`${styles.mainHeading}`}>{title}</h2>
+    <div className={`${styles.mainContainer}`}>
+      <div className={`${styles.sidebarContainer}`}>
+        <Sidebar links={links} />
       </div>
-      <div className={`flex space-x-4 mx-auto ${styles.contentContainer}`}>
-        <Sidebar handleClick={handleLinkClick} links={links} />
+      <div className={`trans-black-bg scrollbar-hidden ${styles.projectsContainer} ${styles.contentContainer}`}>
+
+        <h2 className={`${styles.sectionHeading}`}>{subTitle}</h2>
         <div
-          className={`trans-black-bg scrollbar-hidden ${styles.projectsContainer}`}
+          onWheel={handleWheel}
+          ref={scrollContainerRef}
+          className={`${styles.midContainer} scrollbar-hidden`}
         >
-          <h2 className={`${styles.sectionHeading}`}>{subTitle}</h2>
-          <div
-            onWheel={handleWheel}
-            ref={scrollContainerRef}
-            className={`${styles.midContainer}`}
-          >
-            {currentProject?.map((item: any, index: number) => (
+          {["/images/vartical1.png"]?.map((item: any, index: number) => (
+            <img
+              key={index}
+              className={`${styles.imageVer}`}
+              src={item}
+              alt={`Project ${index + 1}`}
+            />
+          ))}
+          {/* {currentProject?.map((item: any, index: number) => (
               <img
                 key={index}
                 className={`${styles.image}`}
                 src={item.image}
                 alt={`Project ${index + 1}`}
               />
-            ))}
-          </div>
-        </div>
-        <div className={`${styles.timelineContainer}`}>
-          <Timeline timelineData={timelinedata} />
+            ))} */}
+
         </div>
       </div>
+      <div className={`${styles.timelineContainer}`}>
+        <Timeline timelineData={timelinedata} />
+      </div>
     </div>
+
+
+    // <div className={`flex flex-col space-x-4 mx-auto ${styles.mainContainer}`}>
+    //   <div className={`flex space-x-4 ${styles.headingContainer}`}>
+    //     <div className={`${styles.emptyDiv}`}></div>
+    //     <h2 className={`${styles.mainHeading}`}>{title}</h2>
+    //   </div>
+    //   <div className={`flex space-x-4 mx-auto ${styles.contentContainer}`}>
+    //     <Sidebar handleClick={handleLinkClick} links={links} />
+
+    //     <div
+    //       className={`trans-black-bg scrollbar-hidden ${styles.projectsContainer}`}
+    //     >
+    //       <h2 className={`${styles.sectionHeading}`}>{subTitle}</h2>
+    //       <div
+    //         onWheel={handleWheel}
+    //         ref={scrollContainerRef}
+    //         className={`${styles.midContainer}`}
+    //       >
+    //         {["/images/vartical1.png",]?.map((item: any, index: number) => (
+    //           <img
+    //             key={index}
+    //             className={`${styles.imageVer}`}
+    //             src={item}
+    //             alt={`Project ${index + 1}`}
+    //           />
+    //         ))}
+    //         {currentProject?.map((item: any, index: number) => (
+    //           <img
+    //             key={index}
+    //             className={`${styles.image}`}
+    //             src={item.image}
+    //             alt={`Project ${index + 1}`}
+    //           />
+    //         ))}
+    //       </div>
+    //     </div>
+    //     <div className={`${styles.timelineContainer}`}>
+    //       <Timeline timelineData={timelinedata} />
+    //     </div>
+    //   </div>
+    // </div>
   );
 };
 

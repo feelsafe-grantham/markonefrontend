@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 interface CtaCardProps {
     type?: "testimonial" | "connect" | "result" | "blog";
     link: string
-    onClick?: () => void
+
 }
 
-const CtaCard = ({ type, link = "#", onClick }: Readonly<CtaCardProps>) => {
+const CtaCard = ({ type, link = "#", }: Readonly<CtaCardProps>) => {
     const cardObj = {
         image: "/images/testimonials.png",
         title: "Testimonial",
@@ -28,13 +28,9 @@ const CtaCard = ({ type, link = "#", onClick }: Readonly<CtaCardProps>) => {
         cardObj.title = "Blog";
     }
 
-    const handleClick = () => {
-        if (onClick) {
-            onClick();
-        }
-    }
+
     return (
-        <Link onClick={handleClick} to={link} className={styles.card}>
+        <Link to={link} className={styles.card}>
             <img
                 className={`h-12 mx-auto ${styles.cardImage}`}
                 src={cardObj.image}

@@ -56,7 +56,7 @@ const MainContainer = ({
         />
       </div>
       <div
-        className={`${styles.container} ${chiledContainerClass} relative z-0`}
+        className={`${styles.container} ${chiledContainerClass} scrollbar-hidden`}
       >
         {children}
       </div>

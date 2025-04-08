@@ -1,6 +1,6 @@
 import "./App.css";
 import { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, } from "react-router-dom";
 import HomeView from "./views/HomeView";
 import ConnectView from "./views/ConnectView";
 // import SeoProjectView from "./views/SeoProjectView";
@@ -16,6 +16,7 @@ import RefundsView from "./views/RefundsView";
 import BlogDetailView from "./views/BlogDetailView";
 import TestimonialView from "./views/TestimonialView";
 import EbookView from "./views/EbookView";
+
 
 function App() {
   // const alert = [{
@@ -64,43 +65,32 @@ function App() {
     }, 2000);
     return () => clearInterval(interval);
   }, []);
+
   return (
     <>
-      <Router>
+      <BrowserRouter>
         <MainContainer
           setActiveTab={setIsActive}
           chiledContainerClass="relative"
         >
-          <div></div>
+
           <Routes>
-            <Route
-              path="/"
-              element={
-                <>
-                  {isActive === "home" && (
-                    <HomeView setActiveTab={setIsActive} />
-                  )}
-                  {isActive === "connect" && (
-                    <ConnectView setActiveTab={setIsActive} />
-                  )}
-                  {isActive === "project" && (
-                    <ProjectView endpoint="development" />
-                  )}
-                  {isActive === "seoproject" && <ProjectView endpoint="seo" />}
-                  {isActive === "testimonial" && <TestimonialView />}
-                  {isActive === "blogs" && <BlogListView />}
-                  {isActive === "profile" && <EbookView />}
-                </>
-              }
-            />
+            <Route path="/" element={<HomeView />} />
+            <Route path="/development" element={<ProjectView endpoint="development" />} />
+            <Route path="/seo" element={<ProjectView endpoint="seo" />} />
+            <Route path="/connect" element={<ConnectView />} />
+            <Route path="/testimonial" element={<ProjectView endpoint="testimonial" />} />
+            <Route path="/blog" element={<BlogListView />} />
+            <Route path="/project" element={<ProjectView endpoint="development" />} />
+            <Route path="/profile" element={<EbookView />} />
+
             <Route path="/terms-and-conditon" element={<TermsView />} />
             <Route path="/privacy-policy" element={<PrivacyView />} />
             <Route path="/refund-policy" element={<RefundsView />} />
             <Route path="/:slug" element={<BlogDetailView />} />
           </Routes>
-          {/* <Bottombar setActiveTab={setIsActive} /> */}
         </MainContainer>
-      </Router>
+      </BrowserRouter>
     </>
   );
 }

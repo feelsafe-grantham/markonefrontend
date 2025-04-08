@@ -1,26 +1,28 @@
 import styles from "./BottomBarNew.module.css"
 import CtaCard from "../../widgets/CtaCard"
 import { Link } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 const BottomBarNew = () => {
+    const navigate = useNavigate();
     return (
         <div className={`${styles.bottomBar}`}>
 
-            <Link to={"#"} className={`${styles.bottomBarLink} ${styles.redCap}`}>
+            <Link to={"/connect"} className={`${styles.bottomBarLink} ${styles.redCap}`}>
                 connect
             </Link>
             <div className={`${styles.ctaCardContainer}`}>
-                <CtaCard onClick={() => { }} link="/" type="testimonial" />
-                <CtaCard onClick={() => { }} link="/" type="blog" />
-                <CtaCard onClick={() => { }} link="/" type="result" />
+                <CtaCard link="/testimonial" type="testimonial" />
+                <CtaCard link="/blog" type="blog" />
+                <CtaCard link="/project" type="result" />
             </div>
-            <Link to={"#"} className={`${styles.bottomBarLink} ${styles.greenCap}`}>
+            <Link to={"/profile"} className={`${styles.bottomBarLink} ${styles.greenCap}`}>
                 profile
             </Link>
             <div className={`${styles.capsHalfContainer}`}>
-                <Link to={"#"} className={`${styles.capsHalf} ${styles.capsHalfGreen}`}>
+                <Link to={"/connect"} className={`${styles.capsHalf} ${styles.capsHalfGreen}`}>
                     connect
                 </Link>
-                <Link to={"#"} className={`${styles.capsHalf} ${styles.capsHalfRed}`}>
+                <Link to={"/profile"} className={`${styles.capsHalf} ${styles.capsHalfRed}`}>
                     profile
                 </Link>
             </div>

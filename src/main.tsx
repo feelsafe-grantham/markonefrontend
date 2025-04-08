@@ -7,7 +7,9 @@ import { SnackbarProvider } from './components/Operations/Alert.tsx'
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <SnackbarProvider >
+
       <App />
+
     </SnackbarProvider>
   </StrictMode>
 )
