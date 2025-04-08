@@ -55,9 +55,9 @@ const ProjectView = ({ endpoint }: { endpoint: Endpoint }) => {
           {["/images/vartical1.png"]?.map((item: any, index: number) => (
             <img
               key={index}
-              className={`${styles.imageVer}`}
               src={item}
               alt={`Project ${index + 1}`}
+              className={`${styles.imageVer}`}
             />
           ))}
           {/* {currentProject?.map((item: any, index: number) => (
