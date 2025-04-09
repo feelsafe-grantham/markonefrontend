@@ -43,7 +43,7 @@ const ProjectView = ({ endpoint }: { endpoint: Endpoint }) => {
       <div className={`${styles.sidebarContainer}`}>
         <Sidebar links={links} />
       </div>
-      <div className={`trans-black-bg scrollbar-hidden   ${styles.contentContainer}`}>
+      <div className={`trans-black-bg scrollbar-hidden ${styles.contentContainer}`}>
         <h2 className={`${styles.sectionHeading}`}>{subTitle}</h2>
         <div
           onWheel={handleWheel}

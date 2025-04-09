@@ -4,10 +4,10 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  height: calc(100vh - 230px);
   display: flex;
   flex-direction: row;
   gap: 30px;
+  height: 100%;
 }
 .blogsCardContainer {
   display: flex;
@@ -35,22 +35,16 @@
     gap: 10px 10px;
   }
 }
-@media (max-width: 1120px) {
-  .mainContainer {
-    height: calc(100vh - 300px);
-  }
-}
+
 @media (max-width: 750px) {
+  .mainContainer {
+    width: 100vw;
+  }
   .blogsCardContainer {
     display: grid;
     width: 100%;
     justify-items: center;
     grid-template-columns: 1fr;
     gap: 10px 10px;
-  }
-}
-@media (max-width: 600px) {
-  .mainContainer {
-    height: calc(100vh - 240px);
   }
 }

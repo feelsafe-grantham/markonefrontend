@@ -77,6 +77,21 @@ const BlogListView = () => {
         ) : (
           <div className={`${styles.noBlogFound}`}>No Blog Found</div>
         )}
+        {blogss?.length > 0 ? (
+          blogss.map((blog, index) => <BlogCard key={index} blog={blog} />)
+        ) : (
+          <div className={`${styles.noBlogFound}`}>No Blog Found</div>
+        )}
+        {blogss?.length > 0 ? (
+          blogss.map((blog, index) => <BlogCard key={index} blog={blog} />)
+        ) : (
+          <div className={`${styles.noBlogFound}`}>No Blog Found</div>
+        )}
+        {blogss?.length > 0 ? (
+          blogss.map((blog, index) => <BlogCard key={index} blog={blog} />)
+        ) : (
+          <div className={`${styles.noBlogFound}`}>No Blog Found</div>
+        )}
       </div>
       <div className={`scrollbar-hidden ${styles.featuredBlogsContainer}`}>
         {fBlogss?.length > 0 ? (
