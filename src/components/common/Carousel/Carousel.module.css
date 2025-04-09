@@ -48,13 +48,3 @@
 .content:hover .btn {
   display: block;
 }
-
-@media (max-width: 576px) {
-  .content {
-    width: 350px !important;
-  }
-  .image {
-    /* height: 300px;
-    width: 350px; */
-  }
-}
