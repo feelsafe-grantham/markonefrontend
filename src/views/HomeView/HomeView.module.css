@@ -1,6 +1,7 @@
 .homeView {
   display: flex;
   justify-content: center;
+  position: relative;
 }
 
 .bgImage {
@@ -34,7 +35,7 @@
   bottom: -5rem;
   z-index: 10;
   font-weight: 700;
-  font-size: 32px;
+  font-size: 34px;
 }
 
 .capCtaContainer {
@@ -89,7 +90,6 @@
   .bgPosition {
     height: 250px;
     margin: 0 auto;
-    /* margin-top: -5px; */
     aspect-ratio: 11 / 8;
   }
   .textCta {
@@ -99,9 +99,9 @@
     margin-top: 6rem;
   }
   .textPara {
-    /* display: none; */
+    bottom: -6.2rem;
     width: 90%;
-    font-size: 18px;
+    font-size: 25px;
   }
 }
 @media (max-width: 400px) {
@@ -120,7 +120,7 @@
   .textPara {
     bottom: -5vw;
     z-index: 10;
-    font-size: 1.4vw;
+    font-size: 1.8vw;
   }
   .capCtaContainer {
     margin-top: 4vw;

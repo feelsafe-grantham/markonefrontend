@@ -2,17 +2,14 @@ import styles from "./HomeView.module.css";
 import CapsFull from "../../components/widgets/CapsFull";
 import CapsFullPhone from "../../components/widgets/CapsFullPhone";
 import { useNavigate } from 'react-router-dom';
-const HomeView = ({
-  setActiveTab,
-}: Readonly<{ setActiveTab?: (tab: string) => void }>) => {
+const HomeView = () => {
   const navigate = useNavigate();
   const handleClick = (tabName: string) => {
-    console.log("i am here")
     navigate(tabName);
   };
   return (
     <>
-      <div className={`relative p-4 ${styles.homeView}`}>
+      <div className={`${styles.homeView}`}>
         <div
           className={`${styles.bgImage} ${styles.bgPosition} ${styles.bgContainer}`}
         >
