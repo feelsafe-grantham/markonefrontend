@@ -1,8 +1,31 @@
 .parentContainer {
   display: flex;
   justify-content: center;
+  position: relative;
 }
-
+.successMsgContainer {
+  position: absolute;
+  z-index: 999;
+  top: -100px;
+  background-color: green; /* Success color */
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 76%;
+  text-align: center;
+  opacity: 0;
+  animation: slideIn 0.5s ease-out forwards;
+}
+@keyframes slideIn {
+  0% {
+    top: -100px;
+    opacity: 0;
+  }
+  100% {
+    top: 5px; /* Adjust this to control where it stops */
+    opacity: 1;
+  }
+}
 .formContainerBase {
   display: flex;
   align-items: center;

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styles from "./TextInputForm.module.css";
-import { dividerClasses } from "@mui/material";
+
 
 const TextInputForm = ({ form }: any) => {
   const [answers, setAnswers] = useState({
@@ -13,7 +13,7 @@ const TextInputForm = ({ form }: any) => {
     cost: false,
   });
 
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -25,48 +25,34 @@ const TextInputForm = ({ form }: any) => {
     }));
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
     const updated = { ...answers, ...form };
+    console.log("sbuttimg with: ", updated)
     try {
       setIsLoading(true);
-      await fetch("https://formspree.io/f/xnnpgoww", {
+      const res = await fetch("https://formspree.io/f/xnnpgoww", {
         method: "POST",
         body: JSON.stringify(updated),
       })
-        .then((response) => response.json())
-        .then((data) => {
-
-          setIsSuccess(true);
-          setAnswers({
-            name: "",
-            email: "",
-            number: "",
-            website: "",
-            hiring: false,
-            seo: false,
-            cost: false,
-          })
-          console.log("Success:", data);
-        })
-        .catch((error) => {
-
-          console.error("Error:", error);
-          // Optionally, handle error
-        });
-
     } catch (error) {
       setIsSuccess(false);
       console.error("Error:", error);
     }
     finally {
-      setIsLoading(false); // Hide the loading spinner once the request is complete
+      setIsSuccess(true)
+      setIsLoading(false);
     }
 
   };
 
   return (
     <div className={`${styles.parentContainer} `}>
+      {isSuccess && (
+        <div className={`${styles.successMsgContainer}`}>
+          Success! Your operation was completed successfully.
+        </div>
+      )}
       <div className={`scrollbar-hidden ${styles.formContainerBase} ${styles.formContainer}`}>
         <h3 className={`${styles.heading}`}>You are almost done!</h3>
         <p className={`${styles.paragraph}`}>you are doing it right </p>
@@ -178,7 +164,7 @@ const TextInputForm = ({ form }: any) => {
 
         </form>
         <div className={`${styles.submitBtnContainer}`}>
-          <button className={`${styles.submitButton}`} type="submit">
+          <button disabled={isLoading} className={`${styles.submitButton}`} onClick={(e) => handleSubmit(e)}>
             {isLoading ? <div className="flex items-center justify-center">Submitting you query... <div className={`${styles.loader}`}></div></div> : <div>Submit</div>}
           </button>
         </div>
