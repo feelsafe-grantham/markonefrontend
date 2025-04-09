@@ -1,9 +1,9 @@
 import styles from "./BottomBarNew.module.css"
 import CtaCard from "../../widgets/CtaCard"
 import { Link } from "react-router-dom"
-import { useNavigate } from "react-router-dom"
+
 const BottomBarNew = () => {
-    const navigate = useNavigate();
+
     return (
         <div className={`${styles.bottomBar}`}>
 
@@ -18,6 +18,7 @@ const BottomBarNew = () => {
             <Link to={"/profile"} className={`${styles.bottomBarLink} ${styles.greenCap}`}>
                 profile
             </Link>
+
             <div className={`${styles.capsHalfContainer}`}>
                 <Link to={"/connect"} className={`${styles.capsHalf} ${styles.capsHalfGreen}`}>
                     connect
@@ -26,6 +27,7 @@ const BottomBarNew = () => {
                     profile
                 </Link>
             </div>
+
         </div>
     );
 }

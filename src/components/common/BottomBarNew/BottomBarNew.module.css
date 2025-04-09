@@ -3,6 +3,8 @@
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+  max-width: 1500px;
+  margin: 0 auto;
 }
 .bottomBarLink {
   height: 150px;
