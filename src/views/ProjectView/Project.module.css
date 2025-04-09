@@ -20,8 +20,15 @@
   gap: 10px;
   overflow-x: scroll;
 }
+.contentContainer {
+  border-radius: 10px;
+}
+.sectionHeading {
+  padding: 2px 5px;
+}
 .imageVer {
   width: auto;
+  border-radius: 5px;
   height: calc(100vh - 260px);
   max-height: 800px;
 }
@@ -40,5 +47,14 @@
 
   .imageVer {
     height: calc(100vh - 380px);
+  }
+}
+
+@media (min-width: 1600px) {
+  .mainContainer {
+    overflow: hidden;
+  }
+  .imageVer {
+    height: calc(100vh - 280px);
   }
 }

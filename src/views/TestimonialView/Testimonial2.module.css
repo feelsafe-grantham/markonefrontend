@@ -80,6 +80,14 @@
     grid-template-rows: 50px auto;
   }
   .imageVer {
-    height: calc(100vh - 390px);
+    height: calc(100vh - 410px);
+  }
+}
+@media (min-width: 1600px) {
+  .mainContainer {
+    overflow: hidden;
+  }
+  .imageVer {
+    height: calc(100vh - 280px);
   }
 }

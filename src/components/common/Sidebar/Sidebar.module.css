@@ -3,7 +3,7 @@
   max-height: 800px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   overflow-y: scroll;
   padding: 20px;
   width: 350px;

@@ -24,7 +24,8 @@ const ProjectView = ({ endpoint }: { endpoint: Endpoint }) => {
     }
   };
 
-  const handleLinkClick = (value: string) => {
+  const handleLinkClick = (e: React.MouseEvent, value: string) => {
+    e.preventDefault();
     setSelectedType(value);
     // scroll to left of the container with smooth animation
     if (scrollContainerRef.current) {
@@ -41,7 +42,7 @@ const ProjectView = ({ endpoint }: { endpoint: Endpoint }) => {
   return (
     <div className={`${styles.mainContainer}`}>
       <div className={`${styles.sidebarContainer}`}>
-        <Sidebar links={links} />
+        <Sidebar handleClick={handleLinkClick} links={links} />
       </div>
       <div className={`trans-black-bg scrollbar-hidden ${styles.contentContainer}`}>
         <h2 className={`${styles.sectionHeading}`}>{subTitle}</h2>
@@ -50,10 +51,10 @@ const ProjectView = ({ endpoint }: { endpoint: Endpoint }) => {
           ref={scrollContainerRef}
           className={`${styles.midContainer} scrollbar-hidden`}
         >
-          {["/images/vartical1.png", "/images/vartical1.png", "/images/vartical1.png", "/images/vartical1.png", "/images/vartical1.png", "/images/vartical1.png", "/images/vartical1.png",]?.map((item: any, index: number) => (
+          {currentProject?.map((item: any, index: number) => (
             <img
               key={index}
-              src={item}
+              src={item.image}
               alt={`Project ${index + 1}`}
               className={`${styles.imageVer}`}
             />

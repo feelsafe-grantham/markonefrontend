@@ -8,9 +8,9 @@ const Timeline = ({ timelineData = [
 
 
     return (
-        <div className={`${styles.timelineContainer} trans-black-bg`}>
+        <div className={`${styles.timelineContainer} scrollbar-hidden  trans-black-bg`}>
             <h1 className={`${styles.timelineTitle}`}>Timeline</h1>
-            <div className={styles.timeline}>
+            <div className={`${styles.timeline} scrollbar-hidden`}>
                 {timelineData.map((step, index) => (
                     <div key={index} className={styles.timelineItem}>
                         <div className={styles.dot}></div>

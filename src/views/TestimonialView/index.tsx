@@ -56,7 +56,7 @@ const TestimonialView = () => {
           ref={scrollContainerRef}
           className={`${styles.midContainer} scrollbar-hidden`}
         >
-          {["/images/vartical1.png", "/images/vartical1.png", "/images/vartical1.png", "/images/vartical1.png", "/images/vartical1.png", "/images/vartical1.png", "/images/vartical1.png",]?.map((item: any, index: number) => (
+          {images?.map((item: any, index: number) => (
             <img
               key={index}
               src={item}
