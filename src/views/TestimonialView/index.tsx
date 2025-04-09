@@ -28,7 +28,7 @@ const TestimonialView = () => {
   return (
     <div className={`${styles.mainContainer}`}>
       <div className={`${styles.sidebarContainer}`}>
-        <Sidebar links={links} />
+        <Sidebar handleClick={handleClick} links={links} />
       </div>
       <div className={`trans-black-bg scrollbar-hidden ${styles.contentContainer}`}>
         <div className={`${styles.clientInfoContainer}`}>
