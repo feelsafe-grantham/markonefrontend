@@ -169,7 +169,6 @@ const useTestimonialView = () => {
       setTitle("Testimonial");
       setLinks(data.data.link);
       setTestimonial(data.data.testimonials);
-
       console.log("this is data: ", data.data.testimonials);
     } catch (error) {
       console.error("this is error: ", error);

@@ -79,7 +79,7 @@ function App() {
             <Route path="/development" element={<ProjectView endpoint="development" />} />
             <Route path="/seo" element={<ProjectView endpoint="seo" />} />
             <Route path="/connect" element={<ConnectView />} />
-            <Route path="/testimonial" element={<ProjectView endpoint="testimonial" />} />
+            <Route path="/testimonial" element={<TestimonialView />} />
             <Route path="/blog" element={<BlogListView />} />
             <Route path="/project" element={<ProjectView endpoint="development" />} />
             <Route path="/profile" element={<EbookView />} />
