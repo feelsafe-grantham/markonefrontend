@@ -1,24 +1,13 @@
-.input {
-  padding: 10px;
-  border: 1px solid white;
-  margin: 15px 0px;
-  width: 100%;
-  box-sizing: border-box;
+.parentContainer {
+  display: flex;
+  justify-content: center;
 }
 
-.label {
-  font-size: 16px;
-  font-weight: 600;
-  margin-bottom: 5px;
-  display: block;
-}
-
-.formContainer {
-  /* border: 1px solid var(--foreground); */
+.formContainerBase {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   flex-direction: column;
-  justify-content: center;
   border: 1px solid #01e632;
   box-shadow: inset rgba(var(--form-bg-color), 0.1) 0px 54px 50px,
     inset rgba(var(--form-bg-color), 0.12) 0px -521px 50px,
@@ -27,14 +16,35 @@
     inset rgba(var(--form-bg-color), 0.09) 0px -3px 50px;
   border-radius: 10px;
   box-sizing: border-box;
+}
+
+.formContainer {
   padding: 20px 40px;
-  overflow: scroll;
+  max-height: 75vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.heading {
+  text-align: center;
+  font-weight: 700;
+  font-size: 32px;
+  color: var(--green);
+}
+
+.paragraph {
+  font-size: 14px;
+  text-align: center;
+  width: 70%;
 }
 
 .form {
+  display: flex;
+  flex-direction: column;
   width: 70vw;
   max-width: 600px;
   margin: 20px auto;
+  overflow-y: auto;
 }
 
 .label {
@@ -53,25 +63,13 @@
   width: 100%;
   box-sizing: border-box;
 }
+
 .input[type="text"]:focus-visible,
 .input[type="email"]:focus-visible,
 .input[type="password"]:focus-visible,
 .input[type="tel"]:focus-visible {
   border: 2px solid green;
   outline: none;
-}
-
-.heading {
-  text-align: center;
-  font-weight: 700;
-  font-size: 32px;
-  color: var(--green);
-}
-
-.paragraph {
-  font-size: 14px;
-  text-align: center;
-  width: 70%;
 }
 
 .select {
@@ -88,6 +86,13 @@
   overflow: hidden;
 }
 
+.submitBtnContainer {
+  position: sticky;
+  bottom: 0px;
+  z-index: 10;
+  margin-top: 20px;
+}
+
 .submitButton {
   box-shadow: inset rgba(var(--button-bg-color), 0.1) 0px 54px 50px,
     inset rgba(var(--button-bg-color), 0.12) 0px -12px 50px,
@@ -98,7 +103,8 @@
   border-radius: 10px;
   padding: 10px;
   cursor: pointer;
-  margin-top: 20px;
+  width: 70vw;
+  max-width: 600px;
 }
 
 .capsulePhone {
@@ -121,12 +127,13 @@
   margin-top: 5px;
   margin-right: 5px;
 }
+
 .loader {
-  border: 8px solid #f3f3f3; /* Light gray background */
-  border-top: 8px solid #4caf50; /* Green color for the spinner */
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #4caf50;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   animation: spin 1s linear infinite;
 }
 
@@ -138,6 +145,7 @@
     transform: rotate(360deg);
   }
 }
+
 @media (max-width: 1024px) {
   .capsulePhone {
     display: block;
@@ -163,26 +171,14 @@
   .imageContainer {
     display: none;
   }
-  .selectInputContainer {
-    display: flex;
-    justify-content: flex-start;
-  }
-}
-
-@media (min-width: 768px) {
-  .custom-flex-container {
-    gap: 0.75rem;
-  }
-  .selectLabel {
-    font-size: 18px;
-  }
 }
 
 @media (max-width: 600px) {
+  .formContainerBase {
+    max-height: 70vh;
+  }
   .formContainer {
-    margin-top: 1rem;
-    width: 100%;
-    padding: 20px 10px;
+    padding: 10px 10px;
   }
   .heading {
     max-width: 95%;
@@ -194,8 +190,5 @@
   .select {
     width: 100%;
     margin: 10px 0px;
-  }
-  .imageContainer {
-    display: none;
   }
 }

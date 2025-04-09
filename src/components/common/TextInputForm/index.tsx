@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./TextInputForm.module.css";
+import { dividerClasses } from "@mui/material";
 
 const TextInputForm = ({ form }: any) => {
   const [answers, setAnswers] = useState({
@@ -12,7 +13,7 @@ const TextInputForm = ({ form }: any) => {
     cost: false,
   });
 
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [isSuccess, setIsSuccess] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -65,15 +66,12 @@ const TextInputForm = ({ form }: any) => {
   };
 
   return (
-    <div className="flex justify-center">
-      <div className={`scrollbar-hidden ${styles.formContainer}`}>
+    <div className={`${styles.parentContainer} `}>
+      <div className={`scrollbar-hidden ${styles.formContainerBase} ${styles.formContainer}`}>
         <h3 className={`${styles.heading}`}>You are almost done!</h3>
-        {<p className={`${styles.paragraph}`}>you are doing it right </p>}
-        {isSuccess ? <div className="text-green-500">
-          <h4 className="text-xl">Thank you for submitting the form!</h4>
-          <p>We will get back to you shortly.</p>
-        </div> : <form
-          className={`flex flex-col space-y-10 ${styles.form}`}
+        <p className={`${styles.paragraph}`}>you are doing it right </p>
+        <form
+          className={`scrollbar-hidden ${styles.form}`}
           onSubmit={handleSubmit}
         >
           <div>
@@ -123,7 +121,7 @@ const TextInputForm = ({ form }: any) => {
               Company website
             </label>
             <input
-              required
+
               type="text"
               className={`${styles.input}`}
               name="website"
@@ -132,10 +130,11 @@ const TextInputForm = ({ form }: any) => {
               onChange={handleChange}
             />
           </div>
-          <div className="flex justify-center flex-col sm:flex-row sm:justify-between gap-1">
+
+          <div className="flex justify-center items-start flex-col">
             <div className={`${styles.selectInputContainer}`}>
               <input
-                required
+
                 className={`${styles.selectInput}`}
                 type="checkbox"
                 name="hiring"
@@ -176,16 +175,13 @@ const TextInputForm = ({ form }: any) => {
 
             </div>
           </div>
-          {isLoading ? (
-            <div className="flex justify-center items-center">
-              <div className={styles.loader}></div>
-            </div>
-          ) : (
-            <button className={`${styles.submitButton}`} type="submit">
-              Submit
-            </button>
-          )}
-        </form>}
+
+        </form>
+        <div className={`${styles.submitBtnContainer}`}>
+          <button className={`${styles.submitButton}`} type="submit">
+            {isLoading ? <div className="flex items-center justify-center">Submitting you query... <div className={`${styles.loader}`}></div></div> : <div>Submit</div>}
+          </button>
+        </div>
       </div>
     </div>
   );

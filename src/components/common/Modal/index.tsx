@@ -18,7 +18,7 @@ const Modal = (
     return (
         <div className={styles.modalContainer}>
             <div className={`${styles.modal} scrollbar-hidden`}>
-                <div className={`${styles.modalContent} `}>
+                <div className={`${styles.modalContent} scrollbar-hidden `}>
                     <button
                         className={`${styles.closeButton}`}
                         onClick={onPrevClick}

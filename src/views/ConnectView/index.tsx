@@ -94,7 +94,7 @@ const ConnectView = ({ setActiveTab }: any) => {
                     <VerCaps onClick={handleNext} heading="Estimate Budget !" caps={second} />
                 </div>}
 
-                {step === 2 && <div> <TextInputForm form={form} /> </div>}
+                {step === 2 && <TextInputForm form={form} />}
 
             </Modal>
         </div>
