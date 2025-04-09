@@ -1,5 +1,5 @@
 .sidebarContainer {
-  height: calc(100vh - 235px);
+  height: calc(100vh - 240px);
   max-height: 800px;
   display: flex;
   flex-direction: column;
@@ -22,9 +22,10 @@
   margin: 10px;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
   .sidebarContainer {
-    width: 95vw;
+    width: 100%;
+    margin: 0px auto;
     height: auto;
     overflow-x: scroll;
     flex-direction: row;
@@ -41,7 +42,7 @@
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 1100px) {
   .sidebarContainer {
     padding: 5px;
   }
