@@ -8,7 +8,6 @@ import LoadingProjects from "../../components/common/LoadingProjects";
 import { Endpoint } from "../../utilities/static/varNames";
 const ProjectView = ({ endpoint }: { endpoint: Endpoint }) => {
   const {
-    title,
     error,
     subTitle,
     timelinedata,

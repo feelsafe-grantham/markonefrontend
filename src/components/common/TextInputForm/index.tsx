@@ -31,7 +31,7 @@ const TextInputForm = ({ form }: any) => {
     console.log("sbuttimg with: ", updated)
     try {
       setIsLoading(true);
-      const res = await fetch("https://formspree.io/f/xnnpgoww", {
+      await fetch("https://formspree.io/f/xnnpgoww", {
         method: "POST",
         body: JSON.stringify(updated),
       })

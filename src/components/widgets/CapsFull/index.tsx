@@ -1,5 +1,4 @@
 import styles from "./RedCaps.module.css";
-import { Link } from "react-router-dom";
 
 interface RedCapsProps {
   text?: string;

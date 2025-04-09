@@ -4,7 +4,7 @@ import styles from "./Testimonial2.module.css";
 import useTestimonialView from "./useTestimonialView";
 
 const TestimonialView = () => {
-  const { title, testimonial, links, selectedClient, setSelectedClient } =
+  const { testimonial, links, selectedClient, setSelectedClient } =
     useTestimonialView();
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const handleWheel = (e: React.WheelEvent) => {
@@ -17,8 +17,8 @@ const TestimonialView = () => {
   const { client_name, client_image, client_segment, images, stars } =
     testimonial[selectedClient];
 
-  const handleClick = (value: string, index: number) => {
-    console.log(value, index);
+  const handleClick = (e: any, value: string, index: number) => {
+    console.log(e, value, index);
     setSelectedClient(index);
     if (scrollContainerRef.current) {
       scrollContainerRef.current.scrollTo({ left: 0, behavior: "smooth" });

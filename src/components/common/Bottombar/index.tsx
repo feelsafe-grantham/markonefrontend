@@ -19,21 +19,21 @@ const Bottombar = ({ setActiveTab }: Readonly<{ setActiveTab?: (tab: string) => 
   return (
     <>
       <div className={`${styles.bottombar} ${styles.bottombarDesktop}`}>
-        <CapsFull onClick={() => handleTabClick("connect")} link="/" size="medium" text="Connect" type="green" />
+        <CapsFull onClick={() => handleTabClick("connect")} size="medium" text="Connect" type="green" />
         <div
           className={`flex justify-center items-center gap-5 w-full ${styles.ctaContainer}`}
         >
-          <CtaCard onClick={() => handleTabClick("testimonial")} link="/" type="testimonial" />
-          <CtaCard onClick={() => handleTabClick("blogs")} link="/" type="blog" />
-          <CtaCard onClick={() => handleTabClick("project")} link="/" type="result" />
+          <CtaCard link="/" type="testimonial" />
+          <CtaCard link="/" type="blog" />
+          <CtaCard link="/" type="result" />
         </div>
-        <CapsFull onClick={() => handleTabClick("profile")} link="/" size="medium" text="Profile" type="red" />
+        <CapsFull onClick={() => handleTabClick("profile")} size="medium" text="Profile" type="red" />
       </div>
       <div className={`${styles.bottombar} ${styles.bottombarMobile}`}>
         <div className={`flex justify-center items-end gap-5 w-full`}>
-          <CtaCard onClick={() => handleTabClick("testimonial")} link="/" type="testimonial" />
-          <CtaCard onClick={() => handleTabClick("blogs")} link="/" type="blog" />
-          <CtaCard onClick={() => handleTabClick("project")} link="/" type="result" />
+          <CtaCard link="/" type="testimonial" />
+          <CtaCard link="/" type="blog" />
+          <CtaCard link="/" type="result" />
         </div>
         <div className="flex justify-center w-full">
           <CapsHalf onClick={() => handleTabClick("connect")} size="small" text="Connect" type="green" />

@@ -1,11 +1,5 @@
 import styles from './Alerts.module.css';
-interface AlertProps {
-    type: "rating" | "like" | "testimonial" | "subscribed" | "comment";
-    emoji?: string;
-    name: string;
-    segment: string;
-    message: string;
-}
+import { AlertProps } from '../../../types/componentTypes';
 const Alerts = ({ alert }: { alert: AlertProps }) => {
     return (
         <div className={styles.alertContainer}>

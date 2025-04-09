@@ -4,6 +4,13 @@ export interface VerCapsType {
   text: string;
   value: string;
 }
+export interface AlertProps {
+  type: "rating" | "like" | "testimonial" | "subscribed" | "comment";
+  emoji?: string;
+  name: string;
+  segment: string;
+  message: string;
+}
 export interface Question {
   name: string;
   options: { value: string; label: string }[];

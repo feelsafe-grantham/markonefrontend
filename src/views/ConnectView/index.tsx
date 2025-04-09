@@ -6,7 +6,7 @@ import VerCaps from "../../components/widgets/VerCaps";
 import { VerCapsType } from "../../types/componentTypes";
 import TextInputForm from "../../components/common/TextInputForm";
 import { useNavigate } from "react-router-dom";
-const ConnectView = ({ setActiveTab }: any) => {
+const ConnectView = () => {
     const navigate = useNavigate()
     const { isOpen, openModal, closeModal } = useModal();
     const [form, setForm] = useState({

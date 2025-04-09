@@ -2,9 +2,6 @@
 import { useNavigate } from "react-router-dom";
 import styles from "./MainContainer.module.css";
 import React, { useEffect, useState } from "react";
-import Bottombar from "../Bottombar";
-import CtaCard from "../../widgets/CtaCard";
-import CapsFull from "../../widgets/CapsFull";
 import BottomBarNew from "../BottomBarNew";
 const MainContainer = ({
   children,

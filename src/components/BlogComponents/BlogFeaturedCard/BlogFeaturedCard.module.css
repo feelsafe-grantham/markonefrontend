@@ -5,6 +5,7 @@
   border-radius: 20px;
 }
 .blogCover {
+  object-fit: contain;
   aspect-ratio: 2/1;
   border-radius: 20px;
 }
