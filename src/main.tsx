@@ -3,13 +3,15 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
 import { SnackbarProvider } from './components/Operations/Alert.tsx'
-
+import { HelmetProvider } from "react-helmet-async";
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <SnackbarProvider >
+    <HelmetProvider>
+      <SnackbarProvider >
 
-      <App />
+        <App />
 
-    </SnackbarProvider>
+      </SnackbarProvider>
+    </HelmetProvider>
   </StrictMode>
 )

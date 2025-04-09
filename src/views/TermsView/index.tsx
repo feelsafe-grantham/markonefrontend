@@ -1,9 +1,14 @@
+import PageSeo from "../../components/common/PageSeo";
 import styles from "./TermsView.module.css"
 
 const TermsView = () => {
     return (
 
         <div className={`${styles.mainContainer} scrollbar-hidden`}>
+            <PageSeo
+                title="Terms & Conditions | Markone Website Development & SEO"
+                description="Review Markone’s terms & conditions for website development & SEO services. Our terms ensure quality, transparency, and security in all our projects."
+            />
             <h2>Terms and Conditions</h2>
 
             <p>These terms and conditions outline the rules and regulations for the use of <strong>markone's</strong> Website.</p>

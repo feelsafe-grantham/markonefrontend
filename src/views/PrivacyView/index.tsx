@@ -1,7 +1,13 @@
+import PageSeo from "../../components/common/PageSeo";
 import styles from "./PrivacyView.module.css";
 const PrivacyView = () => {
     return (
         <div className={`${styles.mainContainer} scrollbar-hidden`}>
+            <PageSeo
+                title="Privacy Policy | Markone Website Development & SEO Services"
+                description="Protect your information. Read Markone's privacy policy for how we handle data in our website development & SEO services. Your privacy is our priority."
+            />
+
             <h2>Effective Date: February 9, 2025</h2>
 
             <p>

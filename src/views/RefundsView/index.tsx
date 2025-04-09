@@ -1,8 +1,13 @@
+import PageSeo from "../../components/common/PageSeo";
 import styles from "./RefundsView.module.css"
 
 const RefundsView = () => {
     return (
         <div className={`${styles.mainContainer} scrollbar-hidden`}>
+            <PageSeo
+                title="Refund & Cancellation Policy | Markone Website & SEO Services"
+                description="Understand Markone's refund and cancellation policies for website development & SEO services. We ensure clarity and satisfaction in every project we deliver."
+            />
             <h2>Refund and Cancellation Policy</h2>
 
             <p>At <strong>markone</strong>, we offer marketing subscription services to our clients. Once you've subscribed to our services and made the payment, the subscription fees are non-refundable.</p>

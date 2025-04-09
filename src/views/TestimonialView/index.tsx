@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import Sidebar from "../../components/common/Sidebar";
 import styles from "./Testimonial2.module.css";
 import useTestimonialView from "./useTestimonialView";
+import PageSeo from "../../components/common/PageSeo";
 
 const TestimonialView = () => {
   const { testimonial, links, selectedClient, setSelectedClient } =
@@ -27,6 +28,10 @@ const TestimonialView = () => {
 
   return (
     <div className={`${styles.mainContainer}`}>
+      <PageSeo
+        title="Client Success Stories | Markone Website & SEO Results"
+        description="See how Markone helped businesses achieve success with website development & SEO. Real results that drive traffic and generate leads. Success stories inside!"
+      />
       <div className={`${styles.sidebarContainer}`}>
         <Sidebar handleClick={handleClick} links={links} />
       </div>

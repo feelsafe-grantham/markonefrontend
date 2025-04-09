@@ -1,10 +1,16 @@
 import { Link } from 'react-router-dom';
 import styles from "./EbookView.module.css"
 import Carousel from '../../components/common/Carousel';
+import PageSeo from '../../components/common/PageSeo';
 
 const EbookView = () => {
     return (
         <>
+            <PageSeo
+
+                title="Markone's Digital Growth Expert | Website Development & SEO"
+                description=" Learn about the expert behind Markone's successful website development & SEO strategies. Helping businesses grow with custom web solutions and SEO services."
+            />
             <Carousel />
             <div className={`${styles.socialMediaContainer} ${styles.textColor}`}>
                 <div className={`${styles.socialMediaIconsContainer}`}>

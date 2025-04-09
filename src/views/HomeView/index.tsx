@@ -2,6 +2,7 @@ import styles from "./HomeView.module.css";
 import CapsFull from "../../components/widgets/CapsFull";
 import CapsFullPhone from "../../components/widgets/CapsFullPhone";
 import { useNavigate } from 'react-router-dom';
+import PageSeo from "../../components/common/PageSeo";
 const HomeView = () => {
   const navigate = useNavigate();
   const handleClick = (tabName: string) => {
@@ -9,6 +10,12 @@ const HomeView = () => {
   };
   return (
     <>
+      <PageSeo
+        title="Best Website Development & SEO Services | Rank #1 on Google "
+        description="Boost your business with Markone’s website development & SEO services. Get a high-ranking, lead-generating site today with expert strategies!"
+        canonicalUrl="https://feelsafemarkone.com/"
+        url="https://feelsafemarkone.com/"
+      />
       <div className={`${styles.homeView}`}>
         <div
           className={`${styles.bgImage} ${styles.bgPosition} ${styles.bgContainer}`}

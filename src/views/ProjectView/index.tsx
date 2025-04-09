@@ -6,6 +6,7 @@ import Timeline from "../../components/common/Timeline";
 import useProjectView from "./useProjectView";
 import LoadingProjects from "../../components/common/LoadingProjects";
 import { Endpoint } from "../../utilities/static/varNames";
+import PageSeo from "../../components/common/PageSeo";
 const ProjectView = ({ endpoint }: { endpoint: Endpoint }) => {
   const {
     error,
@@ -40,6 +41,10 @@ const ProjectView = ({ endpoint }: { endpoint: Endpoint }) => {
   }
   return (
     <div className={`${styles.mainContainer}`}>
+      <PageSeo
+        title={endpoint === "development" ? "Website Development Services That Drive Results | Markone" : "SEO Services That Rank Websites on Google | Markone"}
+        description={endpoint === "development" ? "Markone’s website development services create high-performing websites that rank and convert. Get a site designed to grow your business and lead generation." : "Improve your Google ranking with Markone’s SEO services. Our expert strategies drive traffic, enhance visibility, and increase conversions for your business."}
+      />
       <div className={`${styles.sidebarContainer}`}>
         <Sidebar handleClick={handleLinkClick} links={links} />
       </div>

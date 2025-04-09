@@ -4,6 +4,7 @@ import BlogFeaturedCard from "../../components/BlogComponents/BlogFeaturedCard";
 import { BlogListType } from "../../types/contentTypes";
 import useFetchBlogList from "../../utilities/customHooks/useFetchBlogList";
 import LoadingProjects from "../../components/common/LoadingProjects";
+import PageSeo from "../../components/common/PageSeo";
 const BlogListView = () => {
   // const blogs: BlogListType[] = [
   //     {
@@ -71,6 +72,10 @@ const BlogListView = () => {
   if (error) return <div>error</div>;
   return (
     <div className={`${styles.mainContainer} `}>
+      <PageSeo
+        title="Insights on Website Development & SEO | Markone Blog"
+        description="Stay updated with Markone’s blog for expert tips on website development & SEO strategies. Learn how to enhance your digital presence and grow your business."
+      />
       <div className={`scrollbar-hidden ${styles.blogsCardContainer}`}>
         {blogss?.length > 0 ? (
           blogss.map((blog, index) => <BlogCard key={index} blog={blog} />)

@@ -17,6 +17,7 @@
     "html-react-parser": "^5.2.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-helmet-async": "^2.0.5",
     "react-router-dom": "^7.4.1",
     "swiper": "^11.2.6",
     "tailwindcss": "^4.0.17"

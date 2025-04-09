@@ -6,6 +6,7 @@ import VerCaps from "../../components/widgets/VerCaps";
 import { VerCapsType } from "../../types/componentTypes";
 import TextInputForm from "../../components/common/TextInputForm";
 import { useNavigate } from "react-router-dom";
+import PageSeo from "../../components/common/PageSeo";
 const ConnectView = () => {
     const navigate = useNavigate()
     const { isOpen, openModal, closeModal } = useModal();
@@ -83,6 +84,10 @@ const ConnectView = () => {
 
     return (
         <div>
+            <PageSeo
+                title="Contact Markone for Expert Website & SEO Solutions"
+                description="Ready to grow your business? Connect with Markone for expert website development & SEO services. Let’s create a custom strategy for your success."
+            />
             <Modal
                 isOpen={isOpen}
                 onPrevClick={handlePrev}
