@@ -1,6 +1,6 @@
 import "./App.css";
 import { useEffect } from "react";
-import { BrowserRouter, Routes, Route, useRevalidator, } from "react-router-dom";
+import { BrowserRouter, Routes, Route, } from "react-router-dom";
 import HomeView from "./views/HomeView";
 import ConnectView from "./views/ConnectView";
 import { useSnackbar } from './components/Operations/Alert';
