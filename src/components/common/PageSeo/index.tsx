@@ -5,9 +5,9 @@ const PageSeo = ({
     description = "Boost your business with Markone’s expert website development and SEO services. Get a high-ranking, lead-generating site today!",
     image = "/images/logotranswhite.png",
     type = "website",
+    url = "",
     keywords = "",
     canonicalUrl = "",
-    url = "",
 }) => {
     return (
         <Helmet>
@@ -23,8 +23,10 @@ const PageSeo = ({
             <meta property="og:description" content={description} />
             {/* twitter meta tags */}
             <meta name="twitter:card" content="summary" />
-            <meta name="twitter:site" content="@grantham_org_in" />
-            <meta property="og:site_name" content="Grantham"></meta>
+            <meta name="twitter:site" content="@feelsafe_mark1" />
+            <meta property="og:site_name" content="feelsafemarkone
+            
+            "></meta>
             <meta name="twitter:title" content={title} />
             <meta name="twitter:description" content={description} />
             <meta name="twitter:image" content={image} />

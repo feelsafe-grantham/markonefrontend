@@ -17,39 +17,40 @@ import EbookView from "./views/EbookView";
 import { AlertProps } from "./types/componentTypes";
 
 function App() {
-  const alert: AlertProps[] = [{
-    type: "rating",
-    name: "Alice",
-    emoji: "❤️",
-    segment: "Customer",
-    message: "⭐ Great product, highly recommended! ⭐"
-  },
-  {
-    type: "like",
-    name: "Bob",
-    emoji: "🔥",
-    segment: "Follower",
-    message: "❤️ I liked your recent post. Keep it up! ❤️"
-  },
-  {
-    type: "testimonial",
-    name: "Charlie",
-    segment: "Client",
-    message: "Had an amazing experience with your service! ⭐⭐⭐"
-  },
-  {
-    type: "subscribed",
-    name: "Dana",
-    emoji: "👍",
-    segment: "Subscriber",
-    message: "Thanks for subscribing to our newsletter! 📧"
-  },
-  {
-    type: "comment",
-    name: "Eve",
-    segment: "Viewer",
-    message: "Great content, looking forward to more! 👍"
-  }
+  const alert: AlertProps[] = [
+    {
+      "type": "rating",
+      "name": "Aarav",
+      "emoji": "❤️",
+      "segment": "Customer",
+      "message": "⭐ Great product, highly recommended! ⭐"
+    },
+    {
+      "type": "like",
+      "name": "Priya",
+      "emoji": "🔥",
+      "segment": "Follower",
+      "message": "❤️ Loved your recent post. Keep it up! ❤️"
+    },
+    {
+      "type": "testimonial",
+      "name": "Ravi",
+      "segment": "Client",
+      "message": "Amazing service, highly recommend! ⭐⭐⭐"
+    },
+    {
+      "type": "subscribed",
+      "name": "Neha",
+      "emoji": "👍",
+      "segment": "Subscriber",
+      "message": "Thanks for subscribing! 📧"
+    },
+    {
+      "type": "comment",
+      "name": "Siddharth",
+      "segment": "Viewer",
+      "message": "Great content, keep it up! 👍"
+    }
   ]
   const { showSnackbar } = useSnackbar();
   const renderSomething = () => {
@@ -59,7 +60,7 @@ function App() {
   useEffect(() => {
     const interval = setInterval(() => {
       renderSomething();
-    }, 2000);
+    }, 5000);
     return () => clearInterval(interval);
   }, []);
 
