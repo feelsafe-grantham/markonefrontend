@@ -4,7 +4,6 @@ import { BrowserRouter, Routes, Route, } from "react-router-dom";
 import HomeView from "./views/HomeView";
 import ConnectView from "./views/ConnectView";
 import { useSnackbar } from './components/Operations/Alert';
-
 import MainContainer from "./components/common/MainContainer";
 import ProjectView from "./views/ProjectView";
 import BlogListView from "./views/BlogListView";
