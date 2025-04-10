@@ -1,6 +1,6 @@
 import "./App.css";
 import { useEffect } from "react";
-import { BrowserRouter, Routes, Route, } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useRevalidator, } from "react-router-dom";
 import HomeView from "./views/HomeView";
 import ConnectView from "./views/ConnectView";
 import { useSnackbar } from './components/Operations/Alert';
@@ -14,64 +14,36 @@ import PrivacyView from "./views/PrivacyView";
 import RefundsView from "./views/RefundsView";
 import BlogDetailView from "./views/BlogDetailView";
 import TestimonialView from "./views/TestimonialView";
-import { AlertProps } from "./types/componentTypes";
 import EbookView from "./views/EbookView";
+import useReview from "./utilities/customHooks/useReviews";
 
 function App() {
-  const alert: AlertProps[] = [
-    {
-      "type": "rating",
-      "name": "Aarav",
-      "emoji": "❤️",
-      "segment": "Customer",
-      "message": "⭐ Great product, highly recommended! ⭐"
-    },
-    {
-      "type": "like",
-      "name": "Priya",
-      "emoji": "🔥",
-      "segment": "Follower",
-      "message": "❤️ Loved your recent post. Keep it up! ❤️"
-    },
-    {
-      "type": "testimonial",
-      "name": "Ravi",
-      "segment": "Client",
-      "message": "Amazing service, highly recommend! ⭐⭐⭐"
-    },
-    {
-      "type": "subscribed",
-      "name": "Neha",
-      "emoji": "👍",
-      "segment": "Subscriber",
-      "message": "Thanks for subscribing! 📧"
-    },
-    {
-      "type": "comment",
-      "name": "Siddharth",
-      "segment": "Viewer",
-      "message": "Great content, keep it up! 👍"
-    }
-  ]
+  const { data, fetchData } = useReview();
   const { showSnackbar } = useSnackbar();
-  const renderSomething = () => {
-    // review
-    showSnackbar(<Alerts alert={alert[Math.floor(Math.random() * alert.length)]} />, "success");
+  const renderSnackbar = () => {
+    if (data && data.message) {
+      showSnackbar(<Alerts alert={data} />, "success");
+    }
   };
+
   useEffect(() => {
     const interval = setInterval(() => {
-      renderSomething();
+      fetchData();
     }, 5000);
     return () => clearInterval(interval);
-  }, []);
+  }, [fetchData]);
 
+  useEffect(() => {
+    if (data && data.message) {
+      renderSnackbar();
+    }
+  }, [data]);
   return (
     <>
       <BrowserRouter>
         <MainContainer
           chiledContainerClass="relative"
         >
-
           <Routes>
             <Route path="/" element={<HomeView />} />
             <Route path="/development" element={<ProjectView endpoint="development" />} />
@@ -81,7 +53,6 @@ function App() {
             <Route path="/blog" element={<BlogListView />} />
             <Route path="/project" element={<ProjectView endpoint="development" />} />
             <Route path="/profile" element={<EbookView />} />
-
             <Route path="/terms-and-conditon" element={<TermsView />} />
             <Route path="/privacy-policy" element={<PrivacyView />} />
             <Route path="/refund-policy" element={<RefundsView />} />
