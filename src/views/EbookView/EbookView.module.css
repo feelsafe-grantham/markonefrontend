@@ -1,11 +1,11 @@
 .socialMediaContainer {
-  margin-top: 50px;
+  margin-top: 0px;
 }
 .textColor {
   color: gray;
 }
 .socialMediaIconsContainer {
-  margin-top: 20px;
+  margin-top: 10px;
   display: flex;
   justify-content: center;
   position: relative;
@@ -40,5 +40,11 @@
   .linksContainer {
     gap: 5px;
     font-size: 12px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .socialMediaContainer {
+    margin-top: 50px;
   }
 }

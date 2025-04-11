@@ -1,108 +1,74 @@
-import styles from "./Carousel.module.css"
+import styles from './Carousel.module.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCoverflow, Pagination } from 'swiper/modules';
-import 'swiper/swiper-bundle.css'; // Import Swiper styles
+import { Navigation, Pagination, EffectCube } from 'swiper/modules';
+import 'swiper/swiper-bundle.css';
 const Carousel = () => {
+    const images = [
+        "/images/vartical1.png",
+        "/images/vartical2.png",
+        "/images/vartical3.png",
+        "/images/vartical4.png",
+        "/images/vartical5.png",
+        "/images/vartical1.png",
+        "/images/vartical2.png",
+        "/images/vartical3.png",
+        "/images/vartical4.png",
+        "/images/vartical5.png",
+    ]
+
+    const handleButtonClick = () => {
+        alert("btn clicked")
+    }
+
     return (
 
-        <section className={styles.collection}>
-            <div className="swiper mySwiper">
-                <Swiper
-                    effect={'coverflow'}
-                    grabCursor={true}
-                    centeredSlides={true}
-                    loop={true}
-                    slidesPerView={3}
-                    spaceBetween={10}
-                    autoplay={true}
-                    pagination={true}
-                    modules={[EffectCoverflow, Pagination]}
-                    coverflowEffect={{
-                        rotate: 0,
-                        stretch: 0,
-                        depth: 150,
-                        modifier: 2.5,
-                        slideShadows: true,
-                    }}
-                >
-                    <SwiperSlide >
-                        <div className={styles.content}>
-                            <img className={styles.image} src="/images/vartical1.png" alt="Photography 1" />
-                            <button className={`${styles.btn} ${styles.downloadbtn}`}>Download</button>
-                        </div>
-
-                    </SwiperSlide>
-                    <SwiperSlide >
-                        <div className={`${styles.content}`}>
-
-                            <img className={styles.image} src="/images/vartical2.png" alt="Photography 1" />
-                            <button className={`${styles.btn} ${styles.downloadbtn}`}>Download</button>
-                        </div>
-
-                    </SwiperSlide>
-                    <SwiperSlide >
-                        <div className={styles.content}>
-
-                            <img className={styles.image} src="/images/vartical3.png" alt="Photography 1" />
-                            <button className={`${styles.btn} ${styles.downloadbtn}`}>Download</button>
-                        </div>
-
-                    </SwiperSlide>
-                    <SwiperSlide >
-                        <div className={styles.content}>
-
-                            <img className={styles.image} src="/images/vartical4.png" alt="Photography 1" />
-                            <button className={`${styles.btn} ${styles.downloadbtn}`}>Download</button>
-                        </div>
-
-                    </SwiperSlide>
-                    <SwiperSlide >
-                        <div className={styles.content}>
-                            <img className={styles.image} src="/images/vartical1.png" alt="Photography 1" />
-                            <button className={`${styles.btn} ${styles.downloadbtn}`}>Download</button>
-                        </div>
-
-                    </SwiperSlide>
-                    <SwiperSlide >
-                        <div className={styles.content}>
-                            <img className={styles.image} src="/images/image6.jpg" alt="Photography 1" />
-                            <button className={`${styles.btn} ${styles.downloadbtn}`}>Download</button>
+        <section className={styles.container}>
+            <Swiper
+                navigation={false}
+                breakpoints={{
+                    50: {
+                        slidesPerView: 1,
+                    },
+                    768: {
+                        slidesPerView: 2,
+                    },
+                    900: {
+                        slidesPerView: 2,
+                    },
+                    1200: {
+                        slidesPerView: 4,
+                    },
+                    1399: {
+                        slidesPerView: 5,
+                    },
+                }}
+                grabCursor={true}
+                effect={'creative'}
+                creativeEffect={{
+                    prev: {
+                        shadow: true,
+                        translate: [0, 0, -400],
+                    },
+                    next: {
+                        translate: ['100%', 0, 0],
+                    },
+                }}
+                modules={[EffectCube, Navigation, Pagination]}
+                className="mySwiper"
+            >
+                {images.map((image, index) => (
+                    <SwiperSlide key={index} className={`${styles.slide}`}>
+                        <div className={`${styles.imageContainer}`}>
+                            <img
+                                className={`${styles.image}`}
+                                src={image}
+                                alt=""
+                            />
+                            <button onClick={handleButtonClick} className={`${styles.downloadBtn}`}>Download</button>
                         </div>
                     </SwiperSlide>
-                    {/* <SwiperSlide className={styles.content}>
-                        <img className={styles.image} src="/images/image4.jpg" alt="Photography 1" />
-                        <button className={`${styles.btn} ${styles.downloadbtn}`}>Download</button>
-                    </SwiperSlide>
-                    <SwiperSlide className={styles.content}>
-
-                        <img className={styles.image} src="/images/image2.jpg" alt="Photography 1" />
-                        <button className={`${styles.btn} ${styles.downloadbtn}`}>Download</button>
-
-                    </SwiperSlide>
-                    <SwiperSlide className={styles.content}>
-
-                        <img className={styles.image} src="/images/image3.jpg" alt="Photography 1" />
-                        <button className={`${styles.btn} ${styles.downloadbtn}`}>Download</button>
-
-                    </SwiperSlide>
-                    <SwiperSlide className={styles.content}>
-
-                        <img className={styles.image} src="/images/image4.jpg" alt="Photography 1" />
-                        <button className={`${styles.btn} ${styles.downloadbtn}`}>Download</button>
-
-                    </SwiperSlide>
-                    <SwiperSlide className={styles.content}>
-
-                        <img className={styles.image} src="/images/image5.jpg" alt="Photography 1" />
-                        <button className={`${styles.btn} ${styles.downloadbtn}`}>Download</button>
-
-                    </SwiperSlide>
-                    <SwiperSlide className={styles.content}>
-                        <img className={styles.image} src="/images/image6.jpg" alt="Photography 1" />
-                        <button className={`${styles.btn} ${styles.downloadbtn}`}>Download</button>
-                    </SwiperSlide> */}
-                </Swiper>
-            </div>
+                ))}
+            </Swiper>
         </section>
     );
 };
