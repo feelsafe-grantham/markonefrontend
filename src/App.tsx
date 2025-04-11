@@ -28,7 +28,7 @@ function App() {
   useEffect(() => {
     const interval = setInterval(() => {
       fetchData();
-    }, 5000);
+    }, 7000);
     return () => clearInterval(interval);
   }, [fetchData]);
 
@@ -37,6 +37,7 @@ function App() {
       renderSnackbar();
     }
   }, [data]);
+
   return (
     <>
       <BrowserRouter>
