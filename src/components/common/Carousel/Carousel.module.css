@@ -2,7 +2,7 @@
   margin: 0px auto;
   max-width: 1400px;
   width: 100%;
-  height: 40vh;
+  height: 45vh;
 }
 
 .slide {
@@ -15,13 +15,16 @@
   color: #fff;
   height: 45vh;
 }
+
 .imageContainer {
   position: relative;
 }
+
 .image {
   margin: auto;
-  height: 40vh;
   border-radius: 10px;
+  height: 45vh;
+  max-height: 580px;
   aspect-ratio: 1080/1920;
 }
 
@@ -43,6 +46,7 @@
 .imageContainer:hover .downloadBtn {
   display: block;
 }
+
 @media (max-width: 576px) {
   .container {
     height: 45vh;
@@ -55,10 +59,13 @@
   }
 }
 @media (min-width: 1600px) {
+  .container {
+    height: 53vh;
+  }
   .slide {
-    height: 45vh;
+    height: 55vh;
   }
   .image {
-    height: 45vh;
+    height: 55vh;
   }
 }

@@ -38,9 +38,7 @@ const Carousel = () => {
                     1200: {
                         slidesPerView: 4,
                     },
-                    1399: {
-                        slidesPerView: 5,
-                    },
+
                 }}
                 grabCursor={true}
                 effect={'creative'}
