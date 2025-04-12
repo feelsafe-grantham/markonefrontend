@@ -25,7 +25,8 @@
   border-radius: 10px;
   height: 45vh;
   max-height: 580px;
-  aspect-ratio: 1080/1920;
+  aspect-ratio: 1500/1920;
+  object-fit: cover;
 }
 
 .downloadBtn {
@@ -33,13 +34,16 @@
   border-radius: 5px;
   left: 50%;
   bottom: 10px;
-  font-size: 14px;
   cursor: pointer;
   padding: 5px 10px;
+  height: 50px;
+  width: 180px;
+  font-size: 18px;
   position: absolute;
-  border: 1px solid white;
+  /* border: 1px solid white;
   background-color: white;
-  color: black;
+  color: black; */
+  outline: 2px solid white;
   transform: translateX(-50%);
 }
 
@@ -56,6 +60,11 @@
   }
   .image {
     height: 45vh;
+  }
+  .downloadBtn {
+    height: 40px;
+    width: 170px;
+    font-size: 18px;
   }
 }
 @media (min-width: 1600px) {
