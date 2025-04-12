@@ -29,7 +29,7 @@
 .imageVer {
   width: auto;
   border-radius: 5px;
-  height: calc(100vh - 260px);
+  height: calc(100vh - 280px);
   max-height: 800px;
 }
 .timelineContainer {
@@ -57,6 +57,6 @@
     overflow: hidden;
   }
   .imageVer {
-    height: calc(100vh - 280px);
+    height: calc(100vh - 320px);
   }
 }

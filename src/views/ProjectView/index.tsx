@@ -48,12 +48,12 @@ const ProjectView = ({ endpoint }: { endpoint: Endpoint }) => {
       <div className={`${styles.sidebarContainer}`}>
         <Sidebar handleClick={handleLinkClick} links={links} />
       </div>
-      <div className={`trans-black-bg scrollbar-hidden ${styles.contentContainer}`}>
+      <div className={`trans-black-bg  ${styles.contentContainer}`}>
         <h2 className={`${styles.sectionHeading}`}>{subTitle}</h2>
         <div
           onWheel={handleWheel}
           ref={scrollContainerRef}
-          className={`${styles.midContainer} scrollbar-hidden`}
+          className={`${styles.midContainer} `}
         >
           {currentProject?.map((item: any, index: number) => (
             <img
