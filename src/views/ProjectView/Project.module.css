@@ -1,9 +1,9 @@
 .mainContainer {
-  max-width: 1400px;
+  max-width: 1300px;
   max-height: 800px;
   margin: 0px auto;
   display: grid;
-  grid-template-columns: 300px auto 300px;
+  grid-template-columns: 300px auto 200px;
   gap: 10px;
   height: 100%;
 }
@@ -32,7 +32,9 @@
   height: calc(100vh - 260px);
   max-height: 800px;
 }
-
+.timelineContainer {
+  margin-left: 10px;
+}
 @media (max-width: 1100px) {
   .mainContainer {
     margin-left: 5px;
