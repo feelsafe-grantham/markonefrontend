@@ -38,7 +38,7 @@ export const SnackbarProvider: React.FC<SnackbarProviderProps> = ({ children }) 
             {children}
             <Snackbar
                 open={snackbar.open}
-                autoHideDuration={1500}
+                autoHideDuration={3000}
                 onClose={handleClose}
                 message={snackbar.message}
                 TransitionComponent={(props) => <Slide {...props} direction="left" />}

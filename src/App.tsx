@@ -1,13 +1,10 @@
 import "./App.css";
-import { useEffect } from "react";
 import { BrowserRouter, Routes, Route, } from "react-router-dom";
 import HomeView from "./views/HomeView";
 import ConnectView from "./views/ConnectView";
-import { useSnackbar } from './components/Operations/Alert';
 import MainContainer from "./components/common/MainContainer";
 import ProjectView from "./views/ProjectView";
 import BlogListView from "./views/BlogListView";
-import Alerts from './components/common/Alterts';
 import TermsView from "./views/TermsView";
 import PrivacyView from "./views/PrivacyView";
 import RefundsView from "./views/RefundsView";
@@ -17,26 +14,7 @@ import EbookView from "./views/EbookView";
 import useReview from "./utilities/customHooks/useReviews";
 
 function App() {
-  const { data, fetchData } = useReview();
-  const { showSnackbar } = useSnackbar();
-  const renderSnackbar = () => {
-    if (data && data.message) {
-      showSnackbar(<Alerts alert={data} />, "success");
-    }
-  };
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      fetchData();
-    }, 7000);
-    return () => clearInterval(interval);
-  }, [fetchData]);
-
-  useEffect(() => {
-    if (data && data.message) {
-      renderSnackbar();
-    }
-  }, [data]);
+  useReview();
 
   return (
     <>
