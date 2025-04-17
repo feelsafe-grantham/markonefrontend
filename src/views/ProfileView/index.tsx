@@ -1,10 +1,8 @@
+import styles from "./ProfileView.module.css";
 import { Link } from 'react-router-dom';
-import styles from "./EbookView.module.css"
 import PageSeo from '../../components/common/PageSeo';
 import LeadForm from '../../components/Profile/LeadForm';
-
-
-const EbookView = () => {
+const ProfileView = () => {
     return (
         <>
             <PageSeo
@@ -14,6 +12,7 @@ const EbookView = () => {
             <div className={`${styles.parentContainer}`}>
                 <LeadForm />
                 <div className={`${styles.socialMediaContainer} ${styles.textColor}`}>
+
                     <div className={`${styles.socialMediaIconsContainer}`}>
                         <Link target="_blank" to={"https://in.linkedin.com/company/feelsafe-markone"}>
                             <img className={`${styles.socialMediaIcon}`} src="/images/linkedin.png" alt="instagram" />
@@ -41,9 +40,7 @@ const EbookView = () => {
                 </div>
             </div>
         </>
-
-
     )
 }
 
-export default EbookView;
+export default ProfileView;

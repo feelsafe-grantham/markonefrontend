@@ -1,9 +1,8 @@
 import styles from "./Card.module.css";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 interface CtaCardProps {
     type?: "testimonial" | "connect" | "project" | "blog" | "profile";
     link: string
-
 }
 
 const CtaCard = ({ type, link = "#", }: Readonly<CtaCardProps>) => {

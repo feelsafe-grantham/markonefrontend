@@ -12,6 +12,7 @@ import BlogDetailView from "./views/BlogDetailView";
 import TestimonialView from "./views/TestimonialView";
 import EbookView from "./views/EbookView";
 import useReview from "./utilities/customHooks/useReviews";
+import ProfileView from "./views/ProfileView";
 
 function App() {
   // useReview();
@@ -30,7 +31,7 @@ function App() {
             <Route path="/testimonial" element={<TestimonialView />} />
             <Route path="/blog" element={<BlogListView />} />
             <Route path="/project" element={<ProjectView endpoint="development" />} />
-            <Route path="/profile" element={<EbookView />} />
+            <Route path="/profile" element={<ProfileView />} />
             <Route path="/terms-and-conditon" element={<TermsView />} />
             <Route path="/privacy-policy" element={<PrivacyView />} />
             <Route path="/refund-policy" element={<RefundsView />} />
