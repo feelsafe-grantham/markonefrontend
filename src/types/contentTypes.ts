@@ -21,12 +21,15 @@ export interface BlogDetailType {
   description: string;
   content: string;
 }
+
 export type FetchBlogDetailResult = {
   loading: boolean;
   data: BlogDetailType | null;
   error: string | null;
 };
+
 export interface ProjectType {}
+
 export interface SeoProjectType {}
 
 export interface ProjectImageInterface {

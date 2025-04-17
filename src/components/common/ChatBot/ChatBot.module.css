@@ -58,6 +58,8 @@
   font-size: 14px;
   color: var(--primary-text);
   width: 100%;
+  display: flex;
+  gap: 5px;
 }
 
 .questionButton:hover {

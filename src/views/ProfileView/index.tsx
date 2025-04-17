@@ -2,6 +2,7 @@ import styles from "./ProfileView.module.css";
 import { Link } from 'react-router-dom';
 import PageSeo from '../../components/common/PageSeo';
 import LeadForm from '../../components/Profile/LeadForm';
+import { ContactData } from "../../utilities/contactData";
 const ProfileView = () => {
     return (
         <>
@@ -13,17 +14,17 @@ const ProfileView = () => {
                 <LeadForm />
                 <div className={`${styles.socialMediaContainer} ${styles.textColor}`}>
                     <div className={`${styles.socialMediaIconsContainer}`}>
-                        <Link target="_blank" to={"https://in.linkedin.com/company/feelsafe-markone"}>
-                            <img className={`${styles.socialMediaIcon}`} src="/images/linkedin.png" alt="instagram" />
+                        <Link target="_blank" to={ContactData.linkedin}>
+                            <img className={`${styles.socialMediaIcon}`} src="/images/linkedin.png" alt="linkedin" />
                         </Link>
-                        <Link target="_blank" to={"https://www.instagram.com/feelsafe_markone/"}>
+                        <Link target="_blank" to={ContactData.instagram}>
                             <img className={`${styles.socialMediaIcon}`} src="/images/instagram.png" alt="instagram" />
                         </Link>
-                        <Link target="_blank" to={"https://x.com/feelsafe_mark1?t=qBgHTsTQPT3CXOsyMwiFdw&s=08"}>
-                            <img className={`${styles.socialMediaIcon}`} src="/images/twitter.png" alt="instagram" />
+                        <Link target="_blank" to={ContactData.x}>
+                            <img className={`${styles.socialMediaIcon}`} src="/images/twitter.png" alt="x" />
                         </Link>
-                        <Link target="_blank" to={"https://www.youtube.com/@feelsafemarkone"}>
-                            <img className={`${styles.socialMediaIcon}`} src="/images/youtube.png" alt="instagram" />
+                        <Link target="_blank" to={ContactData.youtube}>
+                            <img className={`${styles.socialMediaIcon}`} src="/images/youtube.png" alt="youtube" />
                         </Link>
                     </div>
                     <div className={`${styles.copyRightContainer}`}>
