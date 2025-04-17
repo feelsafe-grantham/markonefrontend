@@ -5,19 +5,37 @@
   background-image: url("/images/bg.png");
   grid-template-rows: auto 1fr auto;
 }
+
+.topBarContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
 .logoContainer {
   padding: 0.25rem;
   position: relative;
   z-index: 10;
 }
+
 .logo {
   height: 3.5rem;
 }
+
+.offerStripContainer {
+  min-width: fit-content;
+  position: relative;
+}
+
+.offerStrip {
+  height: 5rem;
+}
+
 .container {
   grid-row: 2;
   height: 100%;
   overflow-y: scroll;
 }
+
 .bottomBarContainer {
   grid-row: 3;
 }
@@ -27,8 +45,12 @@
     height: 4.5rem;
   }
 }
+
 @media (min-width: 1600px) {
   .logo {
     height: 5vw;
+  }
+  .offerStrip {
+    height: 6.2vw;
   }
 }

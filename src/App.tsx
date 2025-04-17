@@ -14,7 +14,7 @@ import EbookView from "./views/EbookView";
 import useReview from "./utilities/customHooks/useReviews";
 
 function App() {
-  useReview();
+  // useReview();
 
   return (
     <>

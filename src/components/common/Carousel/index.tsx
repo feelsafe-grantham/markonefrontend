@@ -1,7 +1,7 @@
+import 'swiper/swiper-bundle.css';
 import styles from './Carousel.module.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, EffectCube } from 'swiper/modules';
-import 'swiper/swiper-bundle.css';
 const Carousel = () => {
     const images = [
         "/images/vartical1.png",
@@ -38,7 +38,6 @@ const Carousel = () => {
                     1200: {
                         slidesPerView: 3,
                     },
-
                 }}
                 grabCursor={true}
                 effect={'creative'}
