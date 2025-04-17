@@ -1,8 +1,8 @@
 
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import BottomBarNew from "../BottomBarNew";
 import styles from "./MainContainer.module.css";
 import React, { useEffect, useState } from "react";
-import BottomBarNew from "../BottomBarNew";
 const MainContainer = ({
   children,
   chiledContainerClass,
@@ -13,7 +13,7 @@ const MainContainer = ({
 
 }>) => {
   const [height, setHeight] = useState<number | undefined>(undefined);
-  const navigate = useNavigate();
+
 
   useEffect(() => {
 
@@ -45,7 +45,7 @@ const MainContainer = ({
           />
         </Link>
         <div className={`${styles.offerStripContainer}`}>
-          <Link target="_blank" to="https://api.whatsapp.com/send?phone=+919990587916&text=Hi, I am interested in your products. Can you please share some details ?">
+          <Link target="_blank" to="https://api.whatsapp.com/send?phone=+918920898168&text=Hi, I am interested in your products. Can you please share some details ?">
             <img
               src="/images/offer2.gif"
               alt="feelsafe markone"
@@ -55,9 +55,7 @@ const MainContainer = ({
           </Link>
         </div>
       </div>
-      <div
-        className={`${styles.container} ${chiledContainerClass} scrollbar-hidden`}
-      >
+      <div className={`scrollbar-hidden ${styles.container} ${chiledContainerClass} `}>
         {children}
       </div>
       <div className={`${styles.bottomBarContainer}`}>
