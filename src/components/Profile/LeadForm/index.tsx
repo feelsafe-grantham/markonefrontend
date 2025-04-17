@@ -94,10 +94,9 @@ const LeadForm = () => {
                     </div>
                     <div>
                         <select name="budget" id="budget" className={`${styles.select}`}>
-                            <option value="25000-50000" className={`${styles.option}`}>25000-50000</option>
-                            <option value="50000-100000" className={`${styles.option}`}>50000-100000</option>
-                            <option value=">100000" className={`${styles.option}`}> &gt;100000</option>
-
+                            <option value="25000-50000" className={`${styles.option}`}>₹25,000 - ₹50,000</option>
+                            <option value="50000-100000" className={`${styles.option}`}>₹50,000 - ₹1,00,000</option>
+                            <option value=">100000" className={`${styles.option}`}>Above ₹1,00,000</option>
                         </select>
                     </div>
 
@@ -108,7 +107,17 @@ const LeadForm = () => {
                     </button>
                 </div>
             </div>
+            <div className={`${styles.mapContainer}`}>
+                <iframe
+                    className={`${styles.map}`}
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d218.91808579808634!2d77.03415770083667!3d28.60909413957715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d05e6d897c561%3A0xa0a263035a72062f!2sfeelsafe%20markone%20%7C%20Best%20SEO%20%26%20Application%20Development%20Company!5e0!3m2!1sen!2sin!4v1744883262964!5m2!1sen!2sin"
+
+                    loading="lazy"
+                >
+                </iframe>
+            </div>
         </div>
+
     );
 };
 
