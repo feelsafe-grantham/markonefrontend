@@ -10,11 +10,12 @@ const BottomBarNew = () => {
             <Link to={"/connect"} className={`${styles.bottomBarLink} ${styles.redCap}`}>
                 connect
             </Link>
-            <div className={`${styles.ctaCardContainer}`}>
+            <nav className={`${styles.ctaCardContainer}`}>
                 <CtaCard link="/testimonial" type="testimonial" />
                 <CtaCard link="/blog" type="blog" />
-                <CtaCard link="/project" type="result" />
-            </div>
+                <CtaCard link="/project" type="project" />
+                <CtaCard link="/profile" type="profile" />
+            </nav>
             <Link to={"/profile"} className={`${styles.bottomBarLink} ${styles.greenCap}`}>
                 profile
             </Link>

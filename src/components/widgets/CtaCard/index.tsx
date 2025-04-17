@@ -1,7 +1,7 @@
 import styles from "./Card.module.css";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 interface CtaCardProps {
-    type?: "testimonial" | "connect" | "result" | "blog";
+    type?: "testimonial" | "connect" | "project" | "blog" | "profile";
     link: string
 
 }
@@ -19,25 +19,29 @@ const CtaCard = ({ type, link = "#", }: Readonly<CtaCardProps>) => {
         cardObj.image = "/images/connectNew.png";
         cardObj.title = "Connect";
     }
-    else if (type === "result") {
+    else if (type === "project") {
         cardObj.image = "/images/resultnew.png";
-        cardObj.title = "Result";
+        cardObj.title = "Projects";
     }
     else if (type === "blog") {
         cardObj.image = "/images/resultnew.png";
         cardObj.title = "Blog";
     }
+    else if (type === "profile") {
+        cardObj.image = "/images/resultnew.png";
+        cardObj.title = "Profile";
+    }
 
 
     return (
-        <Link to={link} className={styles.card}>
+        <NavLink to={link} className={({ isActive }) => isActive ? `${styles.card} ${styles.active}` : `${styles.card}`}>
             <img
                 className={`h-12 mx-auto ${styles.cardImage}`}
                 src={cardObj.image}
                 alt={cardObj.title}
             />
-            <h2 className="text-center">{cardObj.title === "Result" ? "Project" : cardObj.title}</h2>
-        </Link>
+            <h2 className="text-center text-sm">{cardObj.title === "Result" ? "Project" : cardObj.title}</h2>
+        </NavLink>
     );
 }
 
