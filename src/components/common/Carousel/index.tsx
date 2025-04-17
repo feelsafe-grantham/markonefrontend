@@ -2,7 +2,41 @@ import 'swiper/swiper-bundle.css';
 import styles from './Carousel.module.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, EffectCube } from 'swiper/modules';
+import { Link } from 'react-router-dom';
 const Carousel = () => {
+    const ebooks = [
+        {
+            image: "/images/vartical1.png",
+            title: "Ebook 1",
+            description: "Description 1",
+            downloadLink: "https://www.google.com"
+        },
+        {
+            image: "/images/vartical2.png",
+            title: "Ebook 2",
+            description: "Description 2",
+            downloadLink: "https://www.google.com"
+        },
+        {
+            image: "/images/vartical3.png",
+            title: "Ebook 3",
+            description: "Description 3",
+            downloadLink: "https://www.google.com"
+        },
+        {
+            image: "/images/vartical4.png",
+            title: "Ebook 4",
+            description: "Description 4",
+            downloadLink: "https://www.google.com"
+        },
+        {
+            image: "/images/vartical5.png",
+            title: "Ebook 5",
+            description: "Description 5",
+            downloadLink: "https://www.google.com"
+        },
+
+    ]
     const images = [
         "/images/vartical1.png",
         "/images/vartical2.png",
@@ -53,15 +87,23 @@ const Carousel = () => {
                 modules={[EffectCube, Navigation, Pagination]}
                 className="mySwiper"
             >
-                {images.map((image, index) => (
+                {ebooks.map((ebook, index) => (
                     <SwiperSlide key={index} className={`${styles.slide}`}>
                         <div className={`${styles.imageContainer}`}>
                             <img
+                                src={ebook.image}
+                                alt="ebbok:markone"
                                 className={`${styles.image}`}
-                                src={image}
-                                alt=""
                             />
-                            <button onClick={handleButtonClick} className={`${styles.downloadBtn}`}>Download</button>
+                            <Link
+                                to={ebook.downloadLink}
+                                download={true}
+                                target="_blank"
+                                onClick={handleButtonClick}
+                                className={`${styles.downloadBtn}`}
+                            >
+                                Download
+                            </Link>
                         </div>
                     </SwiperSlide>
                 ))}

@@ -1,0 +1,44 @@
+.iconContainer {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+.icon {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.chatIconContainer {
+  bottom: 90px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.chatIcon {
+  border-radius: 50%;
+}
+.iconText {
+  text-align: center;
+  font-size: 10px;
+}
+.iconName {
+  text-align: center;
+  font-size: 15px;
+}
+
+@media (max-width: 768px) {
+  .iconContainer {
+    bottom: 10px;
+    right: 10px;
+  }
+  .icon {
+    width: 60px;
+    height: 60px;
+  }
+  .chatIconContainer {
+    bottom: 90px;
+  }
+}

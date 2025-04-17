@@ -12,7 +12,6 @@ const ProfileView = () => {
             <div className={`${styles.parentContainer}`}>
                 <LeadForm />
                 <div className={`${styles.socialMediaContainer} ${styles.textColor}`}>
-
                     <div className={`${styles.socialMediaIconsContainer}`}>
                         <Link target="_blank" to={"https://in.linkedin.com/company/feelsafe-markone"}>
                             <img className={`${styles.socialMediaIcon}`} src="/images/linkedin.png" alt="instagram" />

@@ -2,7 +2,7 @@
   margin: 0px auto;
   max-width: 1400px;
   width: 100%;
-  height: 45vh;
+  height: 60vh;
 }
 
 .slide {
@@ -13,7 +13,7 @@
   font-size: 22px;
   font-weight: bold;
   color: #fff;
-  height: 45vh;
+  height: 60vh;
 }
 
 .imageContainer {
@@ -23,15 +23,13 @@
 .image {
   margin: auto;
   border-radius: 10px;
-  height: 45vh;
+  height: 60vh;
   max-height: 580px;
   aspect-ratio: 1500/1920;
   object-fit: cover;
 }
 
 .downloadBtn {
-  display: none;
-  border-radius: 5px;
   left: 50%;
   bottom: 10px;
   cursor: pointer;
@@ -40,15 +38,16 @@
   width: 180px;
   font-size: 18px;
   position: absolute;
-  /* border: 1px solid white;
-  background-color: white;
-  color: black; */
+  border-radius: 5px;
   outline: 2px solid white;
   transform: translateX(-50%);
+  display: none;
+  align-items: center;
+  justify-content: center;
 }
 
 .imageContainer:hover .downloadBtn {
-  display: block;
+  display: flex;
 }
 
 @media (max-width: 576px) {
@@ -67,6 +66,7 @@
     font-size: 18px;
   }
 }
+
 @media (min-width: 1600px) {
   .container {
     height: 53vh;

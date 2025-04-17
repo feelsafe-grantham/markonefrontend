@@ -13,6 +13,9 @@ import TestimonialView from "./views/TestimonialView";
 import EbookView from "./views/EbookView";
 import useReview from "./utilities/customHooks/useReviews";
 import ProfileView from "./views/ProfileView";
+import MessageBot from "./components/common/ChatBot";
+import WhatsappIcon from "./components/common/Icons/WhatspappIcon";
+import ChatBot from "./components/common/Icons/ChatBot";
 
 function App() {
   // useReview();
@@ -31,12 +34,16 @@ function App() {
             <Route path="/testimonial" element={<TestimonialView />} />
             <Route path="/blog" element={<BlogListView />} />
             <Route path="/project" element={<ProjectView endpoint="development" />} />
+            <Route path="/e-book" element={<EbookView />} />
             <Route path="/profile" element={<ProfileView />} />
             <Route path="/terms-and-conditon" element={<TermsView />} />
             <Route path="/privacy-policy" element={<PrivacyView />} />
             <Route path="/refund-policy" element={<RefundsView />} />
             <Route path="/:slug" element={<BlogDetailView />} />
           </Routes>
+          <MessageBot />
+          <WhatsappIcon />
+          <ChatBot />
         </MainContainer>
       </BrowserRouter>
     </>
