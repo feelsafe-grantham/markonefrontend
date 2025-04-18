@@ -1,5 +1,5 @@
 .blogCard {
-  width: 400px;
+  max-width: 400px;
   padding: 15px 15px;
   margin: 0px auto;
   border-radius: 20px;

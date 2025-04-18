@@ -100,6 +100,11 @@ const LeadForm = () => {
                         </select>
                     </div>
 
+                    {/* 
+                    <button disabled={isLoading} className={`${styles.submitButton}`} onClick={() => handleSubmit()}>
+                        {isLoading ? <div className="flex items-center justify-center">Submitting you query... <div className={`${styles.loader}`}></div></div> : <div>Submit</div>}
+                    </button> 
+                    */}
                 </form>
                 <div className={`${styles.submitBtnContainer}`}>
                     <button disabled={isLoading} className={`${styles.submitButton}`} onClick={() => handleSubmit()}>

@@ -1,8 +1,17 @@
+.chatIconContainer {
+  bottom: 90px;
+  position: fixed;
+  right: 20px;
+  z-index: 1000;
+}
+
 .iconContainer {
   position: fixed;
   bottom: 20px;
   right: 20px;
   z-index: 1000;
+}
+.mainChatIconContainer {
 }
 .icon {
   width: 60px;
@@ -11,22 +20,50 @@
   transition: transform 0.3s ease-in-out;
 }
 
-.chatIconContainer {
-  bottom: 90px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
 .chatIcon {
+  right: 0px;
   border-radius: 50%;
 }
+
 .iconText {
   text-align: center;
   font-size: 10px;
 }
+
 .iconName {
   text-align: center;
   font-size: 15px;
+}
+
+.popOutContainer {
+  position: absolute;
+  bottom: 70px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.popOutContainer.expanded {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.popOutIcon {
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.popOutIcon:hover {
+  transform: scale(1.1);
+}
+
+.mainIcon {
+  position: relative;
 }
 
 @media (max-width: 768px) {
@@ -40,5 +77,11 @@
   }
   .chatIconContainer {
     bottom: 90px;
+  }
+}
+
+@media (max-width: 600px) {
+  .whatsappIcon {
+    display: none;
   }
 }
