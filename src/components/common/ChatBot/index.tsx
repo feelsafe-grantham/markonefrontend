@@ -5,41 +5,9 @@ const MessageBot = () => {
     const [isVisible, setIsVisible] = useState(true);//make it false by default
     const [selectedQuestion, setSelectedQuestion] = useState<number | null>(null);
 
-    // useEffect(() => {
-    //     // Check if chat was previously shown
-    //     const chatShown = localStorage.getItem('chatShown');
-    //     if (!chatShown) {
-    //         // Add a small delay to ensure the component is mounted
-    //         const timer = setTimeout(() => {
-    //             setIsVisible(true);
-    //             localStorage.setItem('chatShown', 'true');
-    //         }, 2000); // Increased delay to 2 seconds
-    //         return () => clearTimeout(timer);
-    //     }
-    // }, []);
-    const emailIcon = "/images/email2.png";
     const whatsappIcon = "/images/whatsappIcon.png";
     const questions = [
-        {
-            icon: whatsappIcon,
-            text: "Get Business Hours Instantly",
-            whatsappLink: `https://wa.me/+91${"ContactData.phone2"}?text=Can%20you%20share%20your%20business%20hours%3F`
-        },
-        {
-            icon: whatsappIcon,
-            text: "Book Free Consultation Now",
-            whatsappLink: `https://wa.me/+91${"ContactData.phone2"}?text=Do%20you%20offer%20a%20free%20consultation%3F`
-        },
-        {
-            icon: whatsappIcon,
-            text: "Know Delivery Timeframe",
-            whatsappLink: `https://wa.me/+91${"ContactData.phone2"}?text=What%20is%20your%20delivery%20timeline%3F`
-        },
-        {
-            icon: whatsappIcon,
-            text: "Get Installation Support",
-            whatsappLink: `https://wa.me/+91${"ContactData.phone2"}?text=Do%20you%20provide%20installation%20support%3F`
-        },
+
         {
             icon: whatsappIcon,
             text: "Boost Google Rankings",
