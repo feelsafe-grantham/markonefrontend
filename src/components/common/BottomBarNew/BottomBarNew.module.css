@@ -32,15 +32,23 @@
   gap: 10px;
   margin-bottom: 20px;
 }
+.ctaCardContainerMobile {
+  display: none;
+}
 .capsHalfContainer {
   display: none;
 }
 @media (max-width: 1150px) {
+  .ctaCardContainer {
+    display: none;
+  }
+  .ctaCardContainerMobile {
+    display: flex;
+  }
   .bottomBar {
     flex-direction: column;
     align-items: center;
   }
-
   .bottomBarLink {
     display: none;
   }
