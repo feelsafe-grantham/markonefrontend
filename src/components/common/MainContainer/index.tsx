@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import BottomBarNew from "../BottomBarNew";
 import styles from "./MainContainer.module.css";
 import React, { useEffect, useState } from "react";
+import { ContactData } from "../../../utilities/contactData";
 const MainContainer = ({
   children,
   chiledContainerClass,
@@ -33,6 +34,9 @@ const MainContainer = ({
   if (height === undefined) {
     return <div>Loading...</div>; // or null if you prefer
   }
+  const message = encodeURIComponent(
+    `Hi there! 👋\n\nI'm interested in learning more about your products and current offers. Could you please share more details with me?\n\nHere are my details:\nName:\nPhone:\nBusiness Name:\nWebsite (if any):\n\nLooking forward to your response. Thank you! 🙏`
+  );
 
   return (
     <div className={`${styles.mainContainer}`} style={{ height }}>
@@ -45,7 +49,7 @@ const MainContainer = ({
           />
         </Link>
         <div className={`${styles.offerStripContainer}`}>
-          <Link target="_blank" to="https://api.whatsapp.com/send?phone=+918920898168&text=Hi, I am interested in your products. Can you please share some details ?">
+          <Link target="_blank" to={`https://api.whatsapp.com/send?phone=+91${ContactData.phone1}&text=${message}`}>
             <img
               src="/images/offer2.gif"
               alt="feelsafe markone"
@@ -61,7 +65,7 @@ const MainContainer = ({
       <div className={`${styles.bottomBarContainer}`}>
         <BottomBarNew />
       </div>
-    </div>
+    </div >
   );
 };
 

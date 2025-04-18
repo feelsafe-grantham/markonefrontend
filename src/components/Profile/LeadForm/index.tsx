@@ -2,9 +2,12 @@ import { useState } from "react";
 import styles from "./LeadForm.module.css";
 import { Link } from "react-router-dom";
 import { ContactData } from "../../../utilities/contactData";
+import { useNavigate } from "react-router-dom";
 const formspreeUrl = "https://formspree.io/f/xnnpgoww"
 
 const LeadForm = () => {
+    const navigate = useNavigate();
+
     const [answers, setAnswers] = useState({
         name: "",
         email: "",
@@ -128,6 +131,9 @@ const LeadForm = () => {
                 </div>
                 <div className={`trans-black-bg ${styles.contactInfo}`}>
                     <label htmlFor="openingHours">Opening hours</label>: <p className={`${styles.contactInfoText}`}>10:00 AM - 6:00 PM (Mon - Sat)</p>
+                </div>
+                <div className={`trans-black-bg ${styles.contactInfo}`}>
+                    <button onClick={() => navigate("/connect")} className={`${styles.connectButton}`}>Connect with us</button>
                 </div>
 
             </div>

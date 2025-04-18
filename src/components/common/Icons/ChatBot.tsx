@@ -4,8 +4,15 @@ import { useNavigate } from "react-router-dom";
 import { ContactData } from "../../../utilities/contactData";
 
 const ChatBot = () => {
-    const whatsappLink = `https://wa.me/91${ContactData.phone1}`;
-    const emailLink = `mailto:${ContactData.email}`;
+    const whatsappLink = `https://wa.me/91${ContactData.phone1}?text=${encodeURIComponent(
+        "Hi! I'm interested in your digital services. Could you please provide more details?"
+    )}`;
+
+    const emailLink = `mailto:${ContactData.email}?subject=${encodeURIComponent(
+        "Service Inquiry"
+    )}&body=${encodeURIComponent(
+        `Hi,\n\nI'm interested in your services. Please find my details below:\n\nName:\nPhone:\nWebsite:\nService I'm interested in:\n\nThanks!`
+    )}`;
     const navigate = useNavigate();
     const [isExpanded, setIsExpanded] = useState(false);
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 600);
@@ -26,7 +33,7 @@ const ChatBot = () => {
         if (isMobile) {
             setIsExpanded(!isExpanded);
         } else {
-            navigate("/contact");
+            navigate("/connect");
         }
     }
 

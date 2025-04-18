@@ -102,19 +102,6 @@
   /* margin-top: 20px; */
 }
 
-.submitButton {
-  box-shadow: inset rgba(var(--button-bg-color), 0.1) 0px 54px 50px,
-    inset rgba(var(--button-bg-color), 0.12) 0px -12px 50px,
-    inset rgba(var(--button-bg-color), 0.12) 0px 4px 50px,
-    inset rgba(var(--button-bg-color), 0.17) 0px 12px 50px,
-    inset rgba(var(--button-bg-color), 0.09) 0px -3px 50px;
-  border: 1px solid rgb(88, 255, 88);
-  border-radius: 5px;
-  padding: 10px;
-  cursor: pointer;
-  width: 100%;
-}
-
 .capsulePhone {
   display: none;
 }
@@ -166,6 +153,9 @@
 }
 .contactInfo {
   border: 2px solid #01e632;
+  max-height: 40px;
+  display: flex;
+  align-items: center;
   margin: 0px;
   padding: 0px;
   padding: 10px;
@@ -173,7 +163,18 @@
   display: flex;
   gap: 5px;
 }
-
+.connectButton {
+  box-shadow: inset rgba(var(--button-bg-color), 0.1) 0px 54px 50px,
+    inset rgba(var(--button-bg-color), 0.12) 0px -12px 50px,
+    inset rgba(var(--button-bg-color), 0.12) 0px 4px 50px,
+    inset rgba(var(--button-bg-color), 0.17) 0px 12px 50px,
+    inset rgba(var(--button-bg-color), 0.09) 0px -3px 50px;
+  border: 1px solid rgb(88, 255, 88);
+  border-radius: 5px;
+  padding: 1px 10px;
+  cursor: pointer;
+  width: 100%;
+}
 @keyframes spin {
   0% {
     transform: rotate(0deg);

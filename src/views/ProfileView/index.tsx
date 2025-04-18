@@ -1,8 +1,8 @@
-import styles from "./ProfileView.module.css";
 import { Link } from 'react-router-dom';
+import styles from "./ProfileView.module.css";
 import PageSeo from '../../components/common/PageSeo';
-import LeadForm from '../../components/Profile/LeadForm';
 import { ContactData } from "../../utilities/contactData";
+import CompanyInfo from "../../components/Profile/CompanyInfo";
 const ProfileView = () => {
     return (
         <>
@@ -11,7 +11,7 @@ const ProfileView = () => {
                 description="Learn about the expert behind Markone's successful website development & SEO strategies. Helping businesses grow with custom web solutions and SEO services."
             />
             <div className={`${styles.parentContainer}`}>
-                <LeadForm />
+                <CompanyInfo />
                 <div className={`${styles.socialMediaContainer} ${styles.textColor}`}>
                     <div className={`${styles.socialMediaIconsContainer}`}>
                         <Link target="_blank" to={ContactData.linkedin}>
