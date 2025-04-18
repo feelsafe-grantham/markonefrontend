@@ -16,7 +16,7 @@ const TestimonialView = () => {
   };
 
   const { client_name, client_image, client_segment, images, stars } =
-    testimonial[selectedClient];
+    testimonial[selectedClient] || {};
 
   const handleClick = (e: any, value: string, index: number) => {
     console.log(e, value, index);
@@ -61,7 +61,7 @@ const TestimonialView = () => {
           ref={scrollContainerRef}
           className={`${styles.midContainer} scrollbar-hidden`}
         >
-          {images?.map((item: any, index: number) => (
+          {images && images?.map((item: any, index: number) => (
             <img
               key={index}
               src={item}

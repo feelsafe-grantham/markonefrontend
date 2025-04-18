@@ -23,139 +23,139 @@ const useTestimonialView = () => {
 
   const [selectedClient, setSelectedClient] = useState<number>(0);
 
-  const [testimonial, setTestimonial] = useState([
-    {
-      client_image: "/images/user.jpg",
-      client_name: "Alice Johnson",
-      client_segment: "Software Engineer",
-      stars: 5,
-      images: [
-        "/images/project2.png",
-        "/images/project1.png",
-        "/images/project4.png",
-      ],
-    },
-    {
-      client_image: "/images/user.jpg",
-      client_name: "Bob Smith",
-      client_segment: "Marketing Specialist",
-      stars: 3,
-      images: [
-        "/images/project4.png",
-        "/images/project1.png",
-        "/images/project2.png",
-      ],
-    },
-    {
-      client_image: "/images/user.jpg",
-      client_name: "Charlie Brown",
-      client_segment: "Graphic Designer",
-      stars: 4,
-      images: [
-        "/images/project2.png",
-        "/images/project4.png",
-        "/images/project1.png",
-      ],
-    },
-    {
-      client_image: "/images/user.jpg",
-      client_name: "David Lee",
-      client_segment: "Content Writer",
-      stars: 5,
-      images: [
-        "/images/project4.png",
-        "/images/project2.png",
-        "/images/project1.png",
-      ],
-    },
-    {
-      client_image: "/images/user.jpg",
-      client_name: "Eve Carter",
-      client_segment: "Data Scientist",
-      stars: 4,
-      images: [
-        "/images/project1.png",
-        "/images/project4.png",
-        "/images/project2.png",
-      ],
-    },
-    {
-      client_image: "/images/user.jpg",
-      client_name: "Frank Turner",
-      client_segment: "Product Manager",
-      stars: 5,
-      images: [
-        "/images/project2.png",
-        "/images/project4.png",
-        "/images/project1.png",
-      ],
-    },
-    {
-      client_image: "/images/user.jpg",
-      client_name: "Grace Williams",
-      client_segment: "Photographer",
-      stars: 3,
-      images: [
-        "/images/project1.png",
-        "/images/project2.png",
-        "/images/project4.png",
-      ],
-    },
-    {
-      client_image: "/images/user.jpg",
-      client_name: "Henry Jackson",
-      client_segment: "Web Developer",
-      stars: 4,
-      images: [
-        "/images/project4.png",
-        "/images/project1.png",
-        "/images/project2.png",
-      ],
-    },
-    {
-      client_image: "/images/user.jpg",
-      client_name: "Isabel Scott",
-      client_segment: "UI/UX Designer",
-      stars: 5,
-      images: [
-        "/images/project1.png",
-        "/images/project2.png",
-        "/images/project4.png",
-      ],
-    },
-    {
-      client_image: "/images/user.jpg",
-      client_name: "Jack Davis",
-      client_segment: "SEO Specialist",
-      stars: 3,
-      images: [
-        "/images/project2.png",
-        "/images/project4.png",
-        "/images/project1.png",
-      ],
-    },
-    {
-      client_image: "/images/user.jpg",
-      client_name: "Kathy Thomas",
-      client_segment: "Business Consultant",
-      stars: 4,
-      images: [
-        "/images/project4.png",
-        "/images/project1.png",
-        "/images/project2.png",
-      ],
-    },
-    {
-      client_image: "/images/user.jpg",
-      client_name: "Leo Martinez",
-      client_segment: "Sales Executive",
-      stars: 5,
-      images: [
-        "/images/project1.png",
-        "/images/project4.png",
-        "/images/project2.png",
-      ],
-    },
+  const [testimonial, setTestimonial] = useState<any>([
+    // {
+    //   client_image: "/images/user.jpg",
+    //   client_name: "Alice Johnson",
+    //   client_segment: "Software Engineer",
+    //   stars: 5,
+    //   images: [
+    //     "/images/project2.png",
+    //     "/images/project1.png",
+    //     "/images/project4.png",
+    //   ],
+    // },
+    // {
+    //   client_image: "/images/user.jpg",
+    //   client_name: "Bob Smith",
+    //   client_segment: "Marketing Specialist",
+    //   stars: 3,
+    //   images: [
+    //     "/images/project4.png",
+    //     "/images/project1.png",
+    //     "/images/project2.png",
+    //   ],
+    // },
+    // {
+    //   client_image: "/images/user.jpg",
+    //   client_name: "Charlie Brown",
+    //   client_segment: "Graphic Designer",
+    //   stars: 4,
+    //   images: [
+    //     "/images/project2.png",
+    //     "/images/project4.png",
+    //     "/images/project1.png",
+    //   ],
+    // },
+    // {
+    //   client_image: "/images/user.jpg",
+    //   client_name: "David Lee",
+    //   client_segment: "Content Writer",
+    //   stars: 5,
+    //   images: [
+    //     "/images/project4.png",
+    //     "/images/project2.png",
+    //     "/images/project1.png",
+    //   ],
+    // },
+    // {
+    //   client_image: "/images/user.jpg",
+    //   client_name: "Eve Carter",
+    //   client_segment: "Data Scientist",
+    //   stars: 4,
+    //   images: [
+    //     "/images/project1.png",
+    //     "/images/project4.png",
+    //     "/images/project2.png",
+    //   ],
+    // },
+    // {
+    //   client_image: "/images/user.jpg",
+    //   client_name: "Frank Turner",
+    //   client_segment: "Product Manager",
+    //   stars: 5,
+    //   images: [
+    //     "/images/project2.png",
+    //     "/images/project4.png",
+    //     "/images/project1.png",
+    //   ],
+    // },
+    // {
+    //   client_image: "/images/user.jpg",
+    //   client_name: "Grace Williams",
+    //   client_segment: "Photographer",
+    //   stars: 3,
+    //   images: [
+    //     "/images/project1.png",
+    //     "/images/project2.png",
+    //     "/images/project4.png",
+    //   ],
+    // },
+    // {
+    //   client_image: "/images/user.jpg",
+    //   client_name: "Henry Jackson",
+    //   client_segment: "Web Developer",
+    //   stars: 4,
+    //   images: [
+    //     "/images/project4.png",
+    //     "/images/project1.png",
+    //     "/images/project2.png",
+    //   ],
+    // },
+    // {
+    //   client_image: "/images/user.jpg",
+    //   client_name: "Isabel Scott",
+    //   client_segment: "UI/UX Designer",
+    //   stars: 5,
+    //   images: [
+    //     "/images/project1.png",
+    //     "/images/project2.png",
+    //     "/images/project4.png",
+    //   ],
+    // },
+    // {
+    //   client_image: "/images/user.jpg",
+    //   client_name: "Jack Davis",
+    //   client_segment: "SEO Specialist",
+    //   stars: 3,
+    //   images: [
+    //     "/images/project2.png",
+    //     "/images/project4.png",
+    //     "/images/project1.png",
+    //   ],
+    // },
+    // {
+    //   client_image: "/images/user.jpg",
+    //   client_name: "Kathy Thomas",
+    //   client_segment: "Business Consultant",
+    //   stars: 4,
+    //   images: [
+    //     "/images/project4.png",
+    //     "/images/project1.png",
+    //     "/images/project2.png",
+    //   ],
+    // },
+    // {
+    //   client_image: "/images/user.jpg",
+    //   client_name: "Leo Martinez",
+    //   client_segment: "Sales Executive",
+    //   stars: 5,
+    //   images: [
+    //     "/images/project1.png",
+    //     "/images/project4.png",
+    //     "/images/project2.png",
+    //   ],
+    // },
   ]);
   const fetchData = async () => {
     try {
