@@ -37,18 +37,7 @@ const Carousel = () => {
         },
 
     ]
-    const images = [
-        "/images/vartical1.png",
-        "/images/vartical2.png",
-        "/images/vartical3.png",
-        "/images/vartical4.png",
-        "/images/vartical5.png",
-        "/images/vartical1.png",
-        "/images/vartical2.png",
-        "/images/vartical3.png",
-        "/images/vartical4.png",
-        "/images/vartical5.png",
-    ]
+
 
     const handleButtonClick = () => {
         alert("btn clicked")

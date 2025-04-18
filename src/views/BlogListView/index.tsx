@@ -1,9 +1,8 @@
 import styles from "./BlogListView.module.css";
 import BlogCard from "../../components/BlogComponents/BlogCard";
-import BlogFeaturedCard from "../../components/BlogComponents/BlogFeaturedCard";
-import { BlogListType } from "../../types/contentTypes";
-import useFetchBlogList from "../../utilities/customHooks/useFetchBlogList";
 import LoadingProjects from "../../components/common/LoadingProjects";
+import useFetchBlogList from "../../utilities/customHooks/useFetchBlogList";
+import BlogFeaturedCard from "../../components/BlogComponents/BlogFeaturedCard";
 import PageSeo from "../../components/common/PageSeo";
 const BlogListView = () => {
   // const blogs: BlogListType[] = [

@@ -25,7 +25,7 @@ const Bottombar = ({ setActiveTab }: Readonly<{ setActiveTab?: (tab: string) => 
         >
           <CtaCard link="/" type="testimonial" />
           <CtaCard link="/" type="blog" />
-          <CtaCard link="/" type="result" />
+          <CtaCard link="/" type="e-book" />
         </div>
         <CapsFull onClick={() => handleTabClick("profile")} size="medium" text="Profile" type="red" />
       </div>
@@ -33,7 +33,7 @@ const Bottombar = ({ setActiveTab }: Readonly<{ setActiveTab?: (tab: string) => 
         <div className={`flex justify-center items-end gap-5 w-full`}>
           <CtaCard link="/" type="testimonial" />
           <CtaCard link="/" type="blog" />
-          <CtaCard link="/" type="result" />
+          <CtaCard link="/" type="e-book" />
         </div>
         <div className="flex justify-center w-full">
           <CapsHalf onClick={() => handleTabClick("connect")} size="small" text="Connect" type="green" />
