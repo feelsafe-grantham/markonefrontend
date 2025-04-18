@@ -7,7 +7,7 @@ const BlogCard = ({ blog }: { blog: BlogListType }) => {
     return (
         <div key={blog.id} className={`trans-black-bg ${styles.blogCard} `}>
             <h2 className={`clamp-1 ${styles.blogTitle}`}>{blog.title}</h2>
-            <p className={`clamp-3 ${styles.blogInfo}`}>{blog.description}</p>
+            <p className={`clamp-2 ${styles.blogInfo}`}>{blog.description}</p>
 
             <div className={`${styles.blogDetailContainer}`}>
                 <span className={`${styles.detailChip} ${styles.date}`}>{blog.date}</span>

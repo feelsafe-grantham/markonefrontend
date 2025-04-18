@@ -63,11 +63,9 @@ const BlogListView = () => {
   //     },
 
   // ];
-  let blogss: BlogListType[] = [];
-  let fBlogss: BlogListType[] = [];
+
   const { data, loading, error } = useFetchBlogList();
-  blogss = data?.blogs;
-  fBlogss = data?.f_blogs;
+
   if (loading) return <LoadingProjects />;
   if (error) return <div>error</div>;
   return (
@@ -77,16 +75,15 @@ const BlogListView = () => {
         description="Stay updated with Markone’s blog for expert tips on website development & SEO strategies. Learn how to enhance your digital presence and grow your business."
       />
       <div className={`scrollbar-hidden ${styles.blogsCardContainer}`}>
-        {blogss?.length > 0 ? (
-          blogss.map((blog, index) => <BlogCard key={index} blog={blog} />)
+        {data?.blogs?.length > 0 ? (
+          data?.blogs.map((blog, index) => <BlogCard key={index} blog={blog} />)
         ) : (
           <div className={`${styles.noBlogFound}`}>No Blog Found</div>
         )}
-
       </div>
       <div className={`scrollbar-hidden ${styles.featuredBlogsContainer}`}>
-        {fBlogss?.length > 0 ? (
-          fBlogss.map((blog, index) => (
+        {data?.f_blogs?.length > 0 ? (
+          data?.f_blogs.map((blog, index) => (
             <BlogFeaturedCard key={index} blog={blog} />
           ))
         ) : (
