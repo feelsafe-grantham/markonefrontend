@@ -1,16 +1,33 @@
+import { useState, useEffect } from "react";
 import styles from "./Icon.module.css"
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { ContactData } from "../../../utilities/contactData";
 
 const ChatBot = () => {
+    const whatsappLink = `https://wa.me/91${ContactData.phone1}`;
+    const emailLink = `mailto:${ContactData.email}`;
     const navigate = useNavigate();
     const [isExpanded, setIsExpanded] = useState(false);
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 600);
     const img1 = "/images/lisa.png";
-    const img2 = "/images/girl1.png";
-    const img3 = "/images/user3.png";
+    const img2 = "/images/whatsappIcon.png";
+    const img3 = "/images/email2.png";
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 600);
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     const handleClick = () => {
-        setIsExpanded(!isExpanded);
+        if (isMobile) {
+            setIsExpanded(!isExpanded);
+        } else {
+            navigate("/contact");
+        }
     }
 
     const handleIconClick = (path: string) => {
@@ -29,28 +46,30 @@ const ChatBot = () => {
                     className={`${styles.icon} ${styles.chatIcon}`}
                 />
             </div>
-            <div className={`${styles.popOutContainer} ${isExpanded ? styles.expanded : ''}`}>
-                <div
-                    className={`${styles.popOutIcon} `}
-                    onClick={() => handleIconClick("/profile")}
-                >
-                    <img
-                        src={img2}
-                        alt="profile"
-                        className={`${styles.icon} ${styles.chatIcon}`}
-                    />
+            {isMobile && (
+                <div className={`${styles.popOutContainer} ${isExpanded ? styles.expanded : ''}`}>
+                    <div
+                        className={`${styles.popOutIcon} `}
+                        onClick={() => handleIconClick(whatsappLink)}
+                    >
+                        <img
+                            src={img2}
+                            alt="profile"
+                            className={`${styles.icon} ${styles.chatIcon}`}
+                        />
+                    </div>
+                    <div
+                        className={`${styles.popOutIcon} `}
+                        onClick={() => handleIconClick(emailLink)}
+                    >
+                        <img
+                            src={img3}
+                            alt="connect"
+                            className={`${styles.icon} ${styles.chatIcon}`}
+                        />
+                    </div>
                 </div>
-                <div
-                    className={`${styles.popOutIcon} `}
-                    onClick={() => handleIconClick("/connect")}
-                >
-                    <img
-                        src={img3}
-                        alt="connect"
-                        className={`${styles.icon} ${styles.chatIcon}`}
-                    />
-                </div>
-            </div>
+            )}
         </div>
     )
 }

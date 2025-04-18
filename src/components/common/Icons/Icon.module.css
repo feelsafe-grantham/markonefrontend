@@ -11,8 +11,7 @@
   right: 20px;
   z-index: 1000;
 }
-.mainChatIconContainer {
-}
+
 .icon {
   width: 60px;
   height: 60px;
@@ -77,6 +76,12 @@
   }
   .chatIconContainer {
     bottom: 90px;
+  }
+}
+
+@media (min-width: 601px) {
+  .popOutContainer {
+    display: none;
   }
 }
 
