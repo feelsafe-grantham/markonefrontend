@@ -18,7 +18,7 @@ import WhatsappIcon from "./components/common/Icons/WhatspappIcon";
 import ChatBot from "./components/common/Icons/ChatBot";
 
 function App() {
-  // useReview();
+  useReview();
 
   return (
     <>

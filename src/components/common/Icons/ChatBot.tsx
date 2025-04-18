@@ -38,7 +38,7 @@ const ChatBot = () => {
     }
 
     const handleIconClick = (path: string) => {
-        navigate(path);
+        window.open(path, '_blank');
     }
 
     return (

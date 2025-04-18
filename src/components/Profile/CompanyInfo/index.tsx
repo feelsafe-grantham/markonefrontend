@@ -25,9 +25,9 @@ const CompanyInfo = () => {
                 <div className={`trans-black-bg ${styles.contactInfo}`}>
                     <label htmlFor="openingHours" className={`${styles.openingHoursLabel}`}>Opening hours</label>: <p className={`${styles.contactInfoText} ${styles.contactInfoTextOpeningHours}`}>10:00 AM - 6:00 PM (Mon - Sat)</p>
                 </div>
-                <div className={`trans-black-bg ${styles.contactInfo}`}>
-                    <button onClick={() => navigate("/connect")} className={`${styles.connectButton}`}>Connect with us</button>
-                </div>
+
+                <button onClick={() => navigate("/connect")} className={`${styles.connectButton}`}>Connect with us</button>
+
 
             </div>
         </div>

@@ -1,5 +1,5 @@
 .chatIconContainer {
-  bottom: 90px;
+  bottom: 100px;
   position: fixed;
   right: 20px;
   z-index: 1000;
@@ -75,14 +75,14 @@
     height: 60px;
   }
   .chatIconContainer {
-    bottom: 90px;
+    bottom: 100px;
   }
 }
 
 @media (min-width: 601px) {
-  .popOutContainer {
+  /* .popOutContainer {
     display: none;
-  }
+  } */
 }
 
 @media (max-width: 600px) {
