@@ -39,7 +39,7 @@ const CtaCard = ({ type, link = "#", }: Readonly<CtaCardProps>) => {
                 src={cardObj.image}
                 alt={cardObj.title}
             />
-            <h2 className="text-center text-sm">{cardObj.title === "Result" ? "Project" : cardObj.title}</h2>
+            <h2 className={`text-center text-sm ${styles.cardTitle}`}>{cardObj.title === "Result" ? "Project" : cardObj.title}</h2>
         </NavLink>
     );
 }

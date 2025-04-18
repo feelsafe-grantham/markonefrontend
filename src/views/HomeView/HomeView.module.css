@@ -92,9 +92,7 @@
     margin: 0 auto;
     aspect-ratio: 11 / 8;
   }
-  .textCta {
-    font-size: 32px;
-  }
+
   .capCtaContainer {
     margin-top: 6rem;
   }
@@ -105,11 +103,7 @@
     font-size: 23px;
   }
 }
-@media (max-width: 400px) {
-  .textCta {
-    font-size: 30px;
-  }
-}
+
 @media (min-width: 1600px) {
   .bgPosition {
     height: 20vw;

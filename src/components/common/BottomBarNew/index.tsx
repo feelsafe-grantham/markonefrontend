@@ -20,14 +20,16 @@ const BottomBarNew = () => {
                 e-book
             </Link>
 
-            <div className={`${styles.capsHalfContainer}`}>
+            {/*
+             <div className={`${styles.capsHalfContainer}`}>
                 <Link to={"/connect"} className={`${styles.capsHalf} ${styles.capsHalfGreen}`}>
                     connect
                 </Link>
                 <Link to={"/profile"} className={`${styles.capsHalf} ${styles.capsHalfRed}`}>
                     profile
                 </Link>
-            </div>
+            </div> 
+        */}
 
         </div>
     );
