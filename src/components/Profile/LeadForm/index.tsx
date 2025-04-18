@@ -22,8 +22,6 @@ const LeadForm = () => {
     };
 
     const handleSubmit = async () => {
-        console.log(answers);
-        console.log("i am here4")
         setIsSuccess(true)
     };
 
