@@ -17,6 +17,7 @@ const useImageView = () => {
     const touchEndX = useRef<number>(0);
 
     const openImageViewer = (images: string[], index: number = 0) => {
+        console.log("openImageViewer", images, index);
         setCurrentIndex(index);
         setIsOpen(true);
         setScale(1);
@@ -24,9 +25,40 @@ const useImageView = () => {
     };
 
     const closeImageViewer = () => {
-        console.log("closeImageViewer");
         setIsOpen(false);
     };
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+        if (e.key === 'Escape') {
+            closeImageViewer();
+        }
+    };
+
+    const handlePopState = () => {
+        if (isOpen) {
+            closeImageViewer();
+        }
+    };
+
+    useEffect(() => {
+        if (isOpen) {
+            // Add keyboard event listener
+            window.addEventListener('keydown', handleKeyDown);
+            // Add popstate event listener for back button
+            window.addEventListener('popstate', handlePopState);
+            // Push a new state to the history stack
+            window.history.pushState({ imageViewer: true }, '');
+        }
+
+        return () => {
+            window.removeEventListener('keydown', handleKeyDown);
+            window.removeEventListener('popstate', handlePopState);
+            // Remove the state we added when closing
+            if (isOpen) {
+                window.history.back();
+            }
+        };
+    }, [isOpen]);
 
     const handleWheel = (e: React.WheelEvent) => {
         e.preventDefault();
@@ -73,8 +105,6 @@ const useImageView = () => {
     };
 
     const ImageViewer = ({ images, onClose }: ImageViewerProps) => {
-
-
         return (
             <div
                 className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-[1550]"
@@ -93,7 +123,6 @@ const useImageView = () => {
                 </div>
 
                 <div className="relative w-full h-full flex items-center justify-center">
-
                     <img
                         src={images[currentIndex]}
                         alt={`Image ${currentIndex + 1}`}

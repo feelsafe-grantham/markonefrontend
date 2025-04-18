@@ -21,6 +21,10 @@ import { ImageViewerProvider } from './context/ImageViewerContext';
 function App() {
   useReview();
 
+  //override the console.log and console.error
+  console.log = () => { };
+  console.error = () => { };
+
   return (
     <ImageViewerProvider>
       <BrowserRouter>
