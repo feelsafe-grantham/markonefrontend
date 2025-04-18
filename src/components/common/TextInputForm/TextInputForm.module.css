@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   position: relative;
+  top: 15px;
 }
 .successMsgContainer {
   position: absolute;

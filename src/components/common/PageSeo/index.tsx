@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet-async";
-// H1: Build a Website That Ranks & Converts! H2: Get More Leads, More Traffic, and More Sales
+
 const PageSeo = ({
     title = "Best Website & SEO Solutions - Rank #1 on Google | Markone",
     description = "Boost your business with Markone’s expert website development and SEO services. Get a high-ranking, lead-generating site today!",

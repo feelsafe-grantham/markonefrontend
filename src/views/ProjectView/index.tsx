@@ -7,6 +7,7 @@ import useProjectView from "./useProjectView";
 import LoadingProjects from "../../components/common/LoadingProjects";
 import { Endpoint } from "../../utilities/static/varNames";
 import PageSeo from "../../components/common/PageSeo";
+import { useImageViewer } from "../../context/ImageViewerContext";
 const ProjectView = ({ endpoint }: { endpoint: Endpoint }) => {
   const {
     error,
@@ -17,12 +18,15 @@ const ProjectView = ({ endpoint }: { endpoint: Endpoint }) => {
     loading,
     currentProject,
   } = useProjectView(endpoint);
+  const { openImageViewer } = useImageViewer();
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const handleWheel = (e: React.WheelEvent) => {
     if (scrollContainerRef.current) {
       scrollContainerRef.current.scrollLeft += e.deltaY;
     }
   };
+
+  const imageArray = currentProject?.map((item: any) => item.image);
 
   const handleLinkClick = (e: React.MouseEvent, value: string) => {
     e.preventDefault();
@@ -55,12 +59,14 @@ const ProjectView = ({ endpoint }: { endpoint: Endpoint }) => {
           ref={scrollContainerRef}
           className={`${styles.midContainer} `}
         >
-          {currentProject?.map((item: any, index: number) => (
+
+          {imageArray?.map((item: string, index: number) => (
             <img
               key={index}
-              src={item.image}
+              src={item}
               alt={`Project ${index + 1}`}
               className={`${styles.imageVer}`}
+              onClick={() => openImageViewer(imageArray, index)}
             />
           ))}
         </div>

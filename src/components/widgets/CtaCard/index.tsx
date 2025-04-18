@@ -15,7 +15,7 @@ const CtaCard = ({ type, link = "#", }: Readonly<CtaCardProps>) => {
         cardObj.title = "Testimonial";
     }
     else if (type === "connect") {
-        cardObj.image = "/images/connectNew.png";
+        cardObj.image = "/images/callNew.png";
         cardObj.title = "Connect";
     }
     else if (type === "project") {
@@ -31,7 +31,7 @@ const CtaCard = ({ type, link = "#", }: Readonly<CtaCardProps>) => {
         cardObj.title = "Profile";
     }
     else if (type === "e-book") {
-        cardObj.image = "/images/resultnew.png";
+        cardObj.image = "/images/bookNew.png";
         cardObj.title = "E-Book";
     }
 

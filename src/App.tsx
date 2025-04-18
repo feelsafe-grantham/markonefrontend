@@ -16,12 +16,13 @@ import ProfileView from "./views/ProfileView";
 import MessageBot from "./components/common/ChatBot";
 import WhatsappIcon from "./components/common/Icons/WhatspappIcon";
 import ChatBot from "./components/common/Icons/ChatBot";
+import { ImageViewerProvider } from './context/ImageViewerContext';
 
 function App() {
   useReview();
 
   return (
-    <>
+    <ImageViewerProvider>
       <BrowserRouter>
         <MainContainer
           chiledContainerClass="relative"
@@ -46,7 +47,7 @@ function App() {
           <ChatBot />
         </MainContainer>
       </BrowserRouter>
-    </>
+    </ImageViewerProvider>
   );
 }
 

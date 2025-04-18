@@ -60,12 +60,15 @@
   border-radius: 5px;
   padding: 1px 10px;
   cursor: pointer;
+
   width: 100%;
+  height: 35px;
 }
 
 @media (max-width: 1024px) {
   .parentContainer {
-    width: 95vw;
+    width: 90vw;
+    margin: 0px auto;
     gap: 2px;
   }
 }

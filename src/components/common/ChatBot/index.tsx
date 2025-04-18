@@ -13,11 +13,7 @@ const MessageBot = () => {
             text: "Lets fix your Google Rankings",
             whatsappLink: `https://wa.me/+91${ContactData.phone1}?text=Hi%2C%20I'm%20interested%20in%20boosting%20my%20Google%20rankings.%20Can%20you%20guide%20me%20on%20the%20best%20way%20to%20get%20started%3F`
         },
-        {
-            icon: whatsappIcon,
-            text: "Get More Business Leads",
-            whatsappLink: `https://wa.me/+91${ContactData.phone1}?text=Hey%2C%20I'm%20looking%20to%20get%20more%20quality%20leads%20for%20my%20business.%20Can%20you%20help%20me%20generate%20them%3F`
-        },
+
         {
             icon: whatsappIcon,
             text: "Fix Technical SEO Issues",

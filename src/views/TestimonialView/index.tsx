@@ -1,12 +1,14 @@
 import React, { useRef } from "react";
-import Sidebar from "../../components/common/Sidebar";
 import styles from "./Testimonial2.module.css";
+import Sidebar from "../../components/common/Sidebar";
 import useTestimonialView from "./useTestimonialView";
 import PageSeo from "../../components/common/PageSeo";
+import { useImageViewer } from "../../context/ImageViewerContext";
 
 const TestimonialView = () => {
   const { testimonial, links, selectedClient, setSelectedClient } =
     useTestimonialView();
+  const { openImageViewer } = useImageViewer();
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const handleWheel = (e: React.WheelEvent) => {
     if (scrollContainerRef.current) {
@@ -67,6 +69,7 @@ const TestimonialView = () => {
               src={item}
               alt={`Project ${index + 1}`}
               className={`${styles.imageVer}`}
+              onClick={() => openImageViewer(images, index)}
             />
           ))}
         </div>

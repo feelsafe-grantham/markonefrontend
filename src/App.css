@@ -24,7 +24,14 @@
   --swiper-pagination-color: white;
   --swiper-theme-color: white;
 }
-
+/* mui snackbar fix to make clickable logo behind snackbar */
+.css-bviii3-MuiSnackbar-root {
+  pointer-events: none;
+}
+.css-bviii3-MuiSnackbar-root > * {
+  pointer-events: auto;
+}
+/* mui snackbar fix to make clickable logo behind snackbar  end */
 .scrollbar-hidden::-webkit-scrollbar {
   display: none;
 }
