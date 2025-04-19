@@ -12,10 +12,25 @@
   color: white;
   padding: 20px;
   border-radius: 10px;
-  width: 76%;
   text-align: center;
   opacity: 0;
   animation: slideIn 0.5s ease-out forwards;
+  width: 70vw;
+  max-width: 600px;
+}
+.errorMsgContainer {
+  position: absolute;
+  z-index: 999;
+  top: -100px;
+  background-color: red; /* error color */
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  opacity: 0;
+  animation: slideIn 0.5s ease-out forwards;
+  width: 70vw;
+  max-width: 600px;
 }
 @keyframes slideIn {
   0% {

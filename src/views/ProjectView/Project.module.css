@@ -56,6 +56,6 @@
     overflow: hidden;
   }
   .imageVer {
-    height: calc(100vh - 320px);
+    max-height: 750px;
   }
 }

@@ -1,6 +1,14 @@
 import { useState } from "react";
 import styles from "./TextInputForm.module.css";
 
+const isValidEmail = (email: string) => {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+};
+
+const isValidNumber = (number: string) => {
+  // make it at least 10 digits
+  return /^[0-9]{10,}$/.test(number);
+};
 
 const TextInputForm = ({ form }: any) => {
   const [answers, setAnswers] = useState({
@@ -15,32 +23,74 @@ const TextInputForm = ({ form }: any) => {
 
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [isError, setIsError] = useState<boolean | string>(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = e.target;
-
+    setIsError(false);
+    setIsSuccess(false);
+    // do not allow typing character in number field
+    if (name === "number") {
+      //if user is typing character then do not allow it
+      if (/[^0-9]/.test(value)) {
+        return;
+      }
+    }
     setAnswers((prevAnswers) => ({
       ...prevAnswers,
       [name]: type === "checkbox" ? checked : value,
     }));
   };
 
+  const resetForm = () => {
+    setAnswers({
+      name: "",
+      email: "",
+      number: "",
+      website: "",
+      hiring: false,
+      seo: false,
+      cost: false,
+    });
+  };
+
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     const updated = { ...answers, ...form };
-    console.log("sbuttimg with: ", updated)
+    if (!updated.name) {
+      setIsError("Please enter your name");
+      return;
+    }
+    //make sure  no email and name is not empty
+    if (!updated.email && !updated.number) {
+      setIsError("Please provide either an email address or phone number");
+      return;
+    }
+    //if email is not empty then check if it is valid
+    if (updated.email && !isValidEmail(updated.email)) {
+      setIsError("Please enter a valid email address");
+      return;
+    }
+
+    //if number is not empty then check if it is valid
+    if (updated.number && !isValidNumber(updated.number)) {
+      setIsError("Please enter a valid phone number");
+      return;
+    }
     try {
       setIsLoading(true);
       await fetch("https://formspree.io/f/xnnpgoww", {
         method: "POST",
         body: JSON.stringify(updated),
       })
+      resetForm();
     } catch (error) {
       setIsSuccess(false);
       console.error("Error:", error);
     }
     finally {
       setIsSuccess(true)
+      resetForm();
       setIsLoading(false);
     }
 
@@ -49,8 +99,13 @@ const TextInputForm = ({ form }: any) => {
   return (
     <div className={`${styles.parentContainer} `}>
       {isSuccess && (
-        <div className={`${styles.successMsgContainer}`}>
-          Success! Your operation was completed successfully.
+        <div className={`${styles.successMsgContainer} font-bold text-xl`}>
+          Your query has been submitted successfully.
+        </div>
+      )}
+      {isError && (
+        <div className={`${styles.errorMsgContainer} font-bold text-xl`}>
+          {isError}
         </div>
       )}
       <div className={`scrollbar-hidden ${styles.formContainerBase} ${styles.formContainer}`}>

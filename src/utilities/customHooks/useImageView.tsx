@@ -107,7 +107,7 @@ const useImageView = () => {
     const ImageViewer = ({ images, onClose }: ImageViewerProps) => {
         return (
             <div
-                className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-[1550]"
+                className="fixed inset-0  flex items-center justify-center z-[1550] bg-[rgba(0,0,0,0.5)] backdrop-blur-sm"
                 onWheel={handleWheel}
                 onMouseUp={handleMouseUp}
             >

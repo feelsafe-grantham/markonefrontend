@@ -17,7 +17,7 @@
   text-decoration: none;
   border-radius: 5px;
   text-align: center;
-  font-size: 18px;
+  font-size: 16px;
   padding: 10px;
   margin: 10px;
 }
@@ -33,7 +33,7 @@
   }
   .link {
     min-width: fit-content;
-    font-size: 20px;
+    font-size: 16px;
     padding: 5px 10px;
     margin: 4px;
   }
@@ -48,7 +48,7 @@
     padding: 5px;
   }
   .link {
-    font-size: 16px;
+    font-size: 14px;
     padding: 5px 10px;
     margin: 4px;
   }

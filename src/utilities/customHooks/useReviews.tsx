@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { BASE_URL } from "../static/varNames";
-import { useSnackbar } from "../../components/Operations/Alert";
 import Alerts from "../../components/common/Alterts";
 import { AlertProps } from "../../types/componentTypes";
+import { useSnackbar } from "../../components/Operations/Alert";
 // : {
 //   data?: AlertProps;
 //   loading?: boolean;
@@ -25,8 +25,9 @@ const useReview = () => {
       if (!response.ok) {
         throw new Error(`Error fetching blog: ${response.statusText}`);
       }
-      const data = await response.json();
-      setData(data.data);
+      const data = await response.json().then((data) => data.data);
+      console.log(data);
+      setData(data);
     } catch (error) {
 
     }

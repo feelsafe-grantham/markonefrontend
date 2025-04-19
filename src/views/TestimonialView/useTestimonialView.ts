@@ -163,13 +163,10 @@ const useTestimonialView = () => {
       if (!response.ok) {
         throw new Error(`Error fetching blog: ${response.statusText}`);
       }
-
       const data = await response.json();
-      console.log("this is data: ", data.data);
       setTitle("Testimonial");
       setLinks(data.data.link);
       setTestimonial(data.data.testimonials);
-      console.log("this is data: ", data.data.testimonials);
     } catch (error) {
       console.error("this is error: ", error);
       setError(true);
