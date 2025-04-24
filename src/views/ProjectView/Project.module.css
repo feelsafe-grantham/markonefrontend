@@ -3,7 +3,7 @@
   max-height: 800px;
   margin: 0px auto;
   display: grid;
-  grid-template-columns: 300px auto 200px;
+  grid-template-columns: 300px auto 230px;
   gap: 10px;
   height: 100%;
 }
