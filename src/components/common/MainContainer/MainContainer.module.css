@@ -29,6 +29,9 @@
 }
 
 .offerStrip {
+  position: relative;
+  top: 5px;
+  right: 5px;
   height: 5rem;
 }
 
