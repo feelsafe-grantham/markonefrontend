@@ -13,10 +13,8 @@
 
 .logoContainer {
   padding: 0.25rem;
-
   position: relative;
   z-index: 150;
-  /* z-index: 1500; */
 }
 
 .logo {
@@ -49,6 +47,12 @@
 @media (min-width: 1024px) {
   .logo {
     height: 4.5rem;
+  }
+  .offerStrip {
+    position: relative;
+    top: 5px;
+    right: 130px;
+    height: 5rem;
   }
 }
 

@@ -51,7 +51,7 @@ const MainContainer = ({
         <div className={`${styles.offerStripContainer}`}>
           <Link target="_blank" to={`https://api.whatsapp.com/send?phone=+91${ContactData.phone1}&text=${message}`}>
             <img
-              src="/images/offer2.gif"
+              src="/images/offer3.gif"
               alt="feelsafe markone"
               title="Offer by feelsafe markone"
               className={`${styles.offerStrip}`}
