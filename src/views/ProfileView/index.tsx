@@ -36,6 +36,8 @@ const ProfileView = () => {
                         <Link className="text-center" to={"/terms-and-conditon"}>Terms & Conditions</Link>
                         |
                         <Link className="text-center" to={"/refund-policy"}>Refunds & Cancellation</Link>
+                        |
+                        <Link className="text-center" to={"/shipping-and-delivery"}>Shipping & Delivery</Link>
                     </div>
                 </div>
             </div>

@@ -75,12 +75,6 @@
   }
 }
 
-@media (min-width: 601px) {
-  /* .popOutContainer {
-    display: none;
-  } */
-}
-
 @media (max-width: 600px) {
   .whatsappIcon {
     display: none;

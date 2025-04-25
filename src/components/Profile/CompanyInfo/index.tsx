@@ -17,7 +17,7 @@ const CompanyInfo = () => {
             </div>
             <div className={`${styles.contactInfoContainer}`}>
                 <div className={`trans-black-bg ${styles.contactInfo}`}>
-                    <label htmlFor="phone">Phone</label>: <Link to={`tel:${ContactData.phone1}`} className={`${styles.contactInfoText}`}>+91 {ContactData.phone1}</Link>
+                    <label htmlFor="phone">Phone</label>: <Link to={`tel:${ContactData.phone1}`} className={`${styles.contactInfoText}`}>+91 {ContactData.phone1},+91 {ContactData.phone2} </Link>
                 </div>
                 <div className={`trans-black-bg ${styles.contactInfo}`}>
                     <label htmlFor="email">Email</label>: <Link to={`mailto:${ContactData.email}`} className={`${styles.contactInfoText}`}>{ContactData.email}</Link>

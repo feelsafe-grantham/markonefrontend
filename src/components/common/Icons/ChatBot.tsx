@@ -33,7 +33,7 @@ const ChatBot = () => {
         if (isMobile) {
             setIsExpanded(!isExpanded);
         } else {
-            navigate("/connect");
+            navigate("/plans");
         }
     }
 

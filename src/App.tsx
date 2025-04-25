@@ -17,6 +17,7 @@ import MessageBot from "./components/common/ChatBot";
 import WhatsappIcon from "./components/common/Icons/WhatspappIcon";
 import ChatBot from "./components/common/Icons/ChatBot";
 import { ImageViewerProvider } from './context/ImageViewerContext';
+import ShipingAndDeliveryView from "./views/ShipingAndDeliveryView";
 
 function App() {
   useReview();
@@ -35,15 +36,16 @@ function App() {
             <Route path="/" element={<HomeView />} />
             <Route path="/development" element={<ProjectView endpoint="development" />} />
             <Route path="/seo" element={<ProjectView endpoint="seo" />} />
-            <Route path="/connect" element={<ConnectView />} />
+            <Route path="/plans" element={<ConnectView />} />
             <Route path="/testimonial" element={<TestimonialView />} />
             <Route path="/blog" element={<BlogListView />} />
             <Route path="/project" element={<ProjectView endpoint="development" />} />
             <Route path="/e-book" element={<EbookView />} />
-            <Route path="/profile" element={<ProfileView />} />
+            <Route path="/contact-us" element={<ProfileView />} />
             <Route path="/terms-and-conditon" element={<TermsView />} />
             <Route path="/privacy-policy" element={<PrivacyView />} />
             <Route path="/refund-policy" element={<RefundsView />} />
+            <Route path="/shipping-and-delivery" element={<ShipingAndDeliveryView />} />
             <Route path="/:slug" element={<BlogDetailView />} />
           </Routes>
           <MessageBot />

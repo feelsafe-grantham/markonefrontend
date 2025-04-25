@@ -1,7 +1,7 @@
 import styles from "./Card.module.css";
 import { NavLink } from "react-router-dom";
 interface CtaCardProps {
-    type?: "testimonial" | "connect" | "project" | "blog" | "profile" | "e-book";
+    type?: "testimonial" | "connect" | "project" | "blog" | "profile" | "e-book" | "contact-us" | "plans";
     link: string
 }
 
@@ -28,11 +28,19 @@ const CtaCard = ({ type, link = "#", }: Readonly<CtaCardProps>) => {
     }
     else if (type === "profile") {
         cardObj.image = "/images/resultnew.png";
-        cardObj.title = "Profile";
+        cardObj.title = "Contact Us";
     }
     else if (type === "e-book") {
         cardObj.image = "/images/bookNew.png";
         cardObj.title = "E-Book";
+    }
+    else if (type === "contact-us") {
+        cardObj.image = "/images/callNew.png";
+        cardObj.title = "Contact Us";
+    }
+    else if (type === "plans") {
+        cardObj.image = "/images/resultnew.png";
+        cardObj.title = "Plans";
     }
 
 

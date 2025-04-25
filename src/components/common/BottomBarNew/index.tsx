@@ -7,18 +7,18 @@ const BottomBarNew = () => {
     return (
         <div className={`${styles.bottomBar}`}>
 
-            <Link to={"/connect"} className={`${styles.bottomBarLink} ${styles.redCap}`}>
-                connect
+            <Link to={"/plans"} className={`${styles.bottomBarLink} ${styles.redCap}`}>
+                Plans
             </Link>
             <nav className={`${styles.ctaCardContainer}`}>
                 <CtaCard link="/testimonial" type="testimonial" />
-                <CtaCard link="/profile" type="profile" />
+                <CtaCard link="/contact-us" type="contact-us" />
                 <CtaCard link="/e-book" type="e-book" />
             </nav>
             <nav className={`${styles.ctaCardContainer} ${styles.ctaCardContainerMobile}`}>
                 <CtaCard link="/testimonial" type="testimonial" />
-                <CtaCard link="/connect" type="connect" />
-                <CtaCard link="/profile" type="profile" />
+                <CtaCard link="/plans" type="plans" />
+                <CtaCard link="/contact-us" type="contact-us" />
                 <CtaCard link="/e-book" type="e-book" />
             </nav>
             <Link to={"/blog"} className={`${styles.bottomBarLink} ${styles.greenCap}`}>
@@ -30,7 +30,7 @@ const BottomBarNew = () => {
                 <Link to={"/connect"} className={`${styles.capsHalf} ${styles.capsHalfGreen}`}>
                     connect
                 </Link>
-                <Link to={"/profile"} className={`${styles.capsHalf} ${styles.capsHalfRed}`}>
+                <Link to={"/contact-us"} className={`${styles.capsHalf} ${styles.capsHalfRed}`}>
                     profile
                 </Link>
             </div> 
